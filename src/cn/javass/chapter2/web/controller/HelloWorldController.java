@@ -18,6 +18,6 @@ public class HelloWorldController implements Controller {
 		mv.addObject("message", "Hello World!");
 		// 设置逻辑视图名，视图解析器会根据该名字解析到具体的视图页面
 		mv.setViewName("hello");
-		return mv;
+		return mv; 
 	}
 }
