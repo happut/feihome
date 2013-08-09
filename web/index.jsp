@@ -6,27 +6,35 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>欢迎访问我的空间</title>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="css/modern.css">
+<link rel="stylesheet" type="text/css" href="css/flat-ui.css">
 
 <script src="js/jquery-2.0.3.js"></script>
 <script src="js/bootstrap.js"></script>
-<script src="js/tile-slider.js"></script>
 
 </head>
-<body class="modern-ui">
-	<div class="tile selected bg-color-orange">
-		<div class="tile-content">
-			<h2>mattberg@live.com</h2>
-			<h5>Re: Wedding Annoucement!</h5>
-			<p>Congratulations! I'm really excited to celebrate with you all.
-				Thanks for...</p>
+<body bgcolor="#1abc9c">
+
+	<div class="row-fluid">
+		<div class="span4"></div>
+		<div class="span4">
+			<div class="login-form">
+				<div class="control-group">
+					<input type="text" class="login-field" value=""
+						placeholder="Enter your name" id="login-name">
+					 <label class="login-field-icon fui-man-16" for="login-name"></label>
+				</div>
+
+				<div class="control-group">
+					<input type="password" class="login-field" value=""
+						placeholder="Password" id="login-pass">
+					<label class="login-field-icon fui-lock-16" for="login-pass"></label>
+				</div>
+
+				<a class="btn btn-primary btn-large btn-block" href="#">Login</a> <a
+					class="login-link" href="#">Lost your password?</a>
+			</div>
 		</div>
-		<div class="tile-content">
-			<h2>tina@live.com</h2>
-			<h5>Re: Wedding Annoucement!</h5>
-			<p>Huh! Waw!!! I'm really excited to celebrate with you all.
-				Thanks for...</p>
-		</div>
+		<div class="span4"></div>
 	</div>
 </body>
 </html>

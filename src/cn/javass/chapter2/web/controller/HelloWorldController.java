@@ -21,7 +21,6 @@ public class HelloWorldController {
 	}
 	
 	@RequestMapping(value="hello")
-	@ResponseBody
 	public String helloWorld() {
 		log.debug("HelloWorld!" + "已经执行");
 		return "test/helloasdfadsf";
