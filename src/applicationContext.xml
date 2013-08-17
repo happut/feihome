@@ -10,43 +10,20 @@ http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 
 
-	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"  destroy-method="close">
-		<property name="driverClass">
-			<value>${dataSource.driverClass}</value>
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>com.mysql.jdbc.Driver</value>
 		</property>
-		<property name="jdbcUrl">
-			<value>${dataSource.jdbcUrl}</value>
+		<property name="url">
+			<value>jdbc:mysql://localhost/DB_FH_BLOG?autoReconnect=true</value>
 		</property>
-		<property name="user">
-			<value>${dataSource.user}</value>
+		<property name="username">
+			<value>root</value>
 		</property>
 		<property name="password">
-			<value>${dataSource.password}</value>
+			<value>root</value>
 		</property>
-		<!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
-		<property name="acquireIncrement">
-			<value>${dataSource.acquireIncrement}</value>
-		</property>
-		<!--初始化时获取三个连接，取值应在minPoolSize与maxPoolSize之间。Default: 3 -->
-		<property name="initialPoolSize">
-			<value>${dataSource.initialPoolSize}</value>
-		</property>
-		<!--连接池中保留的最大连接数。Default: 15 -->
-		<property name="maxPoolSize">
-			<value>${dataSource.maxPoolSize}</value>
-		</property>
-		<!--连接池中保留的最小连接数。 -->
-		<property name="minPoolSize">
-			<value>${dataSource.minPoolSize}</value>
-		</property>
-		<!-- 在取得连接时检查连接的有效性 -->
-		<property name="testConnectionOnCheckin" value="true" />
-		<!-- 配置测试连接表，这个表可以不存在 -->
-		<property name="automaticTestTable" value="C3P0TestTable"/>
-		<!-- 最大空闲时间,1小时内未使用则连接被丢弃 -->
-		<property name="maxIdleTime" value="3600"/>
-		<!-- 每小时检查所有连接池中的空闲连接 -->
-		<property name="idleConnectionTestPeriod" value="3600"/>
 	</bean>
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
