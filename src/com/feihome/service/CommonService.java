@@ -1,9 +1,13 @@
 package com.feihome.service;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.ConnectionCallback;
 import org.springframework.stereotype.Repository;
 
 import com.feihome.dao.BaseDao;
@@ -19,8 +23,7 @@ public class CommonService {
 
 	public boolean isUser(String user, String pass) {
 		String hql = "from TUser u where u.CUsername = ? and CPassword = ?";
-		List<TUser> test = dao.getHibernateTemplate().find(hql,
-				new Object[] { user, pass });
-		return !test.isEmpty();
+		dao.getJdbcTemplate().queryForList("select * from t_blog");
+		return false;
 	}
 }

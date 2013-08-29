@@ -47,20 +47,9 @@
 			<version>1.2.17</version>
 		</dependency>
 		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>3.6.9.Final</version>
-		</dependency>
-
-		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.5</version>
-		</dependency>
-		<dependency>
-			<groupId>springframework</groupId>
-			<artifactId>spring-hibernate</artifactId>
-			<version>1.2.6</version>
 		</dependency>
 		<dependency>
 			<groupId>net.sf.json-lib</groupId>
@@ -69,9 +58,9 @@
 			<classifier>jdk15</classifier>
 		</dependency>
 		<dependency>
-			<groupId>org.javassist</groupId>
-			<artifactId>javassist</artifactId>
-			<version>3.17.1-GA</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>3.2.3.RELEASE</version>
 		</dependency>
 	</dependencies>
 </project>

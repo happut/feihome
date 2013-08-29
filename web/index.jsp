@@ -50,9 +50,9 @@
 
 
 	function fuck() {
-
 		var user = $("#login-name").val();
-		var pass = $("#login-pass").val()
+		var pass = $("#login-pass").val();
+		alert(user+pass)
 		 $.post("./userLogic/login.do", {"username":user,"passwords":pass}, function (data,textStatus){
 			if(data.result == true){
 				alert("登陆成功");
@@ -88,11 +88,11 @@
                 <form class="margin-base-vertical">
                     <p class="input-group">
                         <span class="input-group-addon"><span class="icon-envelope"></span></span>
-                        <input type="text" class="form-control input-large" name="email" placeholder="jonsnow@knowsnothi.ng" />
+                        <input type="text" class="form-control input-large" id="login-name" name="email" placeholder="jonsnow@knowsnothi.ng" />
                     </p>
                     <p class="input-group">
                         <span class="input-group-addon"><span class="icon-envelope"></span></span>
-                        <input type="text" class="form-control input-large" name="password" placeholder="jonsnow@knowsnothi.ng" />
+                        <input type="text" class="form-control input-large" id="login-pass" name="password" placeholder="jonsnow@knowsnothi.ng" />
                     </p>
                     <p class="help-block text-center"><small>We won't send you spam. Unsubscribe at any time.</small></p>
                     <p class="text-center">

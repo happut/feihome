@@ -1,19 +1,9 @@
 package com.feihome.dao;
 
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
-import org.springframework.stereotype.Repository;
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
-@Repository("baseDao")
-public class BaseDao extends HibernateDaoSupport{
+public class BaseDao extends JdbcDaoSupport{
 	
-    @Autowired
-    public void setSessionFactory0(
-            @Qualifier("sessionFactory") SessionFactory sessionFactory) {
-        super.setSessionFactory(sessionFactory);
-    }
     
     
 }
