@@ -20,10 +20,10 @@
 	<nav class="navbar navbar-default navbar-static-top" role="navigation">
 		<a class="navbar-brand" href="#">Blog</a>
 		<c:if test="${!empty sessionScope.user.CUsername}">
-			<p class="navbar-text pull-right" id="logined">Signed in as <c:out value='${user.CUsername}' />  <a>Sign out</a></p>
+			<p class="navbar-text pull-right" id="logined">Signed in as <c:out value='${user.CUsername}' />  <a href="../user/signup.action?ref=blog_list">Sign out</a></p>
 		</c:if>
 		<c:if test="${empty sessionScope.user.CUsername}">
-			<p class="navbar-text pull-right" id="login"><a href="www.baidu.com">Sign in</a></p>
+			<p class="navbar-text pull-right" id="login"><a href="../user/signup.action?ref=blog_list">Sign in</a></p>
 		</c:if>
 	</nav>
 	<div class="container">
