@@ -12,18 +12,32 @@
 <link href="../css/bootstrap.css" rel="stylesheet">
 <link href="../jsp/user/css/signup.css" rel="stylesheet">
 <script type="text/javascript">
-	$(document).ready(function() {
-
-	});
+/*	$(document).ready(function() {
+		
+	});*/
+	
+	function submitForm(){
+		alert("s")
+		var user = $("#login-name").val();
+		var pass = $("#login-pass").val();
+		alert(user+pass)
+		 $.post("login.action", {"username":user,"passwords":pass}, function (data,textStatus){
+			if(data.result == true){
+				alert("登陆成功");
+			}else{
+				alert("登录失败");
+			}
+		},"json");
+		return false;
+	}
 </script>
 </head>
 <body>
     <div class="container">
-
-      <form class="form-signin" action="" method="post">
+      <form class="form-signin" action="" onsubmit="submitForm()">
         <h2 class="form-signin-heading">登陆</h2>
-        <input type="text" class="form-control" placeholder="用户名" autofocus>
-        <input type="password" class="form-control" placeholder="密码">
+        <input type="text" class="form-control" id="login-name" placeholder="用户名" autofocus>
+        <input type="password" class="form-control" id="login-pass" placeholder="密码">
         <label class="checkbox">
           <input type="checkbox" value="remember-me"> 记住密码
         </label>
