@@ -32,6 +32,6 @@ public class BlogLogic {
 //		request.getSession().removeAttribute("user");
         List<TBlog> data = commonService.getBlogs();
         
-        return new ModelAndView("hello","data",data);  
+        return new ModelAndView("blog/list","data",data);  
 	}
 }
