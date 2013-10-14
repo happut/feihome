@@ -20,6 +20,6 @@
 
 </head>
 <body bgcolor="#1abc9c">
-<a href="./blog/list.html">日志</a>
+<a href="./blog/list.action">日志</a>
 </body>
 </html>

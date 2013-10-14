@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.feihome.model.TBlog;
+import com.feihome.model.TUser;
 import com.feihome.service.CommonService;
 
 @Controller
@@ -25,7 +26,12 @@ public class BlogLogic {
 	@RequestMapping(value = "list")
 	public ModelAndView list(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
+		TUser user = new TUser();
+		user.setCUsername("wangfei");
+//		request.getSession().setAttribute("user", user);
+//		request.getSession().removeAttribute("user");
         List<TBlog> data = commonService.getBlogs();
+        
         return new ModelAndView("hello","data",data);  
 	}
 }
