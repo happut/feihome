@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.feihome.dao.BaseDao;
 import com.feihome.model.TBlog;
+import com.feihome.model.TUser;
 
 
 @Repository("commonService")
@@ -17,13 +18,11 @@ public class CommonService {
 	@Qualifier("baseDao")
 	private BaseDao dao;
 
-	public boolean isUser(String user, String pass) {
-		String hql = "from TUser u where u.CUsername = ? and CPassword = ?";
-		dao.getJdbcTemplate().queryForList("select * from t_blog");
-		return false;
-	}
-
 	public List<TBlog> getBlogs() {
 		return dao.getBlogs();
+	}
+
+	public TUser getUser(String username, String passwords) {
+		return dao.getUser(username,passwords);
 	}
 }
