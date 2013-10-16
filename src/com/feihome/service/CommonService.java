@@ -25,4 +25,8 @@ public class CommonService {
 	public TUser getUser(String username, String passwords) {
 		return dao.getUser(username,passwords);
 	}
+
+	public boolean createBlog(TBlog blog) {
+		return dao.createBlog(blog) ;
+	}
 }
