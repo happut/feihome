@@ -53,4 +53,9 @@ public class BaseDao extends JdbcDaoSupport{
 			return users.get(0);
 		}
 	}
+
+	public boolean createBlog(TBlog blog) {
+//		getJdbcTemplate().update("insert T_BLOG() VALUE(?,?,?)", args, argTypes)
+		return false;
+	}
 }
