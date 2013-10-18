@@ -50,7 +50,7 @@ public class BlogLogic {
 	
 	@RequestMapping(value = "addBlogReq", method = RequestMethod.POST)
 	@ResponseBody
-	public String login(
+	public String addBlogReq(
 			@RequestParam(value = "title", required = true) String title,
 			@RequestParam(value = "content", required = true) String content,
 			HttpServletRequest request, HttpServletResponse response)
