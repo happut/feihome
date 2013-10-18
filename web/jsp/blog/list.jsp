@@ -33,10 +33,10 @@
 				<c:forEach items="${data}" var="d">
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h3 class="panel-title">
+							<%-- <h3 class="panel-title">
 								<c:out value='${d.CTitle}' />
-							</h3>
-							<h5><c:out value='${d.dtCreatetime}' /></h5>
+							</h3> --%>
+							<p class="panel-title"><c:out value='${d.CTitle}' />(<c:out value='${d.dtCreatetime}' />)</p>
 						</div>
 						<div class="panel-body">
 							<c:out value='${d.CContent}' />

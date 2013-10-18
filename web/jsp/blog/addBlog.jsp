@@ -19,12 +19,11 @@
 		var title = $("#blog_title").val();
 		var content = $("#blog_content").val();
 		alert(title+"☆"+content);
-  	    $.post("login.action", {"username":user,"passwords":pass}, function (data,textStatus){
+  	    $.post("addBlogReq.action", {"title":title,"content":content}, function (data,textStatus){
 			if(data.result == true){
-				$("#loginPro").show();
-				time = window.setInterval(setProgress, 50); 
+				alert("成功");
 			}else{
-				$("#subBtn").removeAttr("disabled");
+				alert("失败");
 			}
 		},"json");
 		return false;

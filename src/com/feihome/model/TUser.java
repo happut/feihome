@@ -1,6 +1,5 @@
 package com.feihome.model;
 
-import java.sql.Timestamp;
 import java.util.Date;
 
 /**
