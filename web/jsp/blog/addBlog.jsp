@@ -18,10 +18,9 @@
 	function submitForm(){
 		var title = $("#blog_title").val();
 		var content = $("#blog_content").val();
-		alert(title+"☆"+content);
   	    $.post("addBlogReq.action", {"title":title,"content":content}, function (data,textStatus){
 			if(data.result == true){
-				alert("成功");
+				window.location.href = 'list.action';
 			}else{
 				alert("失败");
 			}

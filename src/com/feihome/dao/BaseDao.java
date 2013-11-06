@@ -14,7 +14,7 @@ public class BaseDao extends JdbcDaoSupport{
 
 	@SuppressWarnings("unchecked")
 	public List<TBlog> getBlogs() {
-		return getJdbcTemplate().query("select * from t_blog", new RowMapper() {
+		return getJdbcTemplate().query("select * from t_blog order by DT_EDITTIME desc", new RowMapper() {
 			@Override
 			public Object mapRow(ResultSet rs, int arg1) throws SQLException {
 				TBlog blog = new TBlog();

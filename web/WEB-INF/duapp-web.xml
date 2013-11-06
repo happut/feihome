@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <du-web-app xmlns="http://bae.baidu.com/java/1.0">
 	<static-files>
-		<include path="/**.html" expiration="access 1 months" />
+		<include path="/**.htm" expiration="access 1 months" />
+		<exclude path="/**.html"/>
 	</static-files>
  	<sessions-enabled>true</sessions-enabled>
 	<!--<session-config>

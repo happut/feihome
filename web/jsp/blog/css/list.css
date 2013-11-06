@@ -1,0 +1,21 @@
+.blogPanel{
+	background-color:#EEEEEE;
+	min-height:100px;
+	margin:10px;
+	border:1px dashed #000; 
+}
+.blogTitle{
+	border-bottom:1px dashed #000; 
+}
+.blogTitleText{
+	font-size: 18px;
+	font-weight: bold;
+}
+.blogContent{
+	font-size: 9px;
+}
+.blogTitleTime{
+	padding-left: 50px;
+} 
+
+body { padding-top: 70px; }
