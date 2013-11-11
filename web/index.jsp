@@ -22,19 +22,5 @@
 <body bgcolor="#1abc9c">
 <a href="./blog/list.action">日志</a>
 <br/>
-<audio controls="controls">
-  <source src="mp3/广播体操 时代在召唤 - 佚名.mp3" type="audio/mpeg">
-	Your browser does not support the audio tag.
-</audio>
-<br/>
-<audio controls="controls">
-  <source src="mp3/青春的活力 广播体操 - 佚名.mp3" type="audio/mpeg">
-	Your browser does not support the audio tag.
-</audio>
-<br/>
-<audio controls="controls">
-  <source src="mp3/0001.土豆网-第一套全国中学生广播体操_clip.mp3" type="audio/mpeg">
-	Your browser does not support the audio tag.
-</audio>
 </body>
 </html>

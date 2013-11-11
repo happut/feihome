@@ -1,6 +1,6 @@
 package com.feihome.logic.blog;
 
-import java.util.Date;
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -63,8 +63,8 @@ public class BlogLogic {
 		TBlog blog = new TBlog();
 		blog.setCContent(content);
 		blog.setCTitle(title);
-		blog.setDtCreatetime(new Date());
-		blog.setDtEdittime(new Date());
+		blog.setDtCreatetime( new Timestamp(System.currentTimeMillis()) );
+		blog.setDtEdittime( new Timestamp(System.currentTimeMillis()));
 		blog.setNType(0);
 		blog.setNUserid(user.getNId());
 		

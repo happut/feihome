@@ -37,7 +37,10 @@
 				<div class="container">
 					<c:forEach items="${data}" var="d" varStatus="var">
 							<div class="blogPanel">
-									<div class="blogTitle"><span class="blogTitleText"><c:out value='${d.CTitle}' /></span><span class="blogTitleTime"><fmt:formatDate value="${d.dtCreatetime}" type="both"/></span></div>
+									<div class="blogTitle">
+										<div class="blogTitleText"><c:out value='${d.CTitle}' /></div>
+										<div class="blogTitleTime"><fmt:formatDate value="${d.dtCreatetime}" type="both" pattern="yyyy-MM-dd HH:mm:ss"/></div>
+									</div>
 									<div class="blogContent"><c:out value='${d.CContent}' /></div>
 							</div>
 					</c:forEach>

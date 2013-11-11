@@ -20,8 +20,8 @@ public class BaseDao extends JdbcDaoSupport{
 				TBlog blog = new TBlog();
 				blog.setCTitle(rs.getString("C_TITLE"));
 				blog.setCContent(rs.getString("C_CONTENT"));
-				blog.setDtCreatetime(rs.getDate("DT_CREATETIME"));
-				blog.setDtEdittime(rs.getDate("DT_EDITTIME"));
+				blog.setDtCreatetime(rs.getTimestamp("DT_CREATETIME"));
+				blog.setDtEdittime(rs.getTimestamp("DT_EDITTIME"));
 				blog.setNId(rs.getInt("N_ID"));
 				blog.setNType(rs.getInt("N_TYPE"));
 				blog.setNUserid(rs.getInt("N_USERID"));

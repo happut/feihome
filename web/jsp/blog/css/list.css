@@ -2,20 +2,24 @@
 	background-color:#EEEEEE;
 	min-height:100px;
 	margin:10px;
-	border:1px dashed #000; 
+	border:1px #717171; 
 }
 .blogTitle{
-	border-bottom:1px dashed #000; 
+	/* border-bottom:1px dashed #000;  */
+	border-bottom:#C8B9AE solid 1px;
+	padding:5px;
 }
 .blogTitleText{
 	font-size: 18px;
 	font-weight: bold;
 }
 .blogContent{
-	font-size: 9px;
+	font-size: 14px;
+	padding:5px;
 }
 .blogTitleTime{
-	padding-left: 50px;
+	font-size: 12px;
+	color: #717171;
 } 
 
 body { padding-top: 70px; }

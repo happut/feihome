@@ -18,8 +18,8 @@ public class TBlog  implements java.io.Serializable {
      private String CContent;
      private Integer NType;
      private Integer NUserid;
-     private Date dtCreatetime;
-     private Date dtEdittime;
+     private Timestamp dtCreatetime;
+     private Timestamp dtEdittime;
 
 
     // Constructors
@@ -87,19 +87,19 @@ public class TBlog  implements java.io.Serializable {
         this.NUserid = NUserid;
     }
 
-    public Date getDtCreatetime() {
+    public Timestamp getDtCreatetime() {
         return this.dtCreatetime;
     }
     
-    public void setDtCreatetime(Date dtCreatetime) {
+    public void setDtCreatetime(Timestamp dtCreatetime) {
         this.dtCreatetime = dtCreatetime;
     }
 
-    public Date getDtEdittime() {
+    public Timestamp getDtEdittime() {
         return this.dtEdittime;
     }
     
-    public void setDtEdittime(Date dtEdittime) {
+    public void setDtEdittime(Timestamp dtEdittime) {
         this.dtEdittime = dtEdittime;
     }
    
