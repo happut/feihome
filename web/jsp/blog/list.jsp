@@ -12,7 +12,7 @@
 <link href="../jsp/blog/css/common.css" rel="stylesheet">
 <link href="../jsp/blog/css/list.css" rel="stylesheet">
 <script type="text/javascript">
-	$(document).ready(function(){
+	$(document).ready(function() {
 	});
 </script>
 </head>
@@ -27,7 +27,7 @@
 			<p class="navbar-text pull-right" id="login"><a href="../user/signup.action?ref=blog_list">Sign in</a></p>
 		</c:if>
 	</nav>
-		<div class="row">
+		<div class="container">
 			<div class="col-md-2">
 				<div class="container">
 					左布局
@@ -36,12 +36,19 @@
 			<div class="col-md-10">
 				<div class="container">
 					<c:forEach items="${data}" var="d" varStatus="var">
-							<div class="blogPanel">
-									<div class="blogTitle">
-										<div class="blogTitleText"><c:out value='${d.CTitle}' /></div>
-										<div class="blogTitleTime"><fmt:formatDate value="${d.dtCreatetime}" type="both" pattern="yyyy-MM-dd HH:mm:ss"/></div>
-									</div>
-									<div class="blogContent"><c:out value='${d.CContent}' /></div>
+							<div class="raised">
+								<b class="b1"></b><b class="b2"></b><b class="b3"></b><b class="b4"></b>
+									<div class="blogPanel">
+										<div class="blogTitle">
+											<div class="blogTitleText"><c:out value='${d.CTitle}' /></div>
+											<div class="blogTitleTime"><fmt:formatDate value="${d.dtCreatetime}" type="both" pattern="yyyy-MM-dd HH:mm:ss"/> <c:out value='${d.user.CUsername}' /> </div>
+											<!-- <div class="blogTypeLabel">卧槽</div> -->
+										</div>
+										<div class="blogContent"><c:out value='${d.CContent}' escapeXml="false"/></div>
+										<div class="blogCommentTip">评论(<strong>0</strong>)</div>
+								    </div>
+									<b class="b4b"></b><b class="b3b"></b><b class="b2b"></b><b class="b1b"></b>
+								  
 							</div>
 					</c:forEach>
 				</div>

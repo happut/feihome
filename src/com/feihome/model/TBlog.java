@@ -21,10 +21,19 @@ public class TBlog  implements java.io.Serializable {
      private Timestamp dtCreatetime;
      private Timestamp dtEdittime;
 
+     private TUser user = new TUser();
 
     // Constructors
 
-    /** default constructor */
+    public TUser getUser() {
+		return user;
+	}
+
+	public void setUser(TUser user) {
+		this.user = user;
+	}
+
+	/** default constructor */
     public TBlog() {
     }
 

@@ -10,21 +10,22 @@
 <link href="../css/bootstrap.css" rel="stylesheet">
 <link href="../jsp/blog/css/common.css" rel="stylesheet">
 <link href="../jsp/blog/css/addBlog.css" rel="stylesheet">
+<script charset="utf-8" src="../ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
-		
+		ckeditor = CKEDITOR.replace( 'content' );
 	});
 	
 	function submitForm(){
 		var title = $("#blog_title").val();
-		var content = $("#blog_content").val();
-  	    $.post("addBlogReq.action", {"title":title,"content":content}, function (data,textStatus){
+		var content = ckeditor.document.getBody().getHtml();
+   	    $.post("addBlogReq.action", {"title":title,"content":content}, function (data,textStatus){
 			if(data.result == true){
 				window.location.href = 'list.action';
 			}else{
 				alert("失败");
 			}
-		},"json");
+		},"json"); 
 		return false;
 	}
 	
@@ -54,8 +55,13 @@
 				<div class="form-group">
 					<label for="inputEmail3" class="col-sm-2 control-label">内容</label>
 					<div class="col-sm-10">
-						<textarea class="form-control" rows="3" id="blog_content"></textarea>
+						<textarea class="ckeditor" rows="3" id="editor_id" name="content">
+						
+						</textarea>
 					</div>
+				</div>
+				<div class="form-group">
+
 				</div>
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">

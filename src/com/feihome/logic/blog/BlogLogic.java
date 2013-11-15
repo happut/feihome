@@ -27,7 +27,7 @@ public class BlogLogic {
 
 	@Autowired
 	@Qualifier("commonService")
-	CommonService commonService;
+	private CommonService commonService;
 
 	@RequestMapping(value = "list")
 	public ModelAndView list(HttpServletRequest request,
@@ -69,7 +69,7 @@ public class BlogLogic {
 		blog.setNUserid(user.getNId());
 		
 		boolean isSuccess = commonService.createBlog(blog);
-		result.put("result", user != null);
+		result.put("result", isSuccess);
 		return result.toString();
 	}
 }
