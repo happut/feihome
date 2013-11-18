@@ -13,6 +13,14 @@
 <link href="../jsp/blog/css/list.css" rel="stylesheet">
 <script type="text/javascript">
 	$(document).ready(function() {
+			$(window).scroll(function() {		
+				if($(window).scrollTop() >= 100){
+					$('.actGotop').fadeIn(300); 
+				}else{    
+					$('.actGotop').fadeOut(300);    
+				}  
+			});
+			$('.actGotop').click(function(){$('html,body').animate({scrollTop: '0px'}, 800);});	
 	});
 </script>
 </head>
@@ -54,6 +62,7 @@
 				</div>
 			</div>
 		</div>
+		<div class="actGotop"><a href="javascript:;" title="Top"></a></div>
     <div id="footer">
       <div class="container">
         <p class="text-muted">Copyright © 2013 Wfei.de.bug.(Happut). All rights reserved. </p>

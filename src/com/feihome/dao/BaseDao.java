@@ -63,4 +63,21 @@ public class BaseDao extends JdbcDaoSupport{
 						blog.getNType(), blog.getNUserid());
 		return rows > 0;
 	}
+
+	public List<TUser> getAllUserInfo() {
+		return getJdbcTemplate().query("select * from t_user" ,
+				new RowMapper() {
+					@Override
+					public Object mapRow(ResultSet rs, int arg1)
+							throws SQLException {
+						TUser user = new TUser();
+						user.setNId(rs.getInt("N_ID"));
+						user.setCEmail(rs.getString("C_EMAIL"));
+						user.setCPassword(rs.getString("C_PASSWORD"));
+						user.setCUsername(rs.getString("C_USERNAME"));
+						user.setDtCreateTime(rs.getDate("DT_CREATE_TIME"));
+						return user;
+					}
+				});
+	}
 }
