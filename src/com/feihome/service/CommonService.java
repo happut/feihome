@@ -29,4 +29,10 @@ public class CommonService {
 	public boolean createBlog(TBlog blog) {
 		return dao.createBlog(blog) ;
 	}
+
+	public List<TUser> getAllUserInfo() {
+		return dao.getAllUserInfo();
+	}
+	
+	
 }
