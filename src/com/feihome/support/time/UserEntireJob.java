@@ -24,20 +24,21 @@ public class UserEntireJob {
 	@Qualifier("commonService")
 	private CommonService commonService;
 	
-	@Scheduled(cron="0/5 * *  * * ? ")   //每5秒执行一次  
+	/*@Scheduled(cron="0/30 * *  * * ? ")   //每5秒执行一次  */
 	private void refreshCache() {
 		Cache cache = CacheManager.getInstance().getCache("userEntire");
 		if(commonService == null){
-			System.out.println("dao == null了");
 			return;
 		}
 		List<TUser> users = commonService.getAllUserInfo();
 		Iterator<TUser> it = users.iterator();
+		
 		Map<Integer,TUser> userMap = new HashMap<Integer,TUser>();
 		while(it.hasNext()){
 			TUser user = it.next();
 			userMap.put(user.getNId(), user);
 		}
+		
 		Element userMapEle = new Element("userMap", userMap);
 		cache.put(userMapEle);
 	}
