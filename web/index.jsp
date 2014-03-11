@@ -14,7 +14,7 @@ body {
 </style>
 </head>
 <body>
-	<h1>我是首页(v0.2)</h1>
+	<h1>我是首页(v0.3 SAE)</h1>
 	<a href="./blog/list.action">日志</a>
 	<br />
 </body>

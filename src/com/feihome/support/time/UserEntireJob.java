@@ -24,7 +24,7 @@ public class UserEntireJob {
 	@Qualifier("commonService")
 	private CommonService commonService;
 	
-	/*@Scheduled(cron="0/30 * *  * * ? ")   //每5秒执行一次  */
+	@Scheduled(cron="0/30 * *  * * ? ")   //每5秒执行一次  
 	private void refreshCache() {
 		Cache cache = CacheManager.getInstance().getCache("userEntire");
 		if(commonService == null){

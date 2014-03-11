@@ -25,7 +25,7 @@ public class BaseDao extends JdbcDaoSupport{
 				blog.setNId(rs.getInt("N_ID"));
 				blog.setNType(rs.getInt("N_TYPE"));
 				blog.setNUserid(rs.getInt("N_USERID"));
-				blog.getUser().setCUsername(rs.getString("USERNAME"));
+				blog.getUser().setCUsername(rs.getString("USERNAME")); 
 				return blog;
 			}
 		});
