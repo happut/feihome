@@ -65,7 +65,7 @@
 		<div class="actGotop"><a href="javascript:;" title="Top"></a></div>
     <div id="footer">
       <div class="container">
-        <p class="text-muted">Copyright © 2013 Wfei.de.bug.(Happut). All rights reserved. </p>
+        <p class="text-muted">Copyright © 2014 Wfei.de.bug.(Happut). All rights reserved. <img alt="" src="../img/sae.png" style="height:50px;width:100px"/></p>
       </div>
     </div>
 </body>
