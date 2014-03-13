@@ -8,7 +8,7 @@
 <title>Hello World</title>
 <script src="../js/jquery-2.0.3.js"></script>
 <script src="../js/bootstrap.js"></script>
-<link href="../css/bootstrap.css" rel="stylesheet">
+<link href="http://lib.sinaapp.com/js/bootstrap/v3.0.0/css/bootstrap.min.css" rel="stylesheet">
 <link href="../jsp/blog/css/common.css" rel="stylesheet">
 <link href="../jsp/blog/css/list.css" rel="stylesheet">
 <script type="text/javascript">
