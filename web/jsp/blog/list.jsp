@@ -33,9 +33,8 @@
 <style type="text/css">
 body {
 	height: 100%;
-	/* The html and body elements cannot have any padding or margin. */
 	font-family: "Microsoft YaHei";
-	padding-top: 50px;
+	padding-top: 70px;
 	padding-bottom: 20px;
 }
 </style>
@@ -45,45 +44,51 @@ body {
 		<jsp:param value="blogNav" name="active" />
 	</jsp:include>
 	<div class="container">
-		<div class="col-md-10">
+		<div class="col-md-8">
 			<div class="container">
 				<c:forEach items="${data}" var="d" varStatus="var">
-					<div class="raised">
-						<b class="b1"></b><b class="b2"></b><b class="b3"></b><b
-							class="b4"></b>
-						<div class="blogPanel">
-							<div class="blogTitle">
-								<div class="blogTitleText">
-									<c:out value='${d.CTitle}' />
-								</div>
-								<div class="blogTitleTime">
-									<fmt:formatDate value="${d.dtCreatetime}" type="both"
-										pattern="yyyy-MM-dd HH:mm:ss" />
-									<c:out value='${d.user.CUsername}' />
-								</div>
-								<!-- <div class="blogTypeLabel">卧槽</div> -->
-							</div>
-							<div class="blogContent">
-								<c:out value='${d.CContent}' escapeXml="false" />
-							</div>
-							<div class="blogCommentTip">
-								评论(<strong>0</strong>)
-							</div>
+					<div class="well">
+						<div class="blogTitle">
+							<h2>
+								<c:out value='${d.CTitle}' />
+							</h2>
+							<span class="blogTitleTime"> <fmt:formatDate
+									value="${d.dtCreatetime}" type="both"
+									pattern="yyyy-MM-dd HH:mm:ss" /> <c:out
+									value='${d.user.CUsername}' />
+							</span> <span class="label label-primary">卧槽</span>
 						</div>
-						<b class="b4b"></b><b class="b3b"></b><b class="b2b"></b><b
-							class="b1b"></b>
-
+						<div class="blogContent">
+							<c:out value='${d.CContent}' escapeXml="false" />
+						</div>
+						<div class="blogCommentTip">评论(10) | 赞(5)</div>
 					</div>
 				</c:forEach>
+				<ul class="pager">
+					<li class="previous disabled"><a href="javascript:false;">&larr;
+							Older</a></li>
+					<li class="next"><a href="#">Newer &rarr;</a></li>
+				</ul>
 			</div>
 		</div>
-		<div class="col-md-2">
-			<div class="container">左布局</div>
+		<div class="col-md-4">
+			<div class="container">
+				<div class="panel panel-success">
+					<div class="panel-heading">个人简介：</div>
+					<div class="panel-body">
+						<p>Happut Wong Fane</p>
+						<p>Poor Java Programme Developer</p>
+						<p>Beijing</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="actGotop">
 		<a href="javascript:;" title="Top"></a>
 	</div>
+
+
 	<%@ include file="/jsp/foot.jsp"%>
 </body>
 </html>

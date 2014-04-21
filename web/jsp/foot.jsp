@@ -3,11 +3,11 @@
 <div id="footer"
 	style="height:60px;text-align: center;">
 	<div class="container">
-		<p class="text-muted">
+		<h5>
 			Copyright © 2014 Wfei.de.bug.(Happut). All rights reserved. <img
 				alt="" src="<c:url value='/img/poweredby-120x33px.png'/>"
 				style="width: 120px; height: 33px" />
-		</p>
+		</h5>
 	</div>
 </div>
 

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class="container">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -14,8 +14,15 @@
 		</div>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
-				<li id="indexNav" ><a href='<c:url value="/"/>'>主页</a></li>
-				<li id="blogNav" ><a href='<c:url value="/blog/list.action"/>'>日志</a></li>
+				<li id="indexNav"><a href='<c:url value="/"/>'>主页</a></li>
+				<li id="blogNav"><a href='<c:url value="/blog/list.action"/>'>日志</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<p class="navbar-text">
+					<span id="topNickName">王飞</span>
+				</p>
+				<li><a href="/WeCoded/signout">SignOut</a></li>
+				<li><a href='<c:url value="/user/signup.action"/>'>SignIn</a></li>
 			</ul>
 		</div>
 		<!--/.nav-collapse -->
