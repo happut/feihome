@@ -23,7 +23,7 @@ body {
 	</jsp:include> 
 	<div class="jumbotron">
 		<div class="container">
-			<h1>Feihome首页(v0.4 [SAE])</h1>
+			<h1>Feihome首页(v0.5-20140418 [SAE])</h1>
 			<p>Spring MVC + Bootstrap搭建的系统</p>
 			<p>
 				<a class="btn btn-primary btn-lg" role="button">Learn more</a>
