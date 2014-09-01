@@ -21,6 +21,10 @@ public class CommonService {
 	public List<TBlog> getBlogs() {
 		return dao.getBlogs();
 	}
+	
+	public List<TBlog> getBlogs(Integer pageNum) {
+		return dao.getBlogs(pageNum);
+	}
 
 	public TUser getUser(String username, String passwords) {
 		return dao.getUser(username,passwords);

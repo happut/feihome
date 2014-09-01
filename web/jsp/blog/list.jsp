@@ -7,11 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>日志界面</title>
-<script src="../js/jquery-2.0.3.js"></script>
-<script src="../js/bootstrap.js"></script>
-<link
-	href="http://lib.sinaapp.com/js/bootstrap/v3.0.0/css/bootstrap.min.css"
-	rel="stylesheet">
+<%@ include file="/jsp/import.jsp"%>
 <link href="../jsp/blog/css/common.css" rel="stylesheet">
 <link href="../jsp/blog/css/list.css" rel="stylesheet">
 <script type="text/javascript">
