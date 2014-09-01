@@ -8,8 +8,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>日志界面</title>
 <%@ include file="/jsp/import.jsp"%>
-<link href="../jsp/blog/css/common.css" rel="stylesheet">
-<link href="../jsp/blog/css/list.css" rel="stylesheet">
 <script type="text/javascript">
 	$(document).ready(function() {
 		$(window).scroll(function() {
@@ -26,38 +24,46 @@
 		});
 	});
 </script>
-<style type="text/css">
-body {
-	height: 100%;
-	font-family: "Microsoft YaHei";
-	padding-top: 70px;
-	padding-bottom: 20px;
-}
-</style>
 </head>
 <body>
-	<jsp:include page='/jsp/header.jsp'>
-		<jsp:param value="blogNav" name="active" />
-	</jsp:include>
 	<div class="container">
-		<div class="col-md-8">
-			<div class="container">
+		<jsp:include page='/jsp/header.jsp'>
+			<jsp:param value="blog" name="active" />
+		</jsp:include>
+		<div class="row marketing">
+			<div class="col-md-3">
+				<div class="panel panel-success">
+					<div class="panel-heading">日期：</div>
+					<div class="panel-body">
+						<p>2014年8月</p>
+						<p>2014年7月</p>
+						<p>2014年6月</p>
+					</div>
+				</div>
+				<div class="panel panel-success">
+					<div class="panel-heading">标签：</div>
+					<div class="panel-body">
+						<p>卧槽</p>
+					</div>
+				</div>				
+			</div>
+			<div class="col-md-9">
 				<c:forEach items="${data}" var="d" varStatus="var">
 					<div class="well">
-						<div class="blogTitle">
+						<div>
 							<h2>
 								<c:out value='${d.CTitle}' />
 							</h2>
-							<span class="blogTitleTime"> <fmt:formatDate
-									value="${d.dtCreatetime}" type="both"
-									pattern="yyyy-MM-dd HH:mm:ss" /> <c:out
-									value='${d.user.CUsername}' />
-							</span> <span class="label label-primary">卧槽</span>
+							<h6>
+								<small><fmt:formatDate value="${d.dtCreatetime}"
+										type="both" pattern="yyyy-MM-dd HH:mm:ss" /> <c:out
+										value='${d.user.CUsername}' /></small>
+							</h6>
 						</div>
-						<div class="blogContent">
+						<div>
 							<c:out value='${d.CContent}' escapeXml="false" />
 						</div>
-						<div class="blogCommentTip">评论(10) | 赞(5)</div>
+						<div>评论(10) | 赞(5)</div>
 					</div>
 				</c:forEach>
 				<ul class="pager">
@@ -65,18 +71,6 @@ body {
 							Older</a></li>
 					<li class="next"><a href="#">Newer &rarr;</a></li>
 				</ul>
-			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="container">
-				<div class="panel panel-success">
-					<div class="panel-heading">个人简介：</div>
-					<div class="panel-body">
-						<p>Happut Wong Fane</p>
-						<p>Poor Java Programme Developer</p>
-						<p>Beijing</p>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>

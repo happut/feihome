@@ -14,7 +14,7 @@ public class BaseDao extends JdbcDaoSupport{
 
 	@SuppressWarnings("unchecked")
 	public List<TBlog> getBlogs() {
-		return getJdbcTemplate().query("select *,u.N_ID as USERID,u.C_USERNAME as USERNAME from t_blog b ,t_user u where b.N_USERID = u.N_ID order by b.DT_EDITTIME desc", new RowMapper() {
+		return getJdbcTemplate().query("select b.*,u.N_ID as USERID,u.C_USERNAME as USERNAME from t_blog b ,t_user u where b.N_USERID = u.N_ID order by b.DT_EDITTIME desc", new RowMapper() {
 			@Override
 			public Object mapRow(ResultSet rs, int arg1) throws SQLException {
 				TBlog blog = new TBlog();
@@ -34,7 +34,7 @@ public class BaseDao extends JdbcDaoSupport{
 	
 	@SuppressWarnings("unchecked")
 	public List<TBlog> getBlogs(Integer pageNum) {
-		return getJdbcTemplate().query("select *,u.N_ID as USERID,u.C_USERNAME as USERNAME from t_blog b ,t_user u where b.N_USERID = u.N_ID order by b.DT_EDITTIME desc LIMIT "+pageNum+",10", new RowMapper() {
+		return getJdbcTemplate().query("select b.*,u.N_ID as USERID,u.C_USERNAME as USERNAME from t_blog b ,t_user u where b.N_USERID = u.N_ID order by b.DT_EDITTIME desc LIMIT "+(pageNum-1)+",10", new RowMapper() {
 			@Override
 			public Object mapRow(ResultSet rs, int arg1) throws SQLException {
 				TBlog blog = new TBlog();
