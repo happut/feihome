@@ -39,7 +39,7 @@ body {
 		<div class="row marketing">
 			<div class="col-md-6">
 				<div class="well">
-					<h1>Feihome v0.6</h1>
+					<h1>Feihome v0.6.1</h1>
 					<address>
 						<strong>Wang Fei, (Happut).</strong><br> A Poor Java
 						Programme Developer<br> Xixiaokou, Haidian, Beijing, China<br>
