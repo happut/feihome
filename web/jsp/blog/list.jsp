@@ -8,22 +8,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>日志界面</title>
 <%@ include file="/jsp/import.jsp"%>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$(window).scroll(function() {
-			if ($(window).scrollTop() >= 100) {
-				$('.actGotop').fadeIn(300);
-			} else {
-				$('.actGotop').fadeOut(300);
-			}
-		});
-		$('.actGotop').click(function() {
-			$('html,body').animate({
-				scrollTop : '0px'
-			}, 800);
-		});
-	});
-</script>
+<style type="text/css">
+.blogDiv{
+	padding:10px 35px 10px 35px;
+}
+
+
+.blogSubTitle{
+	/*text-align:right;*/
+	color:#999999;
+	font-size:12px;
+	margin:10px 0px 10px 0px;
+}
+</style>
 </head>
 <body>
 	<div class="container">
@@ -45,20 +42,20 @@
 					<div class="panel-body">
 						<p>卧槽</p>
 					</div>
-				</div>				
+				</div>
 			</div>
 			<div class="col-md-9">
 				<c:forEach items="${data}" var="d" varStatus="var">
-					<div class="well">
+					<div class="well blogDiv">
 						<div>
 							<h2>
 								<c:out value='${d.CTitle}' />
 							</h2>
-							<h6>
-								<small><fmt:formatDate value="${d.dtCreatetime}"
-										type="both" pattern="yyyy-MM-dd HH:mm:ss" /> <c:out
-										value='${d.user.CUsername}' /></small>
-							</h6>
+						</div>
+						<div class="blogSubTitle">
+							<fmt:formatDate value="${d.dtCreatetime}" type="both"
+								pattern="yyyy-MM-dd HH:mm" />
+							<c:out value='${d.user.CUsername}' />
 						</div>
 						<div>
 							<c:out value='${d.CContent}' escapeXml="false" />
