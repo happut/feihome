@@ -9,16 +9,15 @@
 <title>日志界面</title>
 <%@ include file="/jsp/import.jsp"%>
 <style type="text/css">
-.blogDiv{
-	padding:10px 35px 10px 35px;
+.blogDiv {
+	padding: 10px 35px 10px 35px;
 }
 
-
-.blogSubTitle{
+.blogSubTitle {
 	/*text-align:right;*/
-	color:#999999;
-	font-size:12px;
-	margin:10px 0px 10px 0px;
+	color: #999999;
+	font-size: 12px;
+	margin: 10px 0px 10px 0px;
 }
 </style>
 </head>
@@ -29,8 +28,20 @@
 		</jsp:include>
 		<div class="row marketing">
 			<div class="col-md-3">
+				<c:if test="${!empty sessionScope.user}">
+					<div class="panel panel-success">
+						<div class="panel-heading">任务</div>
+						<div class="panel-body">
+							<p class="text-center">
+								<button type="button" class="btn btn-primary">
+									<span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;&nbsp;&nbsp;添加新博客
+								</button>
+							</p>
+						</div>
+					</div>
+				</c:if>
 				<div class="panel panel-success">
-					<div class="panel-heading">日期：</div>
+					<div class="panel-heading">日期</div>
 					<div class="panel-body">
 						<p>2014年8月</p>
 						<p>2014年7月</p>
@@ -38,7 +49,7 @@
 					</div>
 				</div>
 				<div class="panel panel-success">
-					<div class="panel-heading">标签：</div>
+					<div class="panel-heading">标签</div>
 					<div class="panel-body">
 						<p>卧槽</p>
 					</div>
@@ -60,7 +71,9 @@
 						<div>
 							<c:out value='${d.CContent}' escapeXml="false" />
 						</div>
-						<div>评论(10) | 赞(5)</div>
+						<div>
+							<span class="glyphicon glyphicon-comment"></span><span class="badge">10</span> | <span class="glyphicon glyphicon-thumbs-up"></span><span class="badge">5</span>
+						</div>
 					</div>
 				</c:forEach>
 				<ul class="pager">
