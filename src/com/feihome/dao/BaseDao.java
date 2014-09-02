@@ -12,11 +12,13 @@ import com.feihome.model.TUser;
 
 public class BaseDao extends JdbcDaoSupport{
 
-	@SuppressWarnings("unchecked")
 	public List<TBlog> getBlogs() {
-		return getJdbcTemplate().query("select b.*,u.N_ID as USERID,u.C_USERNAME as USERNAME from t_blog b ,t_user u where b.N_USERID = u.N_ID order by b.DT_EDITTIME desc", new RowMapper() {
+		String sql = " select b.*,u.N_ID as USERID,u.C_USERNAME as USERNAME"
+				+ " from t_blog b ,t_user u"
+				+ " where b.N_USERID = u.N_ID order by b.DT_EDITTIME desc";
+		return getJdbcTemplate().query(sql, new RowMapper<TBlog>() {
 			@Override
-			public Object mapRow(ResultSet rs, int arg1) throws SQLException {
+			public TBlog mapRow(ResultSet rs, int row) throws SQLException {
 				TBlog blog = new TBlog();
 				blog.setCTitle(rs.getString("C_TITLE"));
 				blog.setCContent(rs.getString("C_CONTENT"));
@@ -32,11 +34,14 @@ public class BaseDao extends JdbcDaoSupport{
 
 	}
 	
-	@SuppressWarnings("unchecked")
 	public List<TBlog> getBlogs(Integer pageNum) {
-		return getJdbcTemplate().query("select b.*,u.N_ID as USERID,u.C_USERNAME as USERNAME from t_blog b ,t_user u where b.N_USERID = u.N_ID order by b.DT_EDITTIME desc LIMIT "+(pageNum-1)+",10", new RowMapper() {
+		String sql = " select b.*,u.N_ID as USERID,u.C_USERNAME as USERNAME"
+				+ " from t_blog b ,t_user u"
+				+ " where b.N_USERID = u.N_ID order by b.DT_EDITTIME desc"
+				+ " LIMIT "+(pageNum-1)+",10";
+		return getJdbcTemplate().query(sql, new RowMapper<TBlog>() {
 			@Override
-			public Object mapRow(ResultSet rs, int arg1) throws SQLException {
+			public TBlog mapRow(ResultSet rs, int arg1) throws SQLException {
 				TBlog blog = new TBlog();
 				blog.setCTitle(rs.getString("C_TITLE"));
 				blog.setCContent(rs.getString("C_CONTENT"));

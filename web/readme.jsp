@@ -23,16 +23,10 @@
 						<abbr title="Phone">P:</abbr> (0) 156-GRYS-8912<br>
 						<abbr title="E-Mail">E:</abbr> <a href="mailto:happut@163.com">happut#163.com</a> (Please replace '#' with '@')
 					</address>
+					<script src="http://git.oschina.net/littlewangfei/feihome/preview"></script>
 				</div>
 			</div>
 		</div>
-		
-		<div class="row marketing">
-			<div class="col-md-12">
-				<script src="http://git.oschina.net/littlewangfei/feihome/preview"></script>
-			</div>
-		</div>
-		
 		<%@ include file="/jsp/foot.jsp"%>
 	</div>
 </body>
