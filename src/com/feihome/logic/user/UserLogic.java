@@ -60,4 +60,17 @@ public class UserLogic {
 		}
 		return new ModelAndView("user/signup");
 	}
+	
+	@RequestMapping(value = "logOutReq")
+	@ResponseBody
+	public String logOut(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		TUser user = (TUser) request.getSession().getAttribute("user");
+		if (user != null) {
+			request.getSession().removeAttribute("user");
+		}
+		JSONObject result = new JSONObject();
+		result.put("result", true);
+		return result.toString();
+	}
 }

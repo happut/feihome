@@ -4,13 +4,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import org.apache.commons.lang.BooleanUtils;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.feihome.model.TBlog;
 import com.feihome.model.TUser;
 
-public class BaseDao extends JdbcDaoSupport{
+public class BaseDao extends JdbcDaoSupport {
 
 	public List<TBlog> getBlogs() {
 		String sql = " select b.*,u.N_ID as USERID,u.C_USERNAME as USERNAME"
@@ -27,18 +29,18 @@ public class BaseDao extends JdbcDaoSupport{
 				blog.setNId(rs.getInt("N_ID"));
 				blog.setNType(rs.getInt("N_TYPE"));
 				blog.setNUserid(rs.getInt("N_USERID"));
-				blog.getUser().setCUsername(rs.getString("USERNAME")); 
+				blog.getUser().setCUsername(rs.getString("USERNAME"));
 				return blog;
 			}
 		});
 
 	}
-	
+
 	public List<TBlog> getBlogs(Integer pageNum) {
 		String sql = " select b.*,u.N_ID as USERID,u.C_USERNAME as USERNAME"
 				+ " from t_blog b ,t_user u"
 				+ " where b.N_USERID = u.N_ID order by b.DT_EDITTIME desc"
-				+ " LIMIT "+(pageNum-1)+",10";
+				+ " LIMIT " + (pageNum - 1) + ",10";
 		return getJdbcTemplate().query(sql, new RowMapper<TBlog>() {
 			@Override
 			public TBlog mapRow(ResultSet rs, int arg1) throws SQLException {
@@ -50,32 +52,34 @@ public class BaseDao extends JdbcDaoSupport{
 				blog.setNId(rs.getInt("N_ID"));
 				blog.setNType(rs.getInt("N_TYPE"));
 				blog.setNUserid(rs.getInt("N_USERID"));
-				blog.getUser().setCUsername(rs.getString("USERNAME")); 
+				blog.getUser().setCUsername(rs.getString("USERNAME"));
 				return blog;
 			}
 		});
 
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public TUser getUser(String username, String passwords) {
-		List<TUser> users = getJdbcTemplate().query("select * from t_user where C_USERNAME = ? and C_PASSWORD = ? " ,new Object[]{username,passwords},
-				new RowMapper() {
-					@Override
-					public Object mapRow(ResultSet rs, int arg1)
-							throws SQLException {
-						TUser user = new TUser();
-						user.setNId(rs.getInt("N_ID"));
-						user.setCEmail(rs.getString("C_EMAIL"));
-						user.setCPassword(rs.getString("C_PASSWORD"));
-						user.setCUsername(rs.getString("C_USERNAME"));
-						user.setDtCreateTime(rs.getDate("DT_CREATE_TIME"));
-						return user;
-					}
-				});
-		if(users.isEmpty()){
+		List<TUser> users = getJdbcTemplate()
+				.query("select * from t_user where C_USERNAME = ? and C_PASSWORD = ? ",
+						new Object[] { username, passwords }, new RowMapper() {
+							@Override
+							public Object mapRow(ResultSet rs, int arg1)
+									throws SQLException {
+								TUser user = new TUser();
+								user.setNId(rs.getInt("N_ID"));
+								user.setCEmail(rs.getString("C_EMAIL"));
+								user.setCPassword(rs.getString("C_PASSWORD"));
+								user.setCUsername(rs.getString("C_USERNAME"));
+								user.setDtCreateTime(rs
+										.getDate("DT_CREATE_TIME"));
+								return user;
+							}
+						});
+		if (users.isEmpty()) {
 			return null;
-		}else{
+		} else {
 			return users.get(0);
 		}
 	}
@@ -90,19 +94,23 @@ public class BaseDao extends JdbcDaoSupport{
 	}
 
 	public List<TUser> getAllUserInfo() {
-		return getJdbcTemplate().query("select * from t_user" ,
-				new RowMapper() {
-					@Override
-					public Object mapRow(ResultSet rs, int arg1)
-							throws SQLException {
-						TUser user = new TUser();
-						user.setNId(rs.getInt("N_ID"));
-						user.setCEmail(rs.getString("C_EMAIL"));
-						user.setCPassword(rs.getString("C_PASSWORD"));
-						user.setCUsername(rs.getString("C_USERNAME"));
-						user.setDtCreateTime(rs.getDate("DT_CREATE_TIME"));
-						return user;
-					}
-				});
+		return getJdbcTemplate().query("select * from t_user", new RowMapper() {
+			@Override
+			public Object mapRow(ResultSet rs, int arg1) throws SQLException {
+				TUser user = new TUser();
+				user.setNId(rs.getInt("N_ID"));
+				user.setCEmail(rs.getString("C_EMAIL"));
+				user.setCPassword(rs.getString("C_PASSWORD"));
+				user.setCUsername(rs.getString("C_USERNAME"));
+				user.setDtCreateTime(rs.getDate("DT_CREATE_TIME"));
+				return user;
+			}
+		});
+	}
+
+	@Transactional
+	public boolean deleteBlog(Integer id) {
+		return BooleanUtils.toBoolean(getJdbcTemplate().update(
+				"delete from t_blog WHERE N_ID = ?", id));
 	}
 }

@@ -34,19 +34,18 @@ public class BlogLogic {
 			HttpServletResponse response) throws Exception {
 		TUser user = new TUser();
 		user.setCUsername("wangfei");
-//		request.getSession().setAttribute("user", user);
-//		request.getSession().removeAttribute("user");
-        List<TBlog> data = commonService.getBlogs();
-        return new ModelAndView("blog/list","data",data);  
+		// request.getSession().setAttribute("user", user);
+		// request.getSession().removeAttribute("user");
+		List<TBlog> data = commonService.getBlogs();
+		return new ModelAndView("blog/list", "data", data);
 	}
-	
-	
+
 	@RequestMapping(value = "addBlog")
 	public ModelAndView addBlog(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-        return new ModelAndView("blog/addBlog");  
+		return new ModelAndView("blog/addBlog");
 	}
-	
+
 	@RequestMapping(value = "addBlogReq", method = RequestMethod.POST)
 	@ResponseBody
 	public String addBlogReq(
@@ -56,18 +55,30 @@ public class BlogLogic {
 			throws Exception {
 		JSONObject result = new JSONObject();
 		TUser user = (TUser) request.getSession().getAttribute("user");
-		if(user == null){
+		if (user == null) {
 			throw new Exception("session中未保存user信息");
 		}
 		TBlog blog = new TBlog();
 		blog.setCContent(content);
 		blog.setCTitle(title);
-		blog.setDtCreatetime( new Timestamp(System.currentTimeMillis()) );
-		blog.setDtEdittime( new Timestamp(System.currentTimeMillis()));
+		blog.setDtCreatetime(new Timestamp(System.currentTimeMillis()));
+		blog.setDtEdittime(new Timestamp(System.currentTimeMillis()));
 		blog.setNType(0);
 		blog.setNUserid(user.getNId());
-		
+
 		boolean isSuccess = commonService.createBlog(blog);
+		result.put("result", isSuccess);
+		return result.toString();
+	}
+
+	@RequestMapping(value = "deteleBlogReq", method = RequestMethod.POST)
+	@ResponseBody
+	public String deleteBlogReq(
+			@RequestParam(value = "id", required = true) Integer id,
+			HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+		JSONObject result = new JSONObject();
+		boolean isSuccess = commonService.deleteBlog(id);
 		result.put("result", isSuccess);
 		return result.toString();
 	}

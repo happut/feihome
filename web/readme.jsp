@@ -5,29 +5,38 @@
 <html>
 <head>
 <%@ include file="/jsp/import.jsp"%>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>欢迎访问我的空间</title>
 </head>
 <body>
 	<div class="container">
-		<jsp:include page="/jsp/header.jsp" >
+		<jsp:include page="/jsp/header.jsp">
 			<jsp:param name="active" value="readme" />
 		</jsp:include>
 		<div class="row marketing">
 			<div class="col-md-12">
 				<div class="well">
-					<h1>一个简简单单的人</h1>
-					<address>
-						<strong>Wang Fei, (Happut).</strong><br> A Poor Java
-						Programme Developer<br> Xixiaokou, Haidian, Beijing, China<br>
-						<abbr title="Phone">P:</abbr> (0) 156-GRYS-8912<br>
-						<abbr title="E-Mail">E:</abbr> <a href="mailto:happut@163.com">happut#163.com</a> (Please replace '#' with '@')
-					</address>
-					<script src="http://git.oschina.net/littlewangfei/feihome/preview"></script>
+					<div class="row marketing">
+						<div class="col-md-6">
+							<h1>一个简简单单的人</h1>
+							<address>
+								<strong>Wang Fei, (Happut).</strong><br> A Poor Java
+								Programme Developer<br> Xixiaokou, Haidian, Beijing, China<br>
+								<abbr title="Phone">P:</abbr> (0) 156-GRYS-8912<br> <abbr
+									title="E-Mail">E:</abbr> <a href="mailto:happut@163.com">happut#163.com</a>
+								(Please replace '#' with '@')
+							</address>
+						</div>
+						<div class="col-md-6">
+							<h1>开发进度</h1>
+							<script
+								src="http://git.oschina.net/littlewangfei/feihome/preview"></script>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-		<%@ include file="/jsp/foot.jsp"%>
+		<%@ include file="/jsp/footer.jsp"%>
 	</div>
 </body>
 </html>

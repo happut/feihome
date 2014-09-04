@@ -37,6 +37,10 @@ public class CommonService {
 	public List<TUser> getAllUserInfo() {
 		return dao.getAllUserInfo();
 	}
+
+	public boolean deleteBlog(Integer id) {
+		return dao.deleteBlog(id);
+	}
 	
 	
 }

@@ -10,7 +10,7 @@
 		can be moved between tiers without modification.
 	</description>
        
-	<bean id="propertyPlaceholderConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<bean id="propertyPlaceholderConfigurer" class="com.feihome.support.utils.CustomizedPropertyPlaceholderConfigurer">
 	    <property name="locations">
             <list>
                 <value>classpath:props/config.properties</value>
