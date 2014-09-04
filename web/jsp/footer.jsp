@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" import="com.feihome.support.utils.ConfigUtils"%>
 
 <style type="text/css">
 .footer {
@@ -23,7 +23,9 @@
 				<div class="copyright">
 					Copyright <span class="glyphicon glyphicon-copyright-mark"></span> 1990 - 2014 Wfei.de.bug.(Happut). All rights reserved. <a
 						href="http://git.oschina.net/littlewangfei/feihome" target="_blank">Feihome
-						v0.6.1</a>
+						v<%=ConfigUtils.getProperty("feihome.version") %></a>.
+						Base on <a
+						href="http://v3.bootcss.com/" target="_blank">Bootstrap 3.2</a>, Spring MVC
 				</div>
 				<div class="saelogo">
 					<a href="http://sae.sina.com.cn" target="_blank"><img alt="" src="<c:url value='/img/poweredby.png'/>"
