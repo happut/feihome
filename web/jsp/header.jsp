@@ -14,7 +14,7 @@
 	background-color: #e2ddc7;
 	top: 0px;
 	left: 0px;
-	filter: alpha(Opacity =     80);
+	filter: alpha(Opacity =      80);
 	-moz-opacity: 0.8;
 	opacity: 0.8;
 	z-index: 9999;
@@ -41,9 +41,8 @@
 		}, "json");
 		return false;
 	}
-	
-	
-	function alertMessage(msg){
+
+	function alertMessage(msg) {
 	}
 </script>
 
@@ -60,8 +59,8 @@
 		<c:otherwise>
 			<p class="headMessage text-right">
 				欢迎您， <strong><c:out value="${sessionScope.user.CUsername}"></c:out></strong>&nbsp;&nbsp;
-				<a href="javascript:logOut();"><button
-						type="button" class="btn btn-info">
+				<a href="javascript:logOut();"><button type="button"
+						class="btn btn-info">
 						<span class="glyphicon glyphicon-log-out"></span>&nbsp;&nbsp;&nbsp;&nbsp;注销&nbsp;&nbsp;
 					</button></a>
 			</p>
@@ -76,7 +75,8 @@
 			<h1><%=ConfigUtils.getProperty("feihome.title")%></h1>
 			<h3>
 				<small><a href="<c:url value='/' />"><span
-						class="glyphicon glyphicon-hand-right"></span>&nbsp;&nbsp;http://wangfeidev.sinaapp.com</a></small>
+						class="glyphicon glyphicon-hand-right"></span><span
+						style="margin-left: 10px;"><%=ConfigUtils.getProperty("feihome.url")%></span></a></small>
 			</h3>
 		</div>
 	</div>

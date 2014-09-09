@@ -18,7 +18,10 @@
 				<div class="well">
 					<h3>Feihome v0.6.1更新了</h3>
 					<h6>
-						<small>wangfei 2014-09-01 00:00</small> <span class="glyphicon glyphicon-comment"></span><span class="badge">10</span> | <span class="glyphicon glyphicon-thumbs-up"></span><span class="badge">5</span></small>
+						<small>wangfei 2014-09-01 00:00</small> <span
+							class="glyphicon glyphicon-comment"></span><span class="badge">10</span>
+						| <span class="glyphicon glyphicon-thumbs-up"></span><span
+							class="badge">5</span></small>
 					</h6>
 				</div>
 			</div>
@@ -63,6 +66,14 @@
 								height="16" src="http://1.su.bdimg.com/icon/95512.png">汽车之家</a>
 						</div>
 					</div>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="well">
+					<h3>友情链接</h3>
+					<h5>
+						<a href="http://xuding.info">徐老师</a>
+					</h5>
 				</div>
 			</div>
 		</div>
