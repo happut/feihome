@@ -72,7 +72,9 @@
 				<div class="well">
 					<h3>友情链接</h3>
 					<h5>
-						<a href="http://xuding.info">徐老师</a>
+						<a href="http://xuding.info" target="_blank"><img width="16"
+							height="16" width="16" height="16" alt=""
+							src="http://www.xuding.info/favicon.ico">徐老师</a>
 					</h5>
 				</div>
 			</div>

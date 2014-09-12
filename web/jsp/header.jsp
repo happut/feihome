@@ -14,7 +14,7 @@
 	background-color: #e2ddc7;
 	top: 0px;
 	left: 0px;
-	filter: alpha(Opacity =      80);
+	filter: alpha(Opacity =          80);
 	-moz-opacity: 0.8;
 	opacity: 0.8;
 	z-index: 9999;
@@ -26,6 +26,18 @@
 	font-size: 16pt;
 	margin-bottom: 0px;
 	line-height: 170%;
+}
+
+.line_left {
+	float: left;
+}
+
+.line_right {
+	float: right;
+}
+
+#headMessageLink{
+	display:none;
 }
 </style>
 
@@ -44,12 +56,27 @@
 
 	function alertMessage(msg) {
 	}
+	
+	$(document).ready(function() {
+		$(window).scroll(function() {
+			if ($(window).scrollTop() >= 300) {
+				$('#headMessageLink').fadeIn(300);
+			} else {
+				$('#headMessageLink').fadeOut(300);
+			}
+		});
+	});	
 </script>
 
 <div class="headLine">
+	<p id="headMessageLink" class="headMessage line_left">
+		<a href="<c:url value='/' />">主页</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a
+			href="<c:url value='/blog/list.wangfei' />">博客</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<a href="<c:url value='/readme.jsp' />">关于我</a>
+	</p>
 	<c:choose>
 		<c:when test="${empty sessionScope.user}">
-			<p class="headMessage text-right">
+			<p class="headMessage line_right">
 				<a href="<c:url value='/user/signup.wangfei' />"><button
 						type="button" class="btn btn-success">
 						<span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;&nbsp;&nbsp;登录&nbsp;&nbsp;
@@ -57,7 +84,7 @@
 			</p>
 		</c:when>
 		<c:otherwise>
-			<p class="headMessage text-right">
+			<p class="headMessage line_right">
 				欢迎您， <strong><c:out value="${sessionScope.user.CUsername}"></c:out></strong>&nbsp;&nbsp;
 				<a href="javascript:logOut();"><button type="button"
 						class="btn btn-info">
