@@ -23,7 +23,9 @@
 			<div class="col-md-12">
 				<div class="copyright">
 					Copyright <span class="glyphicon glyphicon-copyright-mark"></span>
-					1990 - 2014 Wfei.de.bug.(Happut). All rights reserved.
+					1990 - 2014 . Designed by <a href="http://weibo.com/littlewangfei"
+						target="_blank">@Wfei.de.bug.(Happut)</a>.
+					All rights reserved.
 					<script type="text/javascript">
 						var cnzz_protocol = (("https:" == document.location.protocol) ? " https://"
 								: " http://");
@@ -31,12 +33,15 @@
 								.write(unescape("%3Cspan id='cnzz_stat_icon_1253223179'%3E%3C/span%3E%3Cscript src='"
 										+ cnzz_protocol
 										+ "s5.cnzz.com/z_stat.php%3Fid%3D1253223179%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
-					</script>					
+					</script>
+				</div>
+				<div class="copyright">					
+					当前版本：<a href="http://git.oschina.net/littlewangfei/feihome"
+						target="_blank"> Feihome v<%=ConfigUtils.getProperty("feihome.version")%>
+					</a>
 				</div>
 				<div class="copyright">
-					<a href="http://git.oschina.net/littlewangfei/feihome"
-						target="_blank"> Feihome v<%=ConfigUtils.getProperty("feihome.version")%>
-					</a> . Base on <a href="http://v3.bootcss.com/" target="_blank">Bootstrap
+					Base on <a href="http://v3.bootcss.com/" target="_blank">Bootstrap
 						3.2</a>, <a href="http://projects.spring.io/spring-framework"
 						target="_blank">Spring MVC</a>
 				</div>

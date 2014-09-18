@@ -21,7 +21,7 @@
 						<small>wangfei 2014-09-01 00:00</small> <span
 							class="glyphicon glyphicon-comment"></span><span class="badge">10</span>
 						| <span class="glyphicon glyphicon-thumbs-up"></span><span
-							class="badge">5</span></small>
+							class="badge">5</span>
 					</h6>
 				</div>
 			</div>

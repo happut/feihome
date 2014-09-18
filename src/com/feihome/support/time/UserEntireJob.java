@@ -17,14 +17,12 @@ import org.springframework.stereotype.Component;
 import com.feihome.model.TUser;
 import com.feihome.service.CommonService;
 
-@Component
 public class UserEntireJob {
 	
 	@Autowired
 	@Qualifier("commonService")
 	private CommonService commonService;
 	
-	@Scheduled(cron="0 0 0  * * ? ")   //每5秒执行一次  
 	private void refreshCache() {
 		Cache cache = CacheManager.getInstance().getCache("userEntire");
 		if(commonService == null){
