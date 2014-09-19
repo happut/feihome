@@ -10,7 +10,7 @@
 <%@ include file="/jsp/import.jsp"%>
 <style type="text/css">
 .blogDiv {
-	padding: 10px 35px 10px 35px;
+	padding: 35px 35px 35px 35px;
 }
 
 .blogSubTitle {
