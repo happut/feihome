@@ -5,8 +5,6 @@
 <html>
 <head>
 <%@ include file="/jsp/import.jsp"%>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>欢迎访问我的空间</title>
 </head>
 <body>
 	<div class="container">

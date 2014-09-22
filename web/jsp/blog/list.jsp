@@ -5,8 +5,6 @@
 <!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>日志界面</title>
 <%@ include file="/jsp/import.jsp"%>
 <style type="text/css">
 .blogDiv {

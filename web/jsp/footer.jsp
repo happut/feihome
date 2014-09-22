@@ -35,15 +35,15 @@
 										+ "s5.cnzz.com/z_stat.php%3Fid%3D1253223179%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
 					</script>
 				</div>
-				<div class="copyright">					
-					当前版本：<a href="http://git.oschina.net/littlewangfei/feihome"
-						target="_blank"> Feihome v<%=ConfigUtils.getProperty("feihome.version")%>
-					</a>
-				</div>
 				<div class="copyright">
 					Base on <a href="http://v3.bootcss.com/" target="_blank">Bootstrap
 						3.2</a>, <a href="http://projects.spring.io/spring-framework"
 						target="_blank">Spring MVC</a>
+				</div>
+				<div class="copyright">					
+					当前版本：<a href="http://git.oschina.net/littlewangfei/feihome"
+						target="_blank"> Feihome v<%=ConfigUtils.getProperty("feihome.version")%>
+					</a>
 				</div>
 				<div class="saelogo">
 					<a href="http://sae.sina.com.cn" target="_blank"><img alt=""
