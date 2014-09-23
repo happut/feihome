@@ -1,20 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" import="com.feihome.support.utils.ConfigUtils"%>
+	pageEncoding="UTF-8"
+	import="com.feihome.support.utils.ConfigUtils,com.feihome.model.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!-- 生成参数 -->
 <c:set value='<%=request.getParameter("active")%>' var="active"
 	scope="request"></c:set>
-
+<c:set value='<%=session.getAttribute("user") != null %>' var="isLogin"
+	scope="request"></c:set>
 <style>
 .headLine {
 	position: fixed;
 	height: 43px;
 	width: 100%;
-	background-color: #e2ddc7;
+	background-color: #acacac;
 	top: 0px;
 	left: 0px;
-	filter: alpha(Opacity =          80);
+	filter: alpha(Opacity =                80);
 	-moz-opacity: 0.8;
 	opacity: 0.8;
 	z-index: 9999;
@@ -36,8 +38,8 @@
 	float: right;
 }
 
-#headMessageLink{
-	display:none;
+#headMessageLink {
+	display: none;
 }
 </style>
 
@@ -56,7 +58,7 @@
 
 	function alertMessage(msg) {
 	}
-	
+
 	$(document).ready(function() {
 		$(window).scroll(function() {
 			if ($(window).scrollTop() >= 300) {
@@ -65,17 +67,20 @@
 				$('#headMessageLink').fadeOut(300);
 			}
 		});
-	});	
+	});
 </script>
 
 <div class="headLine">
 	<p id="headMessageLink" class="headMessage line_left">
-		<a href="<c:url value='/' />">主页</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a
-			href="<c:url value='/blog/list.wangfei' />">博客</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-		<a href="<c:url value='/readme.jsp' />">关于我</a>
+		<a href="<c:url value='/' />"><button type="button"
+				class="btn btn-success">主页</button></a> | <a
+			href="<c:url value='/blog/list.wangfei' />"><button type="button"
+				class="btn btn-success">博客</button></a> | <a
+			href="<c:url value='/readme.jsp' />"><button type="button"
+				class="btn btn-success">关于我</button></a>
 	</p>
 	<c:choose>
-		<c:when test="${empty sessionScope.user}">
+		<c:when test="${!isLogin}">
 			<p class="headMessage line_right">
 				<a href="<c:url value='/user/signup.wangfei' />"><button
 						type="button" class="btn btn-success">
@@ -118,6 +123,10 @@
 				href="<c:url value='/blog/list.wangfei' />">博客</a></li>
 			<li <c:if test="${active eq 'readme'}"> class='active'</c:if>><a
 				href="<c:url value='/readme.jsp' />">关于我</a></li>
+			<c:if test="${isLogin}">
+				<li <c:if test="${active eq 'controlCenter'}"> class='active'</c:if>><a
+					href="<c:url value='/control/index.wangfei' />">控制中心</a></li>
+			</c:if>
 		</ul>
 	</div>
 </nav>

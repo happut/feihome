@@ -41,7 +41,7 @@
 						target="_blank">Spring MVC</a>
 				</div>
 				<div class="copyright">					
-					当前版本：<a href="http://git.oschina.net/littlewangfei/feihome"
+					Current version：<a href="http://git.oschina.net/littlewangfei/feihome"
 						target="_blank"> Feihome v<%=ConfigUtils.getProperty("feihome.version")%>
 					</a>
 				</div>

@@ -15,9 +15,39 @@
 		<div class="row marketing">
 			<div class="col-md-12">
 				<div class="well">
-					<h3>Feihome v0.6.1更新了</h3>
+					<h3>Feihome更新计划</h3>
+					<table class="table table-condensed">
+						<tr class="success">
+							<td>2014.10.1</td>
+							<td>更新0.6.3</td>
+						</tr>
+						<tr>
+							<td>2014.10.15</td>
+							<td>更新0.7</td>
+						</tr>
+						<tr>
+							<td>2014.11.1</td>
+							<td>更新0.8</td>
+						</tr>
+						<tr>
+							<td><strong>2014.11.15</strong></td>
+							<td><strong>更新0.9</strong></td>
+						</tr>
+						<tr>
+							<td>2014.12.1</td>
+							<td>更新0.9.1</td>
+						</tr>
+						<tr>
+							<td>2014.12.15</td>
+							<td>更新0.9.2</td>
+						</tr>
+						<tr>
+							<td><strong>2015.1.1</strong></td>
+							<td><strong>更新1.0</strong></td>
+						</tr>
+					</table>
 					<h6>
-						<small>wangfei 2014-09-01 00:00</small> <span
+						<small>wangfei 2014-09-22 00:00</small> <span
 							class="glyphicon glyphicon-comment"></span><span class="badge">10</span>
 						| <span class="glyphicon glyphicon-thumbs-up"></span><span
 							class="badge">5</span>
@@ -27,46 +57,24 @@
 
 			<div class="col-md-12">
 				<div class="well">
-					<h1>常用网址</h1>
-					<div class="row">
-						<div class="col-md-2">
-							<a href="http://www.iteye.com/" title="Iteye" target="_blank"><img
-								width="16" height="16" src="http://3.su.bdimg.com/icon/8882.png">Iteye</a>
-						</div>
-						<div class="col-md-2">
-							<a href="http://www.csdn.net/" title="CSDN" target="_blank"><img
-								width="16" height="16" src="http://1.su.bdimg.com/icon/712.png">CSDN</a>
-						</div>
-						<div class="col-md-2">
-							<a href="http://www.bootcss.com/" title="bootstrap"
-								target="_blank"><img width="16" height="16"
-								src="http://1.su.bdimg.com/icon/6000.png?3">bootstrap</a>
-						</div>
-						<div class="col-md-2">
-							<a href="http://yun.baidu.com/" title="百度云" target="_blank"><img
-								width="16" height="16" src="http://1.su.bdimg.com/icon/7656.png">百度云</a>
-						</div>
-						<div class="col-md-2">
-							<a href="http://developer.baidu.com/" title="百度开发者中心"
-								target="_blank"><img width="16" height="16"
-								src="http://1.su.bdimg.com/icon/7656.png">百度开发者中心</a>
-						</div>
-						<div class="col-md-2">
-							<a href="http://www.oschina.net/" title="开源中国" target="_blank"><img
-								width="16" height="16" src="http://5.su.bdimg.com/icon/9524.png">开源中国</a>
-						</div>
-						<div class="col-md-2">
-							<a href="http://git.oschina.net/" title="Git@OSC" target="_blank"><img
-								width="16" height="16" src="http://5.su.bdimg.com/icon/9524.png">Git@OSC</a>
-						</div>
-						<div class="col-md-2">
-							<a href="http://www.autohome.com.cn/" title="汽车之家"
-								target="_blank"><img width="16" height="16" width="16"
-								height="16" src="http://1.su.bdimg.com/icon/95512.png">汽车之家</a>
-						</div>
-					</div>
+					<h3>留言板</h3>
+					<table class="table">
+						<tr>
+							<td>我擦:网站弄得不错呦</td>
+						</tr>
+						<tr>
+							<td>我擦:网站弄得不错呦</td>
+						</tr>
+						<tr>
+							<td>我擦:网站弄得不错呦</td>
+						</tr>
+						<tr>
+							<td>我擦:网站弄得不错呦</td>
+						</tr>
+					</table>
 				</div>
 			</div>
+
 			<div class="col-md-12">
 				<div class="well">
 					<h3>友情链接</h3>
