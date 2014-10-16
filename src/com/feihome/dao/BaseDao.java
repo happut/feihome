@@ -10,6 +10,7 @@ import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.feihome.model.TBlog;
+import com.feihome.model.TCodepushRecord;
 import com.feihome.model.TUser;
 
 public class BaseDao extends JdbcDaoSupport {
@@ -112,5 +113,15 @@ public class BaseDao extends JdbcDaoSupport {
 	public boolean deleteBlog(Integer id) {
 		return BooleanUtils.toBoolean(getJdbcTemplate().update(
 				"delete from t_blog WHERE N_ID = ?", id));
+	}
+	
+	
+	public boolean createPushRecord(TCodepushRecord r){
+		int rows = getJdbcTemplate()
+				.update("insert into t_codepush_record(C_PUSH_ID,C_COMMITTER_EMAIL,C_COMMITTER_NAME,C_COMMITTER_SHA,C_COMMITTER_MSG,ref,DT_CREATETIME) VALUE(?,?,?,?,?,?,?)",
+						r.getCPushId(), r.getCCommitterEmail(),
+						r.getCCommitterName(), r.getCCommitterSha(),
+						r.getCCommitterMsg(), r.getDtCreatetime());
+		return rows > 0;	
 	}
 }

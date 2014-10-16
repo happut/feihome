@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.feihome.dao.BaseDao;
 import com.feihome.model.TBlog;
+import com.feihome.model.TCodepushRecord;
 import com.feihome.model.TUser;
 
 
@@ -41,6 +42,8 @@ public class CommonService {
 	public boolean deleteBlog(Integer id) {
 		return dao.deleteBlog(id);
 	}
-	
-	
+
+	public boolean createPushRecord(TCodepushRecord r) {
+		return dao.createPushRecord(r);
+	}
 }
