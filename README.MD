@@ -1,5 +1,5 @@
 ##Spring MVC +  Bootstrap
 
-<a href="http://wangfei.tk">http://wangfei.tk预览</a> 
+http://wangfei.tk 预览
 
 搭建的一个环境
