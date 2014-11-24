@@ -35,7 +35,6 @@ public class CodePush {
 
 		JSONArray commits = JSONArray.fromObject(request
 				.getParameter("commits"));
-
 		for(int i=0;i<commits.size();i++){
 			JSONObject commit = commits.getJSONObject(i);
 			JSONObject committer = commit.getJSONObject("committer");
