@@ -2,32 +2,27 @@ body {
 	background: url("../img/sinablogb.jpg") no-repeat;
 	background-position: center top;
 	background-color: #e2ddc7;
-	margin-top: 40px;
+	margin-top:  50px;
 	position: relative;
+
 }
 
-/*字体阴影*/
 * {
 	text-shadow: 0.01em 0.01em 0.1em #999999 !important;
 }
 
-/*全局雅黑字体*/
-*:not ([class*="icon"] ):not(i) {
+*{
 	font-family: "Microsoft YaHei" !important;
 }
 
-/*淡蓝色文字效果*/
-a {
-	-webkit-transition: all 0.3s ease-out;
+.glyphicon{
+	font-family: 'Glyphicons Halflings' !important;;
 }
 
-a:hover {
-	color: #39F !important;
-	text-shadow: -5px 3px 18px #39F !important;
-	-webkit-transition: all 0.3s ease- out;
+a{
+	color: #080808;
 }
 
-*::-webkit-selection {
-	background: #333333 !important;
-	color: #00FF00 !important;
+a:hover{
+	color: #ac2925;
 }

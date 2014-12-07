@@ -68,6 +68,10 @@ public class BlogLogic {
 
 		boolean isSuccess = commonService.createBlog(blog);
 		result.put("result", isSuccess);
+
+
+
+
 		return result.toString();
 	}
 

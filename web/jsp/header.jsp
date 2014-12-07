@@ -10,18 +10,14 @@
 	scope="request"></c:set>
 <style>
 .headLine {
-	position: fixed;
-	height: 43px;
-	width: 100%;
-	background-color: #acacac;
-	top: 0px;
-	left: 0px;
 	filter: alpha(Opacity =                80);
 	-moz-opacity: 0.8;
 	opacity: 0.8;
-	z-index: 9999;
-	padding-left: 170px;
-	padding-right: 170px;
+}
+
+.headLine:after{
+	content: "";
+	clear: both;
 }
 
 .headMessage {
@@ -32,10 +28,12 @@
 
 .line_left {
 	float: left;
+	margin:auto;
 }
 
 .line_right {
 	float: right;
+	margin:auto;
 }
 
 #headMessageLink {
@@ -69,7 +67,7 @@
 		});
 	});
 </script>
-
+<!--
 <div class="headLine">
 	<p id="headMessageLink" class="headMessage line_left">
 		<a href="<c:url value='/' />"><button type="button"
@@ -98,35 +96,25 @@
 			</p>
 		</c:otherwise>
 	</c:choose>
-</div>
+</div>-->
 
-
-<div class="row marketing">
-	<div class="col-md-12">
-		<div style="margin: '0px'; padding: 80px 120px 80px 40px;">
-			<h1><%=ConfigUtils.getProperty("feihome.title")%></h1>
-			<h3>
-				<small><a href="<c:url value='/' />"><span
-						class="glyphicon glyphicon-hand-right"></span><span
-						style="margin-left: 10px;"><%=ConfigUtils.getProperty("feihome.url")%></span></a></small>
-			</h3>
-		</div>
-	</div>
-</div>
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top headLine" role="navigation">
 	<div class="container-fluid">
 		<div class="navbar-header"></div>
 		<ul class="nav navbar-nav">
 			<li <c:if test="${active eq 'index'}"> class='active'</c:if>><a
-				href="<c:url value='/' />">主页</a></li>
+					href="<c:url value='/' />">主页</a></li>
 			<li <c:if test="${active eq 'blog'}"> class='active'</c:if>><a
-				href="<c:url value='/blog/list.wangfei' />">博客</a></li>
+					href="<c:url value='/blog/list.wangfei' />">博客</a></li>
 			<li <c:if test="${active eq 'readme'}"> class='active'</c:if>><a
-				href="<c:url value='/readme.jsp' />">关于我</a></li>
+					href="<c:url value='/readme.jsp' />">关于我</a></li>
 			<c:if test="${isLogin}">
 				<li <c:if test="${active eq 'controlCenter'}"> class='active'</c:if>><a
-					href="<c:url value='/control/index.wangfei' />">控制中心</a></li>
+						href="<c:url value='/control/index.wangfei' />">控制中心</a></li>
 			</c:if>
 		</ul>
 	</div>
 </nav>
+
+
+
