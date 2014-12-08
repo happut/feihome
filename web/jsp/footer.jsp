@@ -3,9 +3,10 @@
 
 <style type="text/css">
 .footer {
-	text-align: center;
+	text-align: left;
 	margin-top: 10px;
-	margin-bottom: 30px;
+	padding-top: 20px;
+	background-color: rgb(42,147,195);
 }
 
 .copyright {

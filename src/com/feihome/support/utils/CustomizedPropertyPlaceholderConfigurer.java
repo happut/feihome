@@ -19,7 +19,7 @@ import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 public class CustomizedPropertyPlaceholderConfigurer extends
 		PropertyPlaceholderConfigurer {
 
-	Log log = LogFactory.getLog(getClass());
+	public Log log = LogFactory.getLog(getClass());
 
 	private static Map<String, Object> ctxPropertiesMap;
 
