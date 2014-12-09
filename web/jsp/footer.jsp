@@ -7,6 +7,7 @@
 	margin-top: 10px;
 	padding-top: 20px;
 	background-color: rgb(42,147,195);
+	padding-bottom: 20px;
 }
 
 .copyright {
@@ -15,6 +16,14 @@
 
 .saelogo {
 	margin-top: 5px;
+}
+
+.copyright a{
+	color: #080808;
+}
+
+.copyright a:hover{
+	color: #ac2925;
 }
 </style>
 

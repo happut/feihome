@@ -18,11 +18,3 @@ body {
 .glyphicon{
 	font-family: 'Glyphicons Halflings' !important;;
 }
-
-a{
-	color: #080808;
-}
-
-a:hover{
-	color: #ac2925;
-}
