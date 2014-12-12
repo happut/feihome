@@ -97,7 +97,7 @@ class="btn btn-success">关于我</button></a>
     </c:otherwise>
 </c:choose>
 </div>--%>
-
+<header>
 <nav class="navbar navbar-default navbar-fixed-top headLine" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header"><a class="navbar-brand" href="#">FEIHOME@WANGFEI</a></div>
@@ -136,6 +136,7 @@ class="btn btn-success">关于我</button></a>
         </ul>
     </div>
 </nav>
+</header>
 
 
 
