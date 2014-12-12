@@ -4,7 +4,6 @@ body {
 	background-color: #e2ddc7;
 	margin-top:  50px;
 	position: relative;
-
 }
 
 * {
@@ -17,4 +16,8 @@ body {
 
 .glyphicon{
 	font-family: 'Glyphicons Halflings' !important;;
+}
+
+a{
+	text-decoration: none;
 }
