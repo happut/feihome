@@ -21,3 +21,7 @@ body {
 a{
 	text-decoration: none;
 }
+
+.wrap{
+	margin: 100px;
+}

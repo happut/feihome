@@ -21,6 +21,8 @@
         .commentDiv {
             display: none;
         }
+
+
     </style>
 
     <script type="text/javascript">
@@ -49,76 +51,78 @@
 <jsp:include page='/jsp/header.jsp'>
     <jsp:param value="blog" name="active"/>
 </jsp:include>
-<div class="container">
-    <div class="row marketing">
-        <div class="col-md-3">
-            <div class="panel panel-success">
-                <div class="panel-heading">日期</div>
-                <div class="panel-body">
-                    <p>2014年8月</p>
+<div class="wrap">
+    <div class="container">
+        <div class="row marketing">
+            <div class="col-md-3">
+                <div class="panel panel-success">
+                    <div class="panel-heading">日期</div>
+                    <div class="panel-body">
+                        <p>2014年8月</p>
 
-                    <p>2014年7月</p>
+                        <p>2014年7月</p>
 
-                    <p>2014年6月</p>
+                        <p>2014年6月</p>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">标签</div>
+                    <div class="panel-body">
+                        <p>卧槽</p>
+                    </div>
                 </div>
             </div>
-            <div class="panel panel-success">
-                <div class="panel-heading">标签</div>
-                <div class="panel-body">
-                    <p>卧槽</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-9">
-            <c:forEach items="${data}" var="d" varStatus="var">
-                <div class="well blogDiv">
-                    <div>
-                        <h2>
-                            <c:out value='${d.CTitle}'/>
-                        </h2>
-                    </div>
-                    <div class="blogSubTitle">
-                        <fmt:formatDate value="${d.dtCreatetime}" type="both"
-                                        pattern="yyyy-MM-dd HH:mm"/>
-                        <c:out value='${d.user.CUsername}'/>&nbsp;&nbsp;
-                        <span class="glyphicon glyphicon-tags"></span>&nbsp;
-                        <span class="label label-success">卧槽</span>
-                    </div>
-                    <div>
-                        <c:out value='${d.CContent}' escapeXml="false"/>
-                    </div>
-                    <p class="text-right">
-                        <c:if test="${sessionScope.user.NId eq d.NUserid}">
+            <div class="col-md-9">
+                <c:forEach items="${data}" var="d" varStatus="var">
+                    <div class="well blogDiv">
+                        <div>
+                            <h2>
+                                <c:out value='${d.CTitle}'/>
+                            </h2>
+                        </div>
+                        <div class="blogSubTitle">
+                            <fmt:formatDate value="${d.dtCreatetime}" type="both"
+                                            pattern="yyyy-MM-dd HH:mm"/>
+                            <c:out value='${d.user.CUsername}'/>&nbsp;&nbsp;
+                            <span class="glyphicon glyphicon-tags"></span>&nbsp;
+                            <span class="label label-success">卧槽</span>
+                        </div>
+                        <div>
+                            <c:out value='${d.CContent}' escapeXml="false"/>
+                        </div>
+                        <p class="text-right">
+                            <c:if test="${sessionScope.user.NId eq d.NUserid}">
 							<span style="cursor: pointer;"><span
                                     class="glyphicon glyphicon-edit"></span>&nbsp;编辑</span> | <span
-                                style="cursor: pointer;"
-                                onclick="javascript:deleteBlog(<c:out value='${d.NId}'/>)"><span
-                                class="glyphicon glyphicon-remove"></span>&nbsp;删除</span> |
-                        </c:if>
+                                    style="cursor: pointer;"
+                                    onclick="javascript:deleteBlog(<c:out value='${d.NId}'/>)"><span
+                                    class="glyphicon glyphicon-remove"></span>&nbsp;删除</span> |
+                            </c:if>
 							<span
                                     style="cursor: pointer;"
                                     onclick="javascript:showCommentDiv('comment<c:out value='${d.NId}'/>')"><span
                                     class="glyphicon glyphicon-comment"></span>&nbsp;<span
                                     class="badge">10</span></span>
-                        | <span style="cursor: pointer;"><span
-                            class="glyphicon glyphicon-thumbs-up"></span>&nbsp;<span
-                            class="badge">5</span></span>
-                    </p>
+                            | <span style="cursor: pointer;"><span
+                                class="glyphicon glyphicon-thumbs-up"></span>&nbsp;<span
+                                class="badge">5</span></span>
+                        </p>
 
-                    <div class="well commentDiv" id="comment<c:out value='${d.NId}'/>">
-                        <input type="text" class="form-control" id="blog_title"
-                               placeholder="用户名"/>
+                        <div class="well commentDiv" id="comment<c:out value='${d.NId}'/>">
+                            <input type="text" class="form-control" id="blog_title"
+                                   placeholder="用户名"/>
 
 							<textarea rows="3" class="form-control" id="blog_title"
                                       placeholder="请输入评论" cols="20"></textarea>
+                        </div>
                     </div>
-                </div>
-            </c:forEach>
-            <ul class="pager">
-                <li class="previous disabled"><a href="javascript:false;">&larr;
-                    Older</a></li>
-                <li class="next"><a href="#">Newer &rarr;</a></li>
-            </ul>
+                </c:forEach>
+                <ul class="pager">
+                    <li class="previous disabled"><a href="javascript:false;">&larr;
+                        Older</a></li>
+                    <li class="next"><a href="#">Newer &rarr;</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
