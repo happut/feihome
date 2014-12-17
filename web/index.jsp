@@ -13,20 +13,11 @@
 </jsp:include>
 <div class="wrap">
     <div class="container">
-        <div class="row marketing">
-            <div class="col-md-12">
-                <div style="margin: 0px; padding: 80px 90px 80px 40px;">
-                    <h1><%=ConfigUtils.getProperty("feihome.title")%>
-                    </h1>
-
-                    <h3>
-                        <small><a href="<c:url value='/' />"><span
-                                class="glyphicon glyphicon-hand-right"></span><span
-                                style="margin-left: 10px;"><%=ConfigUtils.getProperty("feihome.url")%></span></a>
-                        </small>
-                    </h3>
-                </div>
-            </div>
+        <div class="jumbotron">
+            <h1><%=ConfigUtils.getProperty("feihome.title")%></h1>
+            <p><a href="<c:url value='/' />"><span
+                    class="glyphicon glyphicon-hand-right"></span><span
+                    style="margin-left: 10px;"><%=ConfigUtils.getProperty("feihome.url")%></span></a></p>
         </div>
         <div class="row marketing">
             <div class="col-md-12">

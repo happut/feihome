@@ -6,16 +6,12 @@
         text-align: left;
         margin-top: 10px;
         padding-top: 20px;
-        background-color: rgb(42, 147, 195);
+        background-color:#ffffff;
         padding-bottom: 20px;
     }
 
     .copyright {
         margin-bottom: 5px;
-    }
-
-    .saelogo {
-        margin-top: 5px;
     }
 
     .copyright a {
@@ -51,7 +47,7 @@
             <div class="col-md-6">
                 <div class="copyright">
                     Base on <a href="http://v3.bootcss.com/" target="_blank">Bootstrap
-                    3.2</a>, <a href="http://projects.spring.io/spring-framework"
+                    3.3</a>, <a href="http://projects.spring.io/spring-framework"
                                 target="_blank">Spring MVC</a>,
                     <a href="http://sae.sina.com.cn"
                        target="_blank">Sina App Engine</a>
@@ -60,12 +56,7 @@
                     Current version：<a href="http://git.oschina.net/littlewangfei/feihome"
                                        target="_blank"> Feihome v<%=ConfigUtils.getProperty("feihome.version")%>
                 </a>
-                </div><!--
-                <div class="saelogo">
-                    <a href="http://sae.sina.com.cn" target="_blank"><img alt=""
-                                                                          src="<c:url value='/img/poweredby.png'/>"
-                                                                          style="width: 120px; height: 33px"/></a>
-                </div>-->
+                </div>
             </div>
         </div>
     </div>
