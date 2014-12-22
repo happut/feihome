@@ -1,25 +1,25 @@
 body {
-	background-color: #e7e7e7;
-	margin-top:  50px;
-	position: relative;
+    background-color: #e7e7e7;
+    margin-top: 50px;
+    position: relative;
 }
 
 * {
-	text-shadow: 0.01em 0.01em 0.1em #999999 !important;
+    text-shadow: 0.01em 0.01em 0.1em #999999 !important;
 }
 
-*{
-	font-family: "Microsoft YaHei" !important;
+* {
+    font-family: "Microsoft YaHei" !important;
 }
 
-.glyphicon{
-	font-family: 'Glyphicons Halflings' !important;;
+.glyphicon {
+    font-family: 'Glyphicons Halflings' !important;
 }
 
-a{
-	text-decoration: none;
+a {
+    text-decoration: none;
 }
 
-.wrap{
-	margin: 100px;
+.wrap {
+    margin: 100px;
 }
