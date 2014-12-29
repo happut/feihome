@@ -4,7 +4,7 @@
 <style type="text/css">
     .footer {
         text-align: left;
-        margin-top: 10px;
+        margin-top: 0px;
         padding-top: 20px;
         background-color:#ffffff;
         padding-bottom: 20px;

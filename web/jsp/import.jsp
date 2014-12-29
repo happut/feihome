@@ -7,6 +7,14 @@
 
 <script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
+<script type="text/javascript" src="<c:url value="/js/ripples.min.js"/>"></script>
+
+<script type="text/javascript" src="<c:url value="/js/material.min.js"/>"></script>
+
+
+<link href="<c:url value="/css/material.min.css"/>" rel="stylesheet">
+<link href="<c:url value="/css/material-wfont.min.css"/>" rel="stylesheet">
+
 <link href="<c:url value="/css/common.css"/>" rel="stylesheet">
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">

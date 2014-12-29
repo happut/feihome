@@ -15,11 +15,6 @@
         opacity: 0.8;
     }
 
-    .headLine:after {
-        content: "";
-        clear: both;
-    }
-
     .headMessage {
         font-size: 16pt;
         margin-bottom: 0px;
@@ -67,36 +62,7 @@
         });
     });
 </script>
-<%--
-<div class="headLine">
-<p id="headMessageLink" class="headMessage line_left">
-<a href="<c:url value='/'/>"><button type="button"
-class="btn btn-success">主页</button></a> | <a
-href="<c:url value='/blog/list.wangfei'/>"><button type="button"
-class="btn btn-success">博客</button></a> | <a
-href="<c:url value='/readme.jsp'/>"><button type="button"
-class="btn btn-success">关于我</button></a>
-</p>
-<c:choose>
-    <c:when test="${!isLogin}">
-        <p class="headMessage line_right">
-        <a href="<c:url value='/user/signup.wangfei'/>"><button
-        type="button" class="btn btn-success">
-        <span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;&nbsp;&nbsp;登录&nbsp;&nbsp;
-        </button></a>
-        </p>
-    </c:when>
-    <c:otherwise>
-        <p class="headMessage line_right">
-        欢迎您， <strong><c:out value="${sessionScope.user.CUsername}"></c:out></strong>&nbsp;&nbsp;
-        <a href="javascript:logOut();"><button type="button"
-        class="btn btn-info">
-        <span class="glyphicon glyphicon-log-out"></span>&nbsp;&nbsp;&nbsp;&nbsp;注销&nbsp;&nbsp;
-        </button></a>
-        </p>
-    </c:otherwise>
-</c:choose>
-</div>--%>
+
 <header>
     <nav class="navbar navbar-default navbar-fixed-top headLine" role="navigation">
         <div class="container-fluid">
