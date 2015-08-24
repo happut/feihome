@@ -22,26 +22,6 @@
         <div class="row marketing">
             <div class="col-md-12">
                 <div class="well">
-                    <h3>留言板</h3>
-                    <table class="table">
-                        <tr>
-                            <td>我擦:网站弄得不错呦</td>
-                        </tr>
-                        <tr>
-                            <td>我擦:网站弄得不错呦</td>
-                        </tr>
-                        <tr>
-                            <td>我擦:网站弄得不错呦</td>
-                        </tr>
-                        <tr>
-                            <td>我擦:网站弄得不错呦</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-
-            <div class="col-md-12">
-                <div class="well">
                     <h3>友情链接</h3>
                     <h5>
                         <a href="http://xuding.info" target="_blank"><img width="16"

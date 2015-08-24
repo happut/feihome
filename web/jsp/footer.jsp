@@ -29,7 +29,7 @@
             <div class="col-md-6">
                 <div class="copyright">
                     Copyright <span class="glyphicon glyphicon-copyright-mark"></span>
-                    1990 - 2015 .
+                    1990 - 2016 .
                 </div>
                 <div class="copyright">Designed by <a href="http://weibo.com/littlewangfei"
                                                       target="_blank">@Wfei.de.bug.(Happut)</a>.
@@ -47,10 +47,10 @@
             <div class="col-md-6">
                 <div class="copyright">
                     Base on <a href="http://v3.bootcss.com/" target="_blank">Bootstrap
-                    3.3</a>, <a href="http://projects.spring.io/spring-framework"
+                    4.0 Alpha</a>, <a href="http://projects.spring.io/spring-framework"
                                 target="_blank">Spring MVC</a>,
-                    <a href="http://sae.sina.com.cn"
-                       target="_blank">Sina App Engine</a>
+                    <a href="https://www.openshift.com/"
+                       target="_blank">OpenShift</a>
                 </div>
                 <div class="copyright">
                     Current version：<a href="http://git.oschina.net/littlewangfei/feihome"
