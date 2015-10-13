@@ -25,10 +25,4 @@ http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 			<value>${dataSource.password}</value>
 		</property>
 	</bean>
-
-	<bean id="baseDao" class="com.feihome.dao.BaseDao">
-		<property name="dataSource">
-			<ref local="dataSource" />
-		</property>
-	</bean>
 </beans>

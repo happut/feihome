@@ -5,7 +5,6 @@ import java.sql.Timestamp;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.sf.json.JSON;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
@@ -16,15 +15,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.feihome.model.TCodepushRecord;
-import com.feihome.service.CommonService;
 
 @Controller
 @RequestMapping("/codePush")
 public class CodePush {
 
 	@Autowired
-	@Qualifier("commonService")
-	CommonService commonService;
+	@Qualifier("codeService")
+	CodeService codeService;
 
 	@RequestMapping(value = "push")
 	@ResponseBody
@@ -47,7 +45,7 @@ public class CodePush {
 			r.setCPushId(pushid);
 			r.setRef(ref);
 			r.setDtCreatetime(new Timestamp(System.currentTimeMillis()));
-			commonService.createPushRecord(r);
+			codeService.createPushRecord(r);
 		}
 		return "success";
 	}

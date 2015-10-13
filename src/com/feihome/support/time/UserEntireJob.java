@@ -11,24 +11,22 @@ import net.sf.ehcache.Element;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
 
+import com.feihome.logic.blog.BlogService;
 import com.feihome.model.TUser;
-import com.feihome.service.CommonService;
 
 public class UserEntireJob {
 	
 	@Autowired
-	@Qualifier("commonService")
-	private CommonService commonService;
+	@Qualifier("blogService")
+	private BlogService blogService;
 	
 	private void refreshCache() {
 		Cache cache = CacheManager.getInstance().getCache("userEntire");
-		if(commonService == null){
+		if(blogService == null){
 			return;
 		}
-		List<TUser> users = commonService.getAllUserInfo();
+		List<TUser> users = blogService.getAllUserInfo();
 		Iterator<TUser> it = users.iterator();
 		
 		Map<Integer,TUser> userMap = new HashMap<Integer,TUser>();

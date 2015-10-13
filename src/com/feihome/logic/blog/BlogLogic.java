@@ -26,8 +26,8 @@ import com.feihome.service.CommonService;
 public class BlogLogic {
 
 	@Autowired
-	@Qualifier("commonService")
-	private CommonService commonService;
+	@Qualifier("blogService")
+	private BlogService blogService;
 
 	@RequestMapping(value = "list")
 	public ModelAndView list(HttpServletRequest request,
@@ -36,7 +36,7 @@ public class BlogLogic {
 		user.setCUsername("wangfei");
 		// request.getSession().setAttribute("user", user);
 		// request.getSession().removeAttribute("user");
-		List<TBlog> data = commonService.getBlogs();
+		List<TBlog> data = blogService.getBlogs();
 		return new ModelAndView("blog/list", "data", data);
 	}
 
@@ -66,7 +66,7 @@ public class BlogLogic {
 		blog.setNType(0);
 		blog.setNUserid(user.getNId());
 
-		boolean isSuccess = commonService.createBlog(blog);
+		boolean isSuccess = blogService.createBlog(blog);
 		result.put("result", isSuccess);
 
 
@@ -82,7 +82,7 @@ public class BlogLogic {
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		JSONObject result = new JSONObject();
-		boolean isSuccess = commonService.deleteBlog(id);
+		boolean isSuccess = blogService.deleteBlog(id);
 		result.put("result", isSuccess);
 		return result.toString();
 	}

@@ -22,8 +22,8 @@ import com.feihome.service.CommonService;
 public class UserLogic {
 
 	@Autowired
-	@Qualifier("commonService")
-	CommonService commonService;
+	@Qualifier("userService")
+	UserService userService;
 
 	@RequestMapping(value = "login", method = RequestMethod.POST)
 	@ResponseBody
@@ -33,7 +33,7 @@ public class UserLogic {
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		JSONObject result = new JSONObject();
-		TUser user = commonService.getUser(username,passwords);
+		TUser user = userService.getUser(username,passwords);
 		if(user != null){
 			request.getSession().setAttribute("user",user);
 		}

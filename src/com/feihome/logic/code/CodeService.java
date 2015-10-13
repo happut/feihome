@@ -1,19 +1,19 @@
-package com.feihome.service;
-
-import java.util.List;
+package com.feihome.logic.code;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
-import com.feihome.dao.BaseDao;
-import com.feihome.model.TBlog;
 import com.feihome.model.TCodepushRecord;
-import com.feihome.model.TUser;
 
-
-@Repository("commonService")
-public class CommonService {
-
+@Repository
+public class CodeService {
 	
+	@Autowired
+	@Qualifier("codeDao")
+	private CodeDao dao;
+	
+	public boolean createPushRecord(TCodepushRecord r) {
+		return dao.createPushRecord(r);
+	}
 }
