@@ -52,31 +52,6 @@
 							<div class="card-block">
 								<c:out value='${d.CContent}' escapeXml="false" />
 							</div>
-
-							<p class="text-right">
-								<c:if test="${sessionScope.user.NId eq d.NUserid}">
-									<span style="cursor: pointer;"><span
-										class="glyphicon glyphicon-edit"></span>&nbsp;编辑</span> | <span
-										style="cursor: pointer;"
-										onclick="javascript:deleteBlog(<c:out value='${d.NId}'/>)"><span
-										class="glyphicon glyphicon-remove"></span>&nbsp;删除</span> |
-                            </c:if>
-								<span style="cursor: pointer;"
-									onclick="javascript:showCommentDiv('comment<c:out value='${d.NId}'/>')"><span
-									class="glyphicon glyphicon-comment"></span>&nbsp;<span
-									class="badge">10</span></span> | <span style="cursor: pointer;"><span
-									class="glyphicon glyphicon-thumbs-up"></span>&nbsp;<span
-									class="badge">5</span></span>
-							</p>
-
-							<div class="well commentDiv"
-								id="comment<c:out value='${d.NId}'/>">
-								<input type="text" class="form-control" id="blog_title"
-									placeholder="用户名" />
-
-								<textarea rows="3" class="form-control" id="blog_title"
-									placeholder="请输入评论" cols="20"></textarea>
-							</div>
 						</div>
 					</c:forEach>
 				</div>

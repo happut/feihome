@@ -31,13 +31,7 @@ public class CustomizedPropertyPlaceholderConfigurer extends
 		ctxPropertiesMap = new HashMap<String, Object>();
 		for (Object key : props.keySet()) {
 			String keyStr = key.toString();
-			String value = "";
-			try {
-				value = new String(props.getProperty(keyStr).getBytes(
-						"ISO8859-1"), "UTF-8");
-			} catch (UnsupportedEncodingException e) {
-				log.error("属性→[" + keyStr + "]编码有误，请检查！");
-			}
+			String value = props.getProperty(keyStr);
 			ctxPropertiesMap.put(keyStr, value);
 		}
 	}

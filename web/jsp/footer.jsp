@@ -6,8 +6,11 @@
         text-align: left;
         margin-top: 0px;
         padding-top: 20px;
-        background-color:#ffffff;
+        background-color:#efefef;
         padding-bottom: 20px;
+        border-top: 1px solid #efefef;
+        font-family: 'Microsoft Yahei';
+        font-size: 10pt;
     }
 
     .copyright {
@@ -46,7 +49,7 @@
             </div>
             <div class="col-md-6">
                 <div class="copyright">
-                    Base on <a href="http://v3.bootcss.com/" target="_blank">Bootstrap
+                    Base on <a href="http://v4-alpha.getbootstrap.com/" target="_blank">Bootstrap
                     4.0 Alpha</a>, <a href="http://projects.spring.io/spring-framework"
                                 target="_blank">Spring MVC</a>,
                     <a href="https://www.openshift.com/"

@@ -16,8 +16,7 @@
         <div class="jumbotron">
             <h1><%=ConfigUtils.getProperty("feihome.title")%></h1>
             <p><a href="<c:url value='/' />"><span
-                    class="glyphicon glyphicon-hand-right"></span><span
-                    style="margin-left: 10px;"><%=ConfigUtils.getProperty("feihome.url")%></span></a><script src='http://git.oschina.net/littlewangfei/feihome/star_widget_preview'></script></p>
+                    style="margin-left: 10px;"><%=ConfigUtils.getProperty("feihome.url")%></span></a></p>
         </div>
         <div class="row marketing">
             <div class="col-md-12">
