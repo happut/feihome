@@ -13,16 +13,16 @@ http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName">
-			<value>${dataSource.driverClass}</value>
+			<value>${dataSource_driverClass}</value>
 		</property>
 		<property name="url">
-			<value>${dataSource.jdbcUrl}</value>
+			<value>${dataSource_jdbcUrl}</value>
 		</property>
 		<property name="username">
-			<value>${dataSource.user}</value>
+			<value>${dataSource_user}</value>
 		</property>
 		<property name="password">
-			<value>${dataSource.password}</value>
+			<value>${dataSource_password}</value>
 		</property>
 	</bean>
 </beans>
