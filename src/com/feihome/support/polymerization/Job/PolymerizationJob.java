@@ -35,7 +35,7 @@ public class PolymerizationJob {
 		// 返回单行记录，使用Map
 		System.out.println("使用Map处理单行记录！");
 		List<TBlog> map = dao.getRunner().query("select * from t_blog",
-				new BeanListHandler(TBlog.class));
+				new BeanListHandler<TBlog>(TBlog.class));
 		System.out.println();
 
 	}
