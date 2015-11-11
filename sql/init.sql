@@ -54,6 +54,18 @@ CREATE TABLE `t_codepush_record` (
   PRIMARY KEY (`N_ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
-
+CREATE TABLE `TPolymerizationElement` (
+  `id` int NOT NULL,
+  `title` varchar(300) DEFAULT NULL,
+  `url` varchar(300) DEFAULT NULL,
+  `type` int DEFAULT NULL,
+  `date` datetime DEFAULT NULL,
+  `ext1` varchar(300) DEFAULT NULL,
+  `ext2` varchar(300) DEFAULT NULL,
+  `ext3` varchar(300) DEFAULT NULL,
+  `ext4` varchar(300) DEFAULT NULL,
+  `ext5` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`id`,`type`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
