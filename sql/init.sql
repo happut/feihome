@@ -69,3 +69,12 @@ CREATE TABLE `TPolymerizationElement` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+CREATE TABLE `TGasoline` (
+  `id` varchar(50) NOT NULL,
+  `bdrq` date DEFAULT NULL,
+  `price` decimal(5,2) DEFAULT NULL,
+  `bdfd` decimal(5,2) DEFAULT NULL,
+  `type` int(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
