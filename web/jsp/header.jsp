@@ -15,6 +15,8 @@
 			<li class='nav-item'><a class="nav-link"
 				href="<c:url value='/blog/list.wangfei' />">聚合</a></li>
 			<li class='nav-item'><a class="nav-link"
+				href="<c:url value='/gasoline/list.wangfei' />">油价</a></li>
+			<li class='nav-item'><a class="nav-link"
 				href="<c:url value='/readme.jsp' />">关于我</a></li>
 		</ul>
 	</nav>

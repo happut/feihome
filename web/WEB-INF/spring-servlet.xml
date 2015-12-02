@@ -30,7 +30,13 @@ http://www.springframework.org/schema/websocket/spring-websocket.xsd">
 		</websocket:handshake-interceptors>
 	</websocket:handlers>
 	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
-	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter"></bean>
+			</list>
+		</property>
+	</bean>
 	<bean class="org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter"/>
 	<!-- 完成请求和注解POJO的映射 -->
 	<!-- ViewResolver -->

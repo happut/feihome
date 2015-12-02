@@ -5,15 +5,14 @@ import java.sql.Timestamp;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.feihome.model.TCodepushRecord;
 
 @Controller
@@ -31,7 +30,7 @@ public class CodePush {
 		String pushid = request.getParameter("after");
 		String ref = request.getParameter("ref");
 
-		JSONArray commits = JSONArray.fromObject(request
+		JSONArray commits = JSONArray.parseArray(request
 				.getParameter("commits"));
 		for(int i=0;i<commits.size();i++){
 			JSONObject commit = commits.getJSONObject(i);

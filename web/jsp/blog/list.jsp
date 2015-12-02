@@ -24,6 +24,7 @@
             }, "json");
             return false;
         }
+        
 
     </script>
 </head>
@@ -54,11 +55,19 @@
 							</div>
 						</div>
 					</c:forEach>
+													<!--高速版-->
+								<div id="SOHUCS"></div>
+								<script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" sid="<c:out value='${d.CContent}'></c:out>"></script>
+								<script type="text/javascript">
+								    window.changyan.api.config({
+								        appid: 'cys5H3oKt',
+								        conf: 'prod_477db5d530601b90cdd56133ad25cdf2'
+								    });
+								</script>   
 				</div>
 			</div>
 		</div>
 	</div>
 	<%@ include file="/jsp/footer.jsp"%>
-
 </body>
 </html>
