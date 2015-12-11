@@ -91,7 +91,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-offset-1 col-md-10">
-					<div id="chart" style="width: 1000px;height: 500px;"></div>
+					<div class="well">
+						<div id="chart" style="width: 100%;height: 500px;"></div>
+					</div>
 				</div>
 			</div>
 		</div>

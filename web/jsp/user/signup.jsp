@@ -36,12 +36,27 @@
 </script>
 </head>
 <body>
+	<jsp:include page="/jsp/header.jsp">
+		<jsp:param name="active" value="index" />
+	</jsp:include>
 	<div class="container">
-		<jsp:include page="/jsp/header.jsp">
-			<jsp:param name="active" value="index" />
-		</jsp:include>
 		<div class="row">
-			<div class="col-md-4 col-md-offset-4 well">
+			<div class="col-md-7 well">
+				asdfadsfaasdfasdfasdfasdfasdfasdf<br>
+				asdfadsfaasdfasdfasdfasdfasdfasdf<br>
+				asdfadsfaasdfasdfasdfasdfasdfasdf<br>
+				asdfadsfaasdfasdfasdfasdfasdfasdf<br>
+				asdfadsfaasdfasdfasdfasdfasdfasdf<br>
+				asdfadsfaasdfasdfasdfasdfasdfasdf<br>
+				asdfadsfaasdfasdfasdfasdfasdfasdf<br>
+				asdfadsfaasdfasdfasdfasdfasdfasdf<br>
+				asdfadsfaasdfasdfasdfasdfasdfasdf<br>
+				asdfadsfaasdfasdfasdfasdfasdfasdf<br>
+				asdfadsfaasdfasdfasdfasdfasdfasdf<br>
+				asdfadsfaasdfasdfasdfasdfasdfasdf<br>
+				asdfadsfaasdfasdfasdfasdfasdfasdf<br>
+			</div>
+			<div class="col-md-4 col-md-offset-1 well">
 				<form class="form-signin" style="display: none;" action=""
 					onsubmit="return submitForm();">
 					<h2 class="form-signin-heading">登陆</h2>
@@ -53,7 +68,7 @@
 				</form>
 			</div>
 		</div>
-		<%@ include file="/jsp/footer.jsp"%>
-	</div>
+	</div> 
+	<%@ include file="/jsp/footer.jsp"%>
 </body>
 </html>

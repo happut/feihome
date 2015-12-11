@@ -16,8 +16,7 @@
 		<div class="row marketing">
 			<div class="container">
 				<div class="col-md-12">
-					<div class="card">
-						<div class="card-block">
+					<div class="well">
 							<h4 class="card-title">一个简简单单的人</h4>
 							<p class="card-text">
 							<address>
@@ -28,7 +27,6 @@
 								(Please replace '#' with '@')
 							</address>
 							</p>
-						</div>
 					</div>
 				</div>
 			</div>

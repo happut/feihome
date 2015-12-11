@@ -17,13 +17,6 @@
         margin-bottom: 5px;
     }
 
-    .copyright a {
-        color: #080808;
-    }
-
-    .copyright a:hover {
-        color: #ac2925;
-    }
 </style>
 
 <footer class="footer">
@@ -49,8 +42,11 @@
             </div>
             <div class="col-md-6">
                 <div class="copyright">
-                    Base on <a href="http://v4-alpha.getbootstrap.com/" target="_blank">Bootstrap
-                    4.0 Alpha</a>, <a href="http://projects.spring.io/spring-framework"
+                    Base on <a href="http://getbootstrap.com/" target="_blank">Bootstrap
+                    3.3.6</a>,
+                    <a href="https://fezvrasta.github.io/bootstrap-material-design/"
+                       target="_blank">Material Design for Bootstrap</a>,
+                       <a href="http://projects.spring.io/spring-framework"
                                 target="_blank">Spring MVC</a>,
                     <a href="https://www.openshift.com/"
                        target="_blank">OpenShift</a>
