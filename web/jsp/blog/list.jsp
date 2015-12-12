@@ -13,16 +13,24 @@
 	</jsp:include>
 	<div class="wrap">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-8">
+			<div class="col-md-8">
+				<c:forEach items="${data}" var="d" varStatus="var">
 					<div class="well">
-						<c:forEach items="${data}" var="d" varStatus="var">
-							<h4><c:out value='${d.CTitle}' /></h4>
-						</c:forEach>
+						<blockquote>
+							<h3><c:out value='${d.CTitle}' /></h3>
+							<h5><fmt:formatDate value="${d.dtCreatetime}" type="both"
+								pattern="yyyy-MM-dd HH:mm" /></h5>
+						</blockquote>
+						<p>
+							<c:out value='${d.CContent}' escapeXml="false"/>
+						</p>
+
 					</div>
-				</div>
-				<div class="col-md-4">
-				</div>
+				</c:forEach>
+			</div>
+			<div class="col-md-4">
+				<div class="well"></div>
+				<div class="well"></div>
 			</div>
 		</div>
 	</div>
