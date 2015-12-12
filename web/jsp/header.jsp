@@ -17,7 +17,7 @@
 		    <div class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li class='nav-item'><a class="nav-link"
-						href="<c:url value='/' />">主页</a></li>
+						href="<c:url value='/home/index.wangfei' />">主页</a></li>
 					<li class='nav-item'><a class="nav-link"
 						href="<c:url value='/blog/list.wangfei' />">博客</a></li>
 					<li class='nav-item'><a class="nav-link"

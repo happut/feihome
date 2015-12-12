@@ -27,6 +27,14 @@ public class BlogLogic {
 	@Qualifier("blogService")
 	private BlogService blogService;
 
+	@RequestMapping(value = "loadBlog")
+	@ResponseBody
+	public List<TBlog> loadBlog(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		List<TBlog> data = blogService.getBlogs();
+		return data;
+	}
+	
 	@RequestMapping(value = "list")
 	public ModelAndView list(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {

@@ -24,5 +24,4 @@ public class HomeLogic {
 			HttpServletResponse response) throws Exception {
 		return new ModelAndView("home/index");
 	}
-
 }

@@ -10,6 +10,10 @@
 <script src="//cdn.bootcss.com/bootstrap-material-design/0.5.4/js/ripples.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap-material-design/0.5.4/js/material.min.js"></script>
 
+<link href="//cdn.bootcss.com/bootstrap-markdown/2.9.0/css/bootstrap-markdown.min.css" rel="stylesheet">
+<script src="//cdn.bootcss.com/bootstrap-markdown/2.9.0/js/bootstrap-markdown.js"></script>
+
+<script src="//cdn.bootcss.com/markdown.js/0.6.0-beta1/markdown.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$.material.init();
