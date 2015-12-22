@@ -57,10 +57,10 @@
 <servlet>
     <servlet-name>AccessViewStatusMessages</servlet-name>
     <servlet-class>ch.qos.logback.access.ViewStatusMessagesServlet</servlet-class>
-  </servlet>-->
+  </servlet>
 
   <servlet-mapping>
     <servlet-name>AccessViewStatusMessages</servlet-name>
     <url-pattern>/lbAccessStatus</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping>-->
 </web-app>
