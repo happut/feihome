@@ -31,7 +31,6 @@
 </script>
 </head>
 <body>
-	<div class="container">
 		<jsp:include page='/jsp/header.jsp'>
 			<jsp:param value="blog" name="active" />
 		</jsp:include>
@@ -64,6 +63,5 @@
 			</div>
 		</div>
 		<%@ include file="/jsp/footer.jsp"%>
-	</div>
 </body>
 </html>

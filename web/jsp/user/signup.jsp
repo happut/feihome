@@ -7,6 +7,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Hello World</title>
 <%@ include file="/jsp/import.jsp"%>
+<style type="text/css">
+
+.vertical-center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>
 <script type="text/javascript">
 	$(document).ready(function() {
 		$(".form-signin").fadeIn("slow");
@@ -36,27 +45,9 @@
 </script>
 </head>
 <body>
-	<jsp:include page="/jsp/header.jsp">
-		<jsp:param name="active" value="index" />
-	</jsp:include>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-7 well">
-				asdfadsfaasdfasdfasdfasdfasdfasdf<br>
-				asdfadsfaasdfasdfasdfasdfasdfasdf<br>
-				asdfadsfaasdfasdfasdfasdfasdfasdf<br>
-				asdfadsfaasdfasdfasdfasdfasdfasdf<br>
-				asdfadsfaasdfasdfasdfasdfasdfasdf<br>
-				asdfadsfaasdfasdfasdfasdfasdfasdf<br>
-				asdfadsfaasdfasdfasdfasdfasdfasdf<br>
-				asdfadsfaasdfasdfasdfasdfasdfasdf<br>
-				asdfadsfaasdfasdfasdfasdfasdfasdf<br>
-				asdfadsfaasdfasdfasdfasdfasdfasdf<br>
-				asdfadsfaasdfasdfasdfasdfasdfasdf<br>
-				asdfadsfaasdfasdfasdfasdfasdfasdf<br>
-				asdfadsfaasdfasdfasdfasdfasdfasdf<br>
-			</div>
-			<div class="col-md-4 col-md-offset-1 well">
+			<div class="col-md-3 well vertical-center">
 				<form class="form-signin" style="display: none;" action=""
 					onsubmit="return submitForm();">
 					<h2 class="form-signin-heading">登陆</h2>
@@ -65,10 +56,11 @@
 						class="form-control" id="login-pass" placeholder="密码">
 					<button id="subBtn" class="btn btn-lg btn-primary btn-block"
 						type="submit">登陆</button>
+					<button id="subBtn" class="btn btn-lg btn-primary btn-block"
+						type="submit">返回首页</button>
 				</form>
 			</div>
 		</div>
 	</div> 
-	<%@ include file="/jsp/footer.jsp"%>
 </body>
 </html>

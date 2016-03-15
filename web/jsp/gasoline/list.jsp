@@ -6,12 +6,12 @@
 <html lang="zh-CN">
 <head>
 <%@ include file="/jsp/import.jsp"%>
-<script src="<c:url value="/js/echarts-all.js"/>"></script>
+<%-- <script src="<c:url value="/js/echarts-all.js"/>"></script> --%>
+<script src="http://echarts.baidu.com/dist/echarts.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(
 			function() {
-				var myChart = echarts.init(document.getElementById('chart'),
-						'macarons');
+				var myChart = echarts.init(document.getElementById('chart'));
 		        myChart.showLoading({
 		            text: "加载中...",
 		            effect:'whirling',
