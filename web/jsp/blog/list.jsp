@@ -19,7 +19,7 @@
 						<blockquote>
 							<h3><c:out value='${d.CTitle}' /></h3>
 							<h5><fmt:formatDate value="${d.dtCreatetime}" type="both"
-								pattern="yyyy-MM-dd HH:mm" /></h5>
+								pattern="yyyy-MM-dd HH:mm" /><c:out value='${d.CUsername}' /></h5>
 						</blockquote>
 						<p>
 							<c:out value='${d.CContent}' escapeXml="false"/>

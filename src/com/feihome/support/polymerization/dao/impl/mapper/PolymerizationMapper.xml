@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.feihome.support.polymerization.dao.impl.mapper.PolymerizationMapper">
+	<resultMap id="TPolymerizationResultMap" type="com.feihome.model.TPolymerizationElement">
+		<id property="id" column="id" />
+		<result property="type" column="type" />
+		<result property="CContent" column="C_CONTENT" />
+		<result property="date" column="date" />
+		<result property="title" column="title" />
+		<result property="url" column="url" />
+		<result property="ext1" column="ext1" />
+		<result property="ext2" column="ext2" />
+		<result property="ext3" column="ext3" />
+		<result property="ext4" column="ext4" />
+		<result property="ext5" column="ext5" />
+	</resultMap>
+
+	<insert id="createPolymerizationelement" parameterType="com.feihome.model.TPolymerizationElement">
+		insert into
+		tpolymerizationelement(id,type,date,title,url,ext1,ext2,ext3,ext4,ext5)
+		VALUE(#{id},#{type},#{date},#{title},#{url},#{ext1},#{ext2},#{ext3},#{ext4},#{ext5})
+	</insert>
+	
+	<select id="getPolymerizationElementsCountByType" resultType="int">
+		select count(*) from tpolymerizationelement where type=#{type}
+	</select>
+	
+	<select id="getPolymerizationTopOneElementByType" resultMap="TPolymerizationResultMap">
+		select * from tpolymerizationelement where type=#{type} order by id desc limit 0,1
+	</select>
+	
+	<select id="getPolymerizationElementsByType" resultMap="TPolymerizationResultMap">
+		select * from tpolymerizationelement where type=#{type} order by id desc
+	</select>
+</mapper>

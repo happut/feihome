@@ -38,8 +38,6 @@ public class BlogLogic {
 	@RequestMapping(value = "list")
 	public ModelAndView list(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		TUser user = new TUser();
-		user.setCUsername("wangfei");
 		// request.getSession().setAttribute("user", user);
 		// request.getSession().removeAttribute("user");
 		List<TBlog> data = blogService.getBlogs();

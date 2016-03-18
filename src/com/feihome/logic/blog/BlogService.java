@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
+import com.feihome.logic.blog.dao.impl.BlogDao;
 import com.feihome.model.TBlog;
-import com.feihome.model.TCodepushRecord;
 import com.feihome.model.TUser;
 
 @Repository
