@@ -1,6 +1,6 @@
 FROM daocloud.io/library/centos
 MAINTAINER lun9090 <643812461@qq.com>
-ADD apache-tomcat-6.0.41 /opt/apache-tomcat-6.0.41
+ADD src /opt/apache-tomcat-6.0.41
 RUN cd /opt/ && mv apache-tomcat-6.0.41 tomcat
 ADD jdk-6u45-linux-x64.bin /opt/
 RUN cd /opt && chmod +x jdk-6u45-linux-x64.bin && ./jdk-6u45-linux-x64.bin && mv jdk1.6.0_45 jdk && rm jdk-6u45-linux-x64.bin
