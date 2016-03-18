@@ -1,4 +1,4 @@
-FROM daocloud.io/library/centos
+FROM daocloud.io/daocloud/dao-tomcat
 MAINTAINER lun9090 <643812461@qq.com>
 ADD src /opt/apache-tomcat-6.0.41
 RUN cd /opt/ && mv apache-tomcat-6.0.41 tomcat
