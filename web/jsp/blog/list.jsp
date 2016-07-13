@@ -13,24 +13,23 @@
 	</jsp:include>
 	<div class="wrap">
 		<div class="container">
-			<div class="col-md-8">
-				<c:forEach items="${data}" var="d" varStatus="var">
-					<div class="well">
+			<div class="col-md-10 col-md-offset-1"">
+				<div class="well">
+					<c:forEach items="${data}" var="d" varStatus="var">
 						<blockquote>
-							<h3><c:out value='${d.CTitle}' /></h3>
-							<h5><fmt:formatDate value="${d.dtCreatetime}" type="both"
-								pattern="yyyy-MM-dd HH:mm" /><c:out value='${d.CUsername}' /></h5>
+							<h3>
+								<a href="<c:url value='/blog/p/${d.NId}' />"/> <c:out value='${d.CTitle}' /></a>
+							</h3>
+							<h5>
+								<fmt:formatDate value="${d.dtCreatetime}" type="both"
+									pattern="yyyy-MM-dd HH:mm" />
+							</h5>
+							<h6>
+								<c:out value='${d.CUsername}' />
+							</h6>
 						</blockquote>
-						<p>
-							<c:out value='${d.CContent}' escapeXml="false"/>
-						</p>
-
-					</div>
-				</c:forEach>
-			</div>
-			<div class="col-md-4">
-				<div class="well"></div>
-				<div class="well"></div>
+					</c:forEach>
+				</div>
 			</div>
 		</div>
 	</div>

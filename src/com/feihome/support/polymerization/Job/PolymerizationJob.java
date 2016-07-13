@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Repository;
 
+import com.feihome.dao.Test;
 import com.feihome.logic.blog.dao.impl.BlogDao;
 import com.feihome.model.TPolymerizationElement;
 import com.feihome.support.polymerization.dao.impl.PolymerizationDao;
@@ -37,6 +38,15 @@ public class PolymerizationJob {
 			List<TPolymerizationElement> elements = beans.get(s)
 					.pullPolymerizationInfo();
 			polymerizationDao.createPolymerizationelements(elements);
+		}
+	}
+	
+	@Scheduled(cron = "0/10 1 * * * ? ")
+	public void test() throws SQLException {
+		System.out.println("test");
+		Map<String, Test> beans = SpringContextUtil
+				.getBeansByType(Test.class);
+		for (String s : beans.keySet()) {
 		}
 	}
 }

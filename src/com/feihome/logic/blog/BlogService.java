@@ -20,6 +20,10 @@ public class BlogService {
 	public List<TBlog> getBlogs() {
 		return dao.getBlogs();
 	}
+
+	public TBlog getBlogById(Integer id) {
+	    return dao.getBlogById(id);
+	}
 	
 	public List<TBlog> getBlogs(Integer pageNum) {
 		return dao.getBlogs(pageNum);

@@ -31,4 +31,12 @@ public interface BlogMapper {
 	
 	
 	public void createBlog(TBlog blog);
+
+    /**
+     * @param id
+     * @return
+     * @author wfei
+     * @time 2016-7-13下午6:19:48
+     */
+    public List<TBlog> getBlogById(Integer id);
 }

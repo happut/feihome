@@ -19,6 +19,13 @@
 		order by b.DT_EDITTIME desc
 	</select>
 
+	<select id="getBlogById" resultMap="TBlogResultMap">
+		select b.*,u.C_USERNAME as C_USERNAME
+		from t_blog b left join t_user u on b.N_USERID = u.N_ID
+		where b.N_ID = #{id}
+		order by b.DT_EDITTIME desc
+	</select>
+
 	<select id="getPagableBlogs" resultMap="TBlogResultMap">
 		select b.*,u.N_ID as USERID,u.C_USERNAME as USERNAME
 		from t_blog b ,t_user u
