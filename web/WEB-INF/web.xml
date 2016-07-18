@@ -42,7 +42,7 @@
 		<session-timeout>30</session-timeout>
 	</session-config>
 
-	<!-- <filter>
+	<filter>
 		<filter-name>shiroFilter</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
 		<init-param>
@@ -58,13 +58,4 @@
 		<filter-name>shiroFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping> 
-<servlet>
-    <servlet-name>AccessViewStatusMessages</servlet-name>
-    <servlet-class>ch.qos.logback.access.ViewStatusMessagesServlet</servlet-class>
-  </servlet>
-
-  <servlet-mapping>
-    <servlet-name>AccessViewStatusMessages</servlet-name>
-    <url-pattern>/lbAccessStatus</url-pattern>
-  </servlet-mapping>-->
 </web-app>

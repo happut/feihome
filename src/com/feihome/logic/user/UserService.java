@@ -15,4 +15,8 @@ public class UserService {
 	public TUser getUser(String username, String passwords) {
 		return dao.getUser(username,passwords);
 	}
+	
+	public TUser findUserByUsername(String username) {
+	    return dao.findUserByUsername(username);
+	}
 }

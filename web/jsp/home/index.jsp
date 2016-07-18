@@ -13,7 +13,7 @@
 	</jsp:include>
 	<div class="wrap">
 		<div class="container">
-			<div class="row marketing">
+			<%--<div class="row marketing">
 				<div class="col-md-12">
 					<div class="well well-sm">
 						<div id="carousel-example-generic" class="carousel slide"
@@ -56,11 +56,12 @@
 					</div>
 				</div>
 			</div>
+			--%>
 
 			<div class="row marketing">
-				<div class="col-md-12">
+				<div class="col-md-10 col-md-offset-1">
 					<div class="jumbotron">
-						<h1><%=ConfigUtils.getProperty("feihome.title")%></h1>
+						<h2><%=ConfigUtils.getProperty("feihome.title")%></h2>
 						<p>
 							<a href="<c:url value='/' />"><span
 								style="margin-left: 10px;"><%=ConfigUtils.getProperty("feihome.url")%></span></a>
@@ -70,7 +71,7 @@
 			</div>
 
 			<div class="row marketing">
-				<div class="col-md-12">
+				<div class="col-md-10 col-md-offset-1">
 					<div class="well">
 						<h4 class="card-title">友情链接</h4>
 						<p class="card-text">

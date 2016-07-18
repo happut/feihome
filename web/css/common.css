@@ -1,7 +1,7 @@
 body {
 	  /* background-color: #efefef; */
 	  background: url(../img/bg_ice.jpg) center center repeat;
-	  font-family:"微软雅黑","Microsoft YaHei";
+	  font-family:"Microsoft YaHei","微软雅黑",sans-serif;
 }
 
 .wrap {

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.feihome.logic.user.dao.impl.mapper.UserMapper">
+	<resultMap id="TUser"
+		type="com.feihome.model.TUser">
+		<id property="NId" column="N_ID" />
+		<result property="CUsername" column="C_USERNAME" />
+		<result property="CPassword" column="C_PASSWORD" />
+		<result property="CEmail" column="C_EMAIL" />
+		<result property="dtCreateTime" column="DT_CREATETIME" />
+	</resultMap>
+
+	<select id="findUserByUsername"  parameterType="String" resultMap="TUser">
+		SELECT *
+		FROM T_USER
+		WHERE C_USERNAME = #{username}
+		ORDER BY DT_CREATE_TIME DESC
+	</select>
+
+</mapper>
