@@ -14,14 +14,9 @@
 			<div class="container">
 				<div class="col-md-10 col-md-offset-1">
 					<div class="well">
-							<h4 class="card-title">一个简简单单的人</h4>
-							<address>
-								<strong>Wang Fei, (Happut).</strong><br> A Poor Java
-								Programme Developer<br> Xixiaokou, Haidian, Beijing, China<br>
-								<abbr title="Phone">P:</abbr> (0) 156-GRYS-8912<br> <abbr
-									title="E-Mail">E:</abbr> <a href="mailto:happut@163.com">happut#163.com</a>
-								(Please replace '#' with '@')
-							</address>
+						<p>ID:<c:out value="${user.NId}"></c:out></p>
+						<p>USERNAME:<c:out value="${user.CUsername }"></c:out></p>
+						<p>EMAIL:<c:out value="${user.CEmail }"></c:out></p>
 					</div>
 				</div>
 			</div>

@@ -9,6 +9,7 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -77,5 +78,14 @@ public class UserLogic {
         JSONObject result = new JSONObject();
         result.put("result", true);
         return result.toString();
+    }
+
+    @RequestMapping(value = "detail")
+    public String detail(HttpServletRequest request,
+            HttpServletResponse response, Model model) throws Exception {
+        Subject subject = SecurityUtils.getSubject();
+        TUser user = (TUser) subject.getPrincipal();
+        request.setAttribute("user", user);
+        return "user/detail";
     }
 }

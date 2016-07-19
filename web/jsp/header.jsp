@@ -29,19 +29,25 @@
 					<li class='nav-item'><a class="nav-link"
 						href="<c:url value='/readme.jsp' />">关于我</a></li>
 				</ul>
-				<p class="navbar-text navbar-right">
+				<ul class="nav navbar-nav navbar-right">
 					<shiro:authenticated>
-					(●'◡'●) ,
-					<a class="nav-link" href="<c:url value='/user/signup' />"> <shiro:principal
-								property="CUsername" />
-					</a>
+						<li class='nav-item'><a class="nav-link"
+							href="<c:url value='/control/index' />">控制中心</a></li>
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown" role="button" aria-haspopup="true"
+							aria-expanded="false">(●'◡'●) , <shiro:principal
+									property="CUsername" /> <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="<c:url value='/user/signup' />">注销</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="<c:url value='/user/detail' />">详细信息</a></li>
+							</ul></li>
 					</shiro:authenticated>
 					<shiro:notAuthenticated>
-					(●'◡'●) ,
-					<a class="nav-link" href="<c:url value='/user/signup' />"> 请登录
-					</a>					
+						<li class='nav-item'><a class="nav-link"
+							href="<c:url value='/user/signup' />"> (●'◡'●) ,请登录 </a></li>
 					</shiro:notAuthenticated>
-				</p>
+				</ul>
 			</div>
 		</div>
 	</nav>

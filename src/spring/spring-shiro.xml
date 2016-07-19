@@ -24,10 +24,11 @@
 				/blog/list*=anon
 				/blog/p/**=anon
 				/blog/**=authc
+				/user/signup=anon
+				/user/login=anon
+				/user/**=authc
+				/control/**=authc
 				<!--authc表示需要认证 没有进行身份认证是不能进行访问的 -->
-				/admin*=authc
-
-
 				/student=roles[teacher]
 				/teacher=perms["user:create"]
 			</value>

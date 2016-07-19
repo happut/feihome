@@ -59,7 +59,7 @@ public class MyRealm extends AuthorizingRealm {
         if (user != null) {
             //将查询到的用户账号和密码存放到 authenticationInfo用于后面的权限判断。第三个参数传入realName。
             AuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
-                    user, user.getCPassword(), user.getCUsername());
+                    user, user.getCPassword(), "Myrealm");
             return authenticationInfo;
         } else {
             return null;

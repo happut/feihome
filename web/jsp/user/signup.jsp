@@ -27,7 +27,7 @@
 		var user = $("#login-name").val();
 		var pass = $("#login-pass").val();
 		$("#subBtn").attr("disabled", "disabled");
-		$.post("login.wangfei", {
+		$.post("login", {
 			"username" : user,
 			"passwords" : pass
 		}, function(data, textStatus) {

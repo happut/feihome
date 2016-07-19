@@ -4,17 +4,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/control")
 public class ControlCenterLogic {
 
-	
-	@RequestMapping(value = "index")
-	public ModelAndView signup(HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
-		return new ModelAndView("control/controlCenter");
-	}
+    @RequestMapping(value = "index")
+    public String index(HttpServletRequest request,
+            HttpServletResponse response, Model model) throws Exception {
+        model.addAttribute("test", "wangfei");
+        request.setAttribute("test2", "wangfei");
+        return "control/controlCenter";
+    }
+    
 }

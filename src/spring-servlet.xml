@@ -23,6 +23,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
 	<mvc:resources mapping="/img/**" location="/img/" />
 	<mvc:resources mapping="/**/*.css" location="/" />
+	<mvc:resources mapping="/**/*.ico" location="/" />
 
 
 	<!-- 启用spring mvc 注解 -->
