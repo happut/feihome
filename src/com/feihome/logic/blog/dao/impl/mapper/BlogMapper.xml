@@ -14,28 +14,30 @@
 	</resultMap>
 
 	<select id="getBlogs" resultMap="TBlogResultMap">
-		select b.*,u.C_USERNAME as C_USERNAME
-		from t_blog b left join t_user u on b.N_USERID = u.N_ID
-		order by b.DT_EDITTIME desc
+		SELECT b.*,u.C_USERNAME as C_USERNAME
+		FROM T_BLOG b LEFT JOIN T_USER u ON b.N_USERID = u.N_ID
+		ORDER BY b.DT_EDITTIME DESC
 	</select>
 
 	<select id="getBlogById" resultMap="TBlogResultMap">
-		select b.*,u.C_USERNAME as C_USERNAME
-		from t_blog b left join t_user u on b.N_USERID = u.N_ID
-		where b.N_ID = #{id}
-		order by b.DT_EDITTIME desc
+		SELECT b.*,u.C_USERNAME as C_USERNAME
+		FROM t_blog b LEFT JOIN T_USER u on b.N_USERID = u.N_ID
+		WHERE b.N_ID = #{id}
+		ORDER BY b.DT_EDITTIME DESC
 	</select>
 
 	<select id="getPagableBlogs" resultMap="TBlogResultMap">
-		select b.*,u.N_ID as USERID,u.C_USERNAME as USERNAME
-		from t_blog b ,t_user u
-		where b.N_USERID = u.N_ID order by b.DT_EDITTIME desc
-		LIMIT  #{page} ,#{count};
+		SELECT b.*,u.N_ID as USERID,u.C_USERNAME as USERNAME
+		FROM T_BLOG b ,T_USER u
+		WHERE b.N_USERID = u.N_ID 
+		ORDER BY b.DT_EDITTIME DESC
+		LIMIT #{page} ,#{count};
 	</select>
 	
 		<insert id="createBlog"
 		parameterType="com.feihome.model.TBlog">
-			insert into t_blog(C_TITLE,C_CONTENT,DT_CREATETIME,DT_EDITTIME,N_TYPE,N_USERID)
-			VALUE(#{CTitle},#{CContent},#{dtCreatetime},#{dtEdittime},#{NType},#{NUserid})
+			INSERT INTO
+			T_BLOG(C_TITLE,C_CONTENT,DT_CREATETIME,DT_EDITTIME,N_TYPE,N_USERID)
+			VALUE (#{CTitle},#{CContent},#{dtCreatetime},#{dtEdittime},#{NType},#{NUserid})
 	</insert>
 </mapper>
