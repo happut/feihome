@@ -60,9 +60,9 @@
 					<input type="text" class="form-control" id="login-name"
 						placeholder="用户名" autofocus> <input type="password"
 						class="form-control" id="login-pass" placeholder="密码">
-					<button id="subBtn" class="btn btn-lg btn-primary btn-block"
+					<button id="subBtn" class="btn btn-lg btn-info btn-block"
 						type="submit">登陆</button>
-					<button id="backBtn" class="btn btn-lg btn-primary btn-block"
+					<button id="backBtn" class="btn btn-lg btn-info btn-block"
 						type="button">返回首页</button>
 				</form>
 			</div>
