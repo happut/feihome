@@ -1,80 +1,80 @@
-create table `t_blog` (
-  `n_id` int(11) not null auto_increment,
-  `c_title` varchar(50) default null,
-  `c_content` text,
-  `n_type` int(11) default null,
-  `n_userid` int(11) default null,
-  `dt_createtime` datetime default null,
-  `dt_edittime` datetime default null,
-  primary key (`n_id`)
-) engine=innodb auto_increment=2 default charset=utf8;
+CREATE TABLE T_BLOG (
+  N_ID INT(11) NOT NULL AUTO_INCREMENT,
+  C_TITLE VARCHAR(50) DEFAULT NULL,
+  C_CONTENT TEXT,
+  N_TYPE INT(11) DEFAULT NULL,
+  N_USERID INT(11) DEFAULT NULL,
+  DT_CREATETIME DATETIME DEFAULT NULL,
+  DT_EDITTIME DATETIME DEFAULT NULL,
+  PRIMARY KEY (N_ID)
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=UTF8;
 
 
-create table `t_blog_comment` (
-  `t_id` int(11) not null auto_increment,
-  `t_pid` int(11) default null,
-  `t_rep_id` int(11) default null,
-  `t_user_id` int(11) default null,
-  `t_comment` text,
-  `dt_createtime` datetime default null,
-  `dt_edittime` datetime default null,
-  primary key (`t_id`)
-) engine=innodb default charset=utf8;
+CREATE TABLE T_BLOG_COMMENT (
+  T_ID INT(11) NOT NULL AUTO_INCREMENT,
+  T_PID INT(11) DEFAULT NULL,
+  T_REP_ID INT(11) DEFAULT NULL,
+  T_USER_ID INT(11) DEFAULT NULL,
+  T_COMMENT TEXT,
+  DT_CREATETIME DATETIME DEFAULT NULL,
+  DT_EDITTIME DATETIME DEFAULT NULL,
+  PRIMARY KEY (T_ID)
+) ENGINE=INNODB DEFAULT CHARSET=UTF8;
 
 
-create table `t_user` (
-  `n_id` int(11) not null auto_increment,
-  `c_username` varchar(30) default null,
-  `c_password` varchar(50) default null,
-  `c_email` varchar(50) default null,
-  `dt_create_time` datetime default null,
-  primary key (`n_id`)
-) engine=innodb auto_increment=2 default charset=utf8;
+CREATE TABLE T_USER (
+  N_ID INT(11) NOT NULL AUTO_INCREMENT,
+  C_USERNAME VARCHAR(30) DEFAULT NULL,
+  C_PASSWORD VARCHAR(50) DEFAULT NULL,
+  C_EMAIL VARCHAR(50) DEFAULT NULL,
+  DT_CREATE_TIME DATETIME DEFAULT NULL,
+  PRIMARY KEY (N_ID)
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=UTF8;
 
-create table `t_leave_message` (
-  `n_id` int(11) not null auto_increment,
-  `c_title` varchar(50) default null,
-  `c_content` text,
-  `n_userid` int(11) default null,
- `c_username` int(11) default null,
-  `dt_createtime` datetime default null,
-  `dt_edittime` datetime default null,
-  primary key (`n_id`)
-) engine=innodb auto_increment=2 default charset=utf8;
+CREATE TABLE T_LEAVE_MESSAGE (
+  N_ID INT(11) NOT NULL AUTO_INCREMENT,
+  C_TITLE VARCHAR(50) DEFAULT NULL,
+  C_CONTENT TEXT,
+  N_USERID INT(11) DEFAULT NULL,
+ C_USERNAME INT(11) DEFAULT NULL,
+  DT_CREATETIME DATETIME DEFAULT NULL,
+  DT_EDITTIME DATETIME DEFAULT NULL,
+  PRIMARY KEY (N_ID)
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=UTF8;
 
-create table `t_codepush_record` (
-  `n_id` int(11) not null auto_increment,
-  `c_push_id` varchar(50) default null,
-  `c_committer_email` varchar(50) default null,
-  `c_committer_name` varchar(50) default null,
-  `c_committer_sha` varchar(50) default null,
-  `c_committer_msg` varchar(50) default null,
-  `ref` varchar(50) default null,
-  `dt_createtime` datetime default null,
-  primary key (`n_id`)
-) engine=innodb auto_increment=2 default charset=utf8;
+CREATE TABLE T_CODEPUSH_RECORD (
+  N_ID INT(11) NOT NULL AUTO_INCREMENT,
+  C_PUSH_ID VARCHAR(50) DEFAULT NULL,
+  C_COMMITTER_EMAIL VARCHAR(50) DEFAULT NULL,
+  C_COMMITTER_NAME VARCHAR(50) DEFAULT NULL,
+  C_COMMITTER_SHA VARCHAR(50) DEFAULT NULL,
+  C_COMMITTER_MSG VARCHAR(50) DEFAULT NULL,
+  REF VARCHAR(50) DEFAULT NULL,
+  DT_CREATETIME DATETIME DEFAULT NULL,
+  PRIMARY KEY (N_ID)
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=UTF8;
 
-create table `tpolymerizationelement` (
-  `id` int not null,
-  `title` varchar(300) default null,
-  `url` varchar(300) default null,
-  `type` int default null,
-  `date` datetime default null,
-  `ext1` varchar(300) default null,
-  `ext2` varchar(300) default null,
-  `ext3` varchar(300) default null,
-  `ext4` varchar(300) default null,
-  `ext5` varchar(300) default null,
-  primary key (`id`,`type`)
-) engine=innodb default charset=utf8;
+CREATE TABLE TPOLYMERIZATIONELEMENT (
+  ID INT NOT NULL,
+  TITLE VARCHAR(300) DEFAULT NULL,
+  URL VARCHAR(300) DEFAULT NULL,
+  TYPE INT DEFAULT NULL,
+  DATE DATETIME DEFAULT NULL,
+  EXT1 VARCHAR(300) DEFAULT NULL,
+  EXT2 VARCHAR(300) DEFAULT NULL,
+  EXT3 VARCHAR(300) DEFAULT NULL,
+  EXT4 VARCHAR(300) DEFAULT NULL,
+  EXT5 VARCHAR(300) DEFAULT NULL,
+  PRIMARY KEY (ID,TYPE)
+) ENGINE=INNODB DEFAULT CHARSET=UTF8;
 
 
-create table `tgasoline` (
-  `id` varchar(50) not null,
-  `bdrq` date default null,
-  `price` decimal(5,2) default null,
-  `bdfd` decimal(5,2) default null,
-  `type` int(255) default null,
-  primary key (`id`)
-) engine=innodb default charset=utf8;
+CREATE TABLE TGASOLINE (
+  ID VARCHAR(50) NOT NULL,
+  BDRQ DATE DEFAULT NULL,
+  PRICE DECIMAL(5,2) DEFAULT NULL,
+  BDFD DECIMAL(5,2) DEFAULT NULL,
+  TYPE INT(255) DEFAULT NULL,
+  PRIMARY KEY (ID)
+) ENGINE=INNODB DEFAULT CHARSET=UTF8;
 
