@@ -21,7 +21,7 @@
 
 	<select id="getBlogById" resultMap="TBlogResultMap">
 		SELECT b.*,u.C_USERNAME as C_USERNAME
-		FROM t_blog b LEFT JOIN T_USER u on b.N_USERID = u.N_ID
+		FROM T_BLOG b LEFT JOIN T_USER u on b.N_USERID = u.N_ID
 		WHERE b.N_ID = #{id}
 		ORDER BY b.DT_EDITTIME DESC
 	</select>
