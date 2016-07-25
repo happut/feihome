@@ -59,7 +59,7 @@
 			--%>
 
 			<div class="row marketing">
-				<div class="col-md-10 col-md-offset-1">
+				<div class="col-md-12">
 					<div class="jumbotron">
 						<h2><%=ConfigUtils.getProperty("feihome.title")%></h2>
 						<p>
@@ -71,7 +71,7 @@
 			</div>
 
 			<div class="row marketing">
-				<div class="col-md-10 col-md-offset-1">
+				<div class="col-md-12">
 					<div class="well">
 						<h4 class="card-title">友情链接</h4>
 						<p class="card-text">

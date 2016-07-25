@@ -13,24 +13,24 @@
 	</jsp:include>
 	<div class="wrap">
 		<div class="container">
-			<div class="col-md-10 col-md-offset-1">
+			<div class="col-md-12">
 				<div class="well">
 					<blockquote>
-						<h3>
+						<p>
 							<c:out value='${data.CTitle}' />
-						</h3>
-						<h5>
-							<fmt:formatDate value="${data.dtCreatetime}" type="both"
-								pattern="yyyy-MM-dd HH:mm" />
-						</h5>
-						<h6>
-							<c:out value='${data.CUsername}' />
-						</h6>
+						</p>
+						<footer>
+							无 <cite title="Source Title"><a href="http://wangfei.tk">http://wangfei.tk</a></cite>
+							<p class="text-right">
+								<fmt:formatDate value="${data.dtCreatetime}" type="both"
+									pattern="yyyy-MM-dd HH:mm" />
+								<c:out value='${data.CUsername}' />
+							</p>
+						</footer>
 					</blockquote>
-					<p>
-						<c:out value='${data.CContent}' escapeXml="false" />
-					</p>
-
+				</div>
+				<div class="well">
+					<c:out value='${data.CContent}' escapeXml="false" />
 				</div>
 			</div>
 		</div>

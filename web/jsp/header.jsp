@@ -5,7 +5,7 @@
 <header>
 	<nav class="navbar navbar-info" role="navigation">
 		<div class="container">
-			<div class="col-md-10 col-md-offset-1">
+			<div class="col-md-12">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed"
 						data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
@@ -43,7 +43,7 @@
 						</shiro:authenticated>
 						<shiro:notAuthenticated>
 							<li class='nav-item'><a class="nav-link"
-								href="<c:url value='/user/signup' />">请登录</a></li>
+								href="<c:url value='/user/signup' />">登录</a></li>
 						</shiro:notAuthenticated>
 					</ul>
 					<shiro:authenticated>

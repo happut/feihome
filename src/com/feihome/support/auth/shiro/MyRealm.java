@@ -1,9 +1,9 @@
 /*
  * @(#)MyRealm.java 2016-7-18 上午11:09:11 feihome Copyright 2016 Thuisoft, Inc.
- * All rights reserved. THUNISOFT PROPRIETARY/CONFIDENTIAL. Use is subject to
- * license terms.
- */
-package com.feihome.support.auth.shiro;
+        * All rights reserved. THUNISOFT PROPRIETARY/CONFIDENTIAL. Use is subject to
+        * license terms.
+        */
+        package com.feihome.support.auth.shiro;
 
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
