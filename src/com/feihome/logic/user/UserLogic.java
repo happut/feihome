@@ -4,6 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.IncorrectCredentialsException;
+import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,16 +35,20 @@ public class UserLogic {
     public String login(
             @RequestParam(value = "username", required = true) String username,
             @RequestParam(value = "passwords", required = true) String passwords,
-            HttpServletRequest request, HttpServletResponse response) throws Exception {
+            HttpServletRequest request, HttpServletResponse response) {
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(username,
                 MD5Util.md5(passwords));
         JSONObject result = new JSONObject();
         try {
             subject.login(token);
-        } catch (Exception e) {
+        } catch (UnknownAccountException e) {
             result.put("success", false);
-            result.put("message", "验证出错");
+            result.put("message", "未找到该用户！");
+            return result.toString();
+        } catch (IncorrectCredentialsException e) {
+            result.put("success", false);
+            result.put("message", "密码错误！");
             return result.toString();
         }
         result.put("success", true);
