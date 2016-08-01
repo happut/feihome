@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.feihome.model.TBlog;
 import com.feihome.model.TUser;
@@ -37,12 +38,19 @@ public class BlogLogic {
     }
 
     @RequestMapping(value = "list")
-    public ModelAndView list(HttpServletRequest request,
-            HttpServletResponse response) throws Exception {
-        // request.getSession().setAttribute("user", user);
-        // request.getSession().removeAttribute("user");
+    public String list(HttpServletRequest request, HttpServletResponse response) throws Exception {
         List<TBlog> data = blogService.getBlogs();
-        return new ModelAndView("blog/list", "data", data);
+        request.setAttribute("data", data);
+        request.setAttribute("pageCount", blogService.getBlogsCount());
+        return "blog/list";
+    }
+
+    @RequestMapping(value = "list/{id}")
+    @ResponseBody
+    public String list(HttpServletRequest request,
+            HttpServletResponse response, @PathVariable Integer id) throws Exception {
+        List<TBlog> data = blogService.getBlogs(id);
+        return JSON.toJSONString(data, true);
     }
 
     @RequestMapping(value = "addBlog")
