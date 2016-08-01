@@ -9,10 +9,10 @@
 </head>
 <body>
 
-	<jsp:include page="/jsp/header.jsp"/>
+	<jsp:include page="/jsp/header.jsp" />
 	<div class="wrap">
-		<div class="container">
-			<%--<div class="row marketing">
+
+		<%--<div class="row marketing">
 				<div class="col-md-12">
 					<div class="well well-sm">
 						<div id="carousel-example-generic" class="carousel slide"
@@ -56,28 +56,47 @@
 				</div>
 			</div>
 			--%>
-
-			<div class="row marketing">
-				<div class="col-md-12">
-					<div class="jumbotron">
-						<h2><%=ConfigUtils.getProperty("feihome.title")%></h2>
-						<p>
-							<a href="<c:url value='/' />"><span
-								style="margin-left: 10px;"><%=ConfigUtils.getProperty("feihome.url")%></span></a>
-						</p>
-					</div>
-				</div>
+		<div class="jumbotron" style="background:rgba(255,255,255,0)">
+			<div class="container">
+				<h1>Feihome</h1>
+				<h2><%=ConfigUtils.getProperty("feihome.title")%></h2>
+				<p>
+					<a href="<c:url value='/' />"><span style="margin-left: 10px;"><%=ConfigUtils.getProperty("feihome.url")%></span></a>
+				</p>
 			</div>
-
+		</div>
+		<div class="container">
 			<div class="row marketing">
-				<div class="col-md-12">
+				<div class="col-md-8">
 					<div class="well">
-						<h4 class="card-title">友情链接</h4>
-						<p class="card-text">
+						<blockquote>
+							<p>友情链接</p>
+						</blockquote>
+						<p>
 							<a href="http://www.xuding.info" target="_blank"><img
 								width="16" height="16" width="16" height="16" alt=""
 								src="http://www.xuding.info/favicon.ico">徐老师</a>
 						</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="well">
+						<blockquote>
+							<p>热门文章</p>
+						</blockquote>
+						<ul class="ds-top-threads" data-range="monthly" data-num-items="5"></ul>
+						<!--多说js加载开始，一个页面只需要加载一次 -->
+						<script type="text/javascript">
+						var duoshuoQuery = {short_name:"feihome"};
+						(function() {
+						    var ds = document.createElement('script');
+						    ds.type = 'text/javascript';ds.async = true;
+						    ds.src = 'http://static.duoshuo.com/embed.js';
+						    ds.charset = 'UTF-8';
+						    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+						})();
+						</script>
+						<!--多说js加载结束，一个页面只需要加载一次 -->
 					</div>
 				</div>
 			</div>

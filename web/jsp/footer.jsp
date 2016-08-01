@@ -6,7 +6,6 @@
         text-align: left;
         margin-top: 0px;
         padding-top: 20px;
-        background-color:#efefef;
         padding-bottom: 20px;
         border-top: 1px solid #efefef;
         font-family: 'Microsoft Yahei';

@@ -10,8 +10,8 @@
 
 	<jsp:include page="/jsp/header.jsp" />
 	<div class="wrap">
-		<div class="row marketing">
-			<div class="container">
+		<div class="container">
+			<div class="row marketing">
 				<div class="col-md-12">
 					<div class="well">
 						<blockquote>
@@ -34,47 +34,36 @@
 						<script
 							src='http://git.oschina.net/littlewangfei/feihome/widget_preview'></script>
 						<style>
-							.pro_name a {
-								color: #4183c4;
-							}
-							
-							.osc_git_title {
-								background-color: #d8e5f1;
-							}
-							
-							.osc_git_box {
-								background-color: #fafafa;
-							}
-							
-							.osc_git_box {
-								border-color: #ddd;
-							}
-							
-							.osc_git_info {
-								color: #666;
-							}
-							
-							.osc_git_main a {
-								color: #4183c4;
-							}
+						.pro_name a {
+							color: #4183c4;
+						}
+						
+						.osc_git_title {
+							background-color: #d8e5f1;
+						}
+						
+						.osc_git_box {
+							background-color: #fafafa;
+						}
+						
+						.osc_git_box {
+							border-color: #ddd;
+						}
+						
+						.osc_git_info {
+							color: #666;
+						}
+						
+						.osc_git_main a {
+							color: #4183c4;
+						}
 						</style>
 					</div>
 				</div>
-				<div class="col-md-12">
-					<div class="well">
-						<blockquote>
-							<p>Changelog</p>
-						</blockquote>
-						<p>
-							ver:1.2.0.5<br>
-							增加多说评论
-						</p>
-					</div>
-				</div>
+				<%@ include file="/jsp/changelog.jsp"%>
 			</div>
 		</div>
 	</div>
 	<%@ include file="/jsp/footer.jsp"%>
-
 </body>
 </html>

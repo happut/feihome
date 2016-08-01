@@ -10,6 +10,7 @@
 <style type="text/css">
 .vertical-center {
 	margin-top: 100px;
+	min-height: 350px;
 }
 
 .errorMsg {
@@ -51,26 +52,30 @@
 </script>
 </head>
 <body>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4 col-md-offset-4 well vertical-center">
-				<form class="form-signin has-warning" style="display: block;"
-					action="" onsubmit="return submitForm();">
-					<h1><small>Log In&nbsp;&nbsp;</small>Feihome<small>&nbsp;&nbsp;site!</small></h1>
-					<div class="form-group has-info label-floating">
-						<label class="control-label" for="login-name">用户名</label>
-						<input type="text" class="form-control" id="login-name">
-					</div>
-					<div class="form-group has-info label-floating">
-						<label class="control-label" for="login-pass">密码</label>
-						<input type="password" class="form-control" id="login-pass">
-					</div>										
-						
-					<button id="subBtn" class="btn btn-lg btn-info btn-block btn-raised"
-						type="submit">登陆</button>
-					<button id="backBtn" class="btn btn-lg btn-info btn-block"
-						type="button">返回首页</button>
-				</form>
+	<div class="wrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4 well vertical-center">
+					<form class="form-signin has-warning" style="display: block;"
+						action="" onsubmit="return submitForm();">
+						<h1>
+							<small>Log In&nbsp;&nbsp;</small>Feihome<small>&nbsp;&nbsp;site!</small>
+						</h1>
+						<div class="form-group has-info label-floating">
+							<label class="control-label" for="login-name">用户名</label> <input
+								type="text" class="form-control" id="login-name">
+						</div>
+						<div class="form-group has-info label-floating">
+							<label class="control-label" for="login-pass">密码</label> <input
+								type="password" class="form-control" id="login-pass">
+						</div>
+
+						<button id="subBtn"
+							class="btn btn-lg btn-info btn-block btn-raised" type="submit">登陆</button>
+						<button id="backBtn" class="btn btn-lg btn-info btn-block"
+							type="button">返回首页</button>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>

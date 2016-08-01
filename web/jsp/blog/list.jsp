@@ -9,6 +9,16 @@
 <title><%=ConfigUtils.getProperty("feihome.title")%></title>
 
 <script type="text/javascript">
+	var duoshuoQuery = {short_name:"feihome"};
+	(function() {
+	    var ds = document.createElement('script');
+	    ds.type = 'text/javascript';ds.async = true;
+	    ds.src = 'http://static.duoshuo.com/embed.js';
+	    ds.charset = 'UTF-8';
+	    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	
+
 	$(document).ready()
 	{
 
@@ -46,7 +56,14 @@
 							</p>
 							<footer>
 								无 <cite title="Source Title"><a href="http://wangfei.tk">http://wangfei.tk</a></cite>
+								
 								<p class="text-right">
+									<a href="<c:url value='/blog/p/${d.NId}' />" />
+										<span
+										class="ds-thread-count"
+										data-thread-key="p<c:out value='${d.NId}' />"
+										data-count-type="comments"></span>
+									</a>
 									<fmt:formatDate value="${d.dtCreatetime}" type="both"
 										pattern="yyyy-MM-dd HH:mm" />
 									<c:out value='${d.CUsername}' />
