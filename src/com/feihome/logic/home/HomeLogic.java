@@ -26,7 +26,12 @@ public class HomeLogic {
 	@RequestMapping(value = "index")
 	public ModelAndView list(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		logger.info("wangfei");
 		return new ModelAndView("home/index");
+	}
+
+	@RequestMapping(value = "aboutMe")
+	public ModelAndView aboutMe(HttpServletRequest request,
+	        HttpServletResponse response) throws Exception {
+	    return new ModelAndView("home/aboutMe");
 	}
 }
