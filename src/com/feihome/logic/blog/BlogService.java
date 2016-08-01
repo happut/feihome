@@ -40,4 +40,8 @@ public class BlogService {
 	public boolean deleteBlog(Integer id) {
 		return dao.deleteBlog(id);
 	}
+
+	public Integer getBlogsCount() {
+	    return dao.getBlogsCount();
+	}
 }

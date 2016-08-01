@@ -27,11 +27,17 @@
 	</select>
 
 	<select id="getPagableBlogs" resultMap="TBlogResultMap">
-		SELECT b.*,u.N_ID as USERID,u.C_USERNAME as USERNAME
+		SELECT b.N_ID,b.C_TITLE,u.N_ID as USERID,u.C_USERNAME as USERNAME
 		FROM T_BLOG b ,T_USER u
 		WHERE b.N_USERID = u.N_ID 
 		ORDER BY b.DT_EDITTIME DESC
 		LIMIT #{page} ,#{count};
+	</select>
+	
+	<select id="getBlogsCount" resultType="java.lang.Integer">
+		SELECT count(*)
+		FROM T_BLOG b ,T_USER u
+		WHERE b.N_USERID = u.N_ID 
 	</select>
 	
 		<insert id="createBlog"
