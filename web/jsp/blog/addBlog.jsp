@@ -5,8 +5,9 @@
 <html lang="zh-CN">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Hello World</title>
+<title>新增博客</title>
 <%@ include file="/jsp/import.jsp"%>
+
 <script type="text/javascript">
 	function submitForm() {
 		var title = $("#blog_title").val();
