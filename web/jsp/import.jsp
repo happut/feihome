@@ -10,24 +10,9 @@
 <script src="//cdn.bootcss.com/bootstrap-material-design/0.5.4/js/ripples.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap-material-design/0.5.4/js/material.min.js"></script>
 
-<link href="//cdn.bootcss.com/bootstrap-markdown/2.10.0/css/bootstrap-markdown.min.css" rel="stylesheet">
-<script src="//cdn.bootcss.com/bootstrap-markdown/2.10.0/js/bootstrap-markdown.min.js"></script>
-
 <script type="text/javascript">
 	$(document).ready(function(){
 		$.material.init();
-		
-	    $("textarea").markdown({
-	        language: 'zh',
-	        fullscreen: {
-	            enable: true
-	        },
-	        resize:'vertical',
-	        localStorage:'md',
-	        imgurl: 'http://192.168.1.142:8080/upload',
-	        base64url: 'http://192.168.1.142:8080/base64'
-	    });
-		
 	});
 </script>
 
@@ -35,4 +20,3 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-<title><%=ConfigUtils.getProperty("feihome.title")%></title>

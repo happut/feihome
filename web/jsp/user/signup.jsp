@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Hello World</title>
+<title>Login</title>
 <%@ include file="/jsp/import.jsp"%>
 <style type="text/css">
 .vertical-center {
@@ -56,7 +56,7 @@
 			<div class="col-md-4 col-md-offset-4 well vertical-center">
 				<form class="form-signin has-warning" style="display: block;"
 					action="" onsubmit="return submitForm();">
-					<h1>登陆</h1>
+					<h1><small>Log In&nbsp;&nbsp;</small>Feihome<small>&nbsp;&nbsp;site!</small></h1>
 					<div class="form-group has-info label-floating">
 						<label class="control-label" for="login-name">用户名</label>
 						<input type="text" class="form-control" id="login-name">

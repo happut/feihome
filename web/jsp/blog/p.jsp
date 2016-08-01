@@ -6,6 +6,7 @@
 <html>
 <head>
 <%@ include file="/jsp/import.jsp"%>
+<title><c:out value='${data.CTitle}' /></title>
 </head>
 <body>
 	<jsp:include page='/jsp/header.jsp'/>

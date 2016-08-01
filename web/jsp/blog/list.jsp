@@ -6,16 +6,36 @@
 <html>
 <head>
 <%@ include file="/jsp/import.jsp"%>
+<title><%=ConfigUtils.getProperty("feihome.title")%></title>
+
+<script type="text/javascript">
+	$(document).ready()
+	{
+
+	/*	$.get("list/1", {
+		}, function(data, textStatus) {
+			var test = $.parseJSON(data);
+			
+			for(var i=0;i<test.length;i++){
+				$("#main").append("<div class=\"well\">");
+				$("#main").append("<blockquote>");
+				$("#main").append("<p>");
+				$("#main").append("<a href=\"<c:url value='/blog/p/' />"+test[i].NId+"\" />");
+				$("#main").append(test[i].CTitle+"</a>");
+				$("#main").append("</p>");
+				$("#main").append("</blockquote>");
+				$("#main").append("</div>");
+			}
+		}, "json");*/
+	}
+</script>
+
 </head>
 <body>
-	<jsp:include page='/jsp/header.jsp'>
-		<jsp:param value="blog" name="active" />
-	</jsp:include>
+	<jsp:include page='/jsp/header.jsp' />
 	<div class="wrap">
 		<div class="container">
-			<div class="col-md-12">
-
-
+			<div class="col-md-12 " id="main">
 				<c:forEach items="${data}" var="d" varStatus="var">
 					<div class="well">
 						<blockquote>

@@ -5,12 +5,11 @@
 <html>
 <head>
 <%@ include file="/jsp/import.jsp"%>
+<title><%=ConfigUtils.getProperty("feihome.title")%></title>
 </head>
 <body>
 
-	<jsp:include page="/jsp/header.jsp">
-		<jsp:param name="active" value="index" />
-	</jsp:include>
+	<jsp:include page="/jsp/header.jsp"/>
 	<div class="wrap">
 		<div class="container">
 			<%--<div class="row marketing">
