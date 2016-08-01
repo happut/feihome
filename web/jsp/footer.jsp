@@ -25,10 +25,10 @@
             <div class="col-md-6">
                 <div class="copyright">
                     Copyright <span class="glyphicon glyphicon-copyright-mark"></span>
-                    1990 - 2016 .
+                    1990 - 2017 .
                 </div>
                 <div class="copyright">Designed by <a href="http://weibo.com/littlewangfei"
-                                                      target="_blank">@Wfei.de.bug.(Happut)</a>.
+                                                      target="_blank">@WangFei-Invariant.(Happut)</a>.
                     All rights reserved.
 <!--                     <script type="text/javascript">
                         var cnzz_protocol = (("https:" == document.location.protocol) ? " https://"
