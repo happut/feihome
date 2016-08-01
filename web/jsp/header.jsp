@@ -25,10 +25,10 @@
 							href="<c:url value='/blog/list' />">博客</a></li>
 						<li class='nav-item'><a class="nav-link"
 							href="<c:url value='/blog/list' />">聚合</a></li>
+<%-- 						<li class='nav-item'><a class="nav-link"
+							href="<c:url value='/gasoline/list' />">油价</a></li> --%>
 						<li class='nav-item'><a class="nav-link"
-							href="<c:url value='/gasoline/list' />">油价</a></li>
-						<li class='nav-item'><a class="nav-link"
-							href="<c:url value='/readme.jsp' />">关于我</a></li>
+							href="<c:url value='/home/aboutMe' />">关于我</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<shiro:authenticated>
@@ -37,7 +37,6 @@
 								aria-expanded="false">我的 <span class="caret"></span></a>
 								<ul class="dropdown-menu">
 									<li><a href="<c:url value='/user/detail' />">详细信息</a></li>
-									<li role="separator" class="divider"></li>
 									<li><a href="<c:url value='/user/signup' />" style="color: red;">退出登录</a></li>
 								</ul></li>
 						</shiro:authenticated>
