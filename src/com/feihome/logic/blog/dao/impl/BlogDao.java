@@ -71,4 +71,13 @@ public class BlogDao extends BaseDao {
         List<TBlog> blogById = blogMapper.getBlogById(id);
         return blogById.size() > 0 ? blogById.get(0) : null;
     }
+
+    /**
+     * @return
+     * @author wfei
+     * @time 2016-7-29下午5:44:36
+     */
+    public Integer getBlogsCount() {
+        return blogMapper.getBlogsCount();
+    }
 }
