@@ -13,7 +13,7 @@
 		<div class="row marketing">
 			<div class="container">
 				<div class="col-md-10 col-md-offset-1">
-					<div class="well">
+					<div class="well" style="min-height: 500px;">
 						<p>ID:<c:out value="${user.NId}"></c:out></p>
 						<p>USERNAME:<c:out value="${user.CUsername }"></c:out></p>
 						<p>EMAIL:<c:out value="${user.CEmail }"></c:out></p>
