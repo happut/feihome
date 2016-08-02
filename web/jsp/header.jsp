@@ -22,7 +22,7 @@
 						<li class='nav-item'><a class="nav-link"
 							href="<c:url value='/home/index' />">主页</a></li>
 						<li class='nav-item'><a class="nav-link"
-							href="<c:url value='/blog/list' />">博客</a></li>
+							href="<c:url value='/blog/list' />">所有博文</a></li>
 						<li class='nav-item'><a class="nav-link"
 							href="<c:url value='/blog/list' />">聚合</a></li>
 						<%-- 						<li class='nav-item'><a class="nav-link"

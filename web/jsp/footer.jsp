@@ -7,6 +7,7 @@
         margin-top: 0px;
         padding-top: 20px;
         padding-bottom: 20px;
+        border-top:1px solid #efefef;
         font-family: 'Microsoft Yahei';
         font-size: 10pt;
     }
