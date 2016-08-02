@@ -1,16 +1,21 @@
 body {
-	background-color: #fff;
+	background-color: rgba(255,255,255,0);
 	/*background: url(../img/bg_ice.jpg) center center repeat;*/
-	font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
+	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 .wrap {
 	margin-top: -20px;
 	background: linear-gradient(to bottom, #03a9f4 0px, #fff 600px);
+	min-height: 600px;
 }
 
 .pageHead {
 /* 	background: linear-gradient(to bottom, #03a9f4 0px, #fff 600px); */
-	background: rgba(255,255,255,0);
+	background-color: rgba(255,255,255,0);
 	margin-top: 0px;
+}
+
+a,a:HOVER{
+	color:#03a9f4;
 }

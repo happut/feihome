@@ -57,14 +57,12 @@
 							</p>
 							<footer>
 								无 <cite title="Source Title"><a href="http://wangfei.tk">http://wangfei.tk</a></cite>
-								
+
 								<p class="text-right">
-									<a href="<c:url value='/blog/p/${d.NId}' />" />
-										<span
+									<a href="<c:url value='/blog/p/${d.NId}' />" /> <span
 										class="ds-thread-count"
 										data-thread-key="p<c:out value='${d.NId}' />"
-										data-count-type="comments"></span>
-									</a>
+										data-count-type="comments"></span> </a>
 									<fmt:formatDate value="${d.dtCreatetime}" type="both"
 										pattern="yyyy-MM-dd HH:mm" />
 									<c:out value='${d.CUsername}' />
@@ -75,7 +73,7 @@
 				</c:forEach>
 			</div>
 		</div>
+		<%@ include file="/jsp/footer.jsp"%>
 	</div>
-	<%@ include file="/jsp/footer.jsp"%>
 </body>
 </html>

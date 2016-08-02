@@ -25,26 +25,32 @@
 		return false;
 	}
 </script>
+<style type="text/css">
+.vertical-center {
+	margin-top: 100px;
+	min-height: 350px;
+}
+</style>
 </head>
 <body>
-		<jsp:include page='/jsp/header.jsp'>
-			<jsp:param value="blog" name="active" />
-		</jsp:include>
+	<jsp:include page="/jsp/header.jsp" />
+	<div class="wrap">
 		<div class="container">
-			<div class="col-md-offset-1 col-md-10 well">
-				<form class="form-horizontal" role="form"
+			<div class="col-md-12 well vertical-center">
+				<form class="form-horizontal " role="form"
 					onsubmit="return submitForm();">
-					<div class="form-group">
-						<label for="inputEmail3" class="col-sm-1 control-label">主题</label>
-						<div class="col-sm-10">
+					<div class="form-group has-info " >
+						<label for="inputEmail3" class="col-md-1 control-label">主题</label>
+						<div class="col-md-11">
 							<input type="text" class="form-control" id="blog_title"
 								placeholder="" />
 						</div>
 					</div>
-					<div class="form-group">
-						<label for="inputEmail3" class="col-sm-1 control-label">内容</label>
-						<div class="col-sm-10">
-							<textarea class="ckeditor" rows="15" id="editor_id" name="content">
+					<div class="form-group has-info">
+						<label for="inputEmail3" class="col-md-1 control-label">内容</label>
+						<div class="col-md-11">
+							<textarea class="ckeditor" rows="15" id="editor_id"
+								name="content">
 						
 						</textarea>
 						</div>
@@ -59,5 +65,6 @@
 			</div>
 		</div>
 		<%@ include file="/jsp/footer.jsp"%>
+	</div>
 </body>
 </html>

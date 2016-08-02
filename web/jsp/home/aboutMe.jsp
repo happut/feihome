@@ -5,6 +5,32 @@
 <html>
 <head>
 <%@ include file="/jsp/import.jsp"%>
+<style>
+/* oschina */
+.pro_name a {
+	color: #4183c4;
+}
+
+.osc_git_title {
+	background-color: #d8e5f1;
+}
+
+.osc_git_box {
+	background-color: #fafafa;
+}
+
+.osc_git_box {
+	border-color: #ddd;
+}
+
+.osc_git_info {
+	color: #666;
+}
+
+.osc_git_main a {
+	color: #4183c4;
+}
+</style>
 </head>
 <body>
 
@@ -34,37 +60,12 @@
 						</blockquote>
 						<script
 							src='http://git.oschina.net/littlewangfei/feihome/widget_preview'></script>
-						<style>
-						.pro_name a {
-							color: #4183c4;
-						}
-						
-						.osc_git_title {
-							background-color: #d8e5f1;
-						}
-						
-						.osc_git_box {
-							background-color: #fafafa;
-						}
-						
-						.osc_git_box {
-							border-color: #ddd;
-						}
-						
-						.osc_git_info {
-							color: #666;
-						}
-						
-						.osc_git_main a {
-							color: #4183c4;
-						}
-						</style>
 					</div>
 				</div>
 				<%@ include file="/jsp/changelog.jsp"%>
 			</div>
 		</div>
+		<%@ include file="/jsp/footer.jsp"%>
 	</div>
-	<%@ include file="/jsp/footer.jsp"%>
 </body>
 </html>

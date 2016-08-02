@@ -10,9 +10,10 @@
 <body>
 	<jsp:include page="/jsp/header.jsp" />
 	<div class="wrap">
+		<jsp:include page="/jsp/pageHeader.jsp" />
 		<div class="container">
 			<div class="row">
-				<div class="col-md-3 col-md-offset-1">
+				<div class="col-md-3">
 					<shiro:authenticated>
 						<div class="panel panel-info">
 							<div class="panel-heading">任务</div>
@@ -33,7 +34,7 @@
 						</div>
 					</shiro:authenticated>
 				</div>
-				<div class="col-md-7">
+				<div class="col-md-9">
 					<div class="panel panel-info">
 						<div class="panel-heading">任务</div>
 						<div class="panel-body">
