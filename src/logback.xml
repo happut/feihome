@@ -16,7 +16,7 @@
 			<fileNamePattern>./feihome.log.%d</fileNamePattern>
 		</rollingPolicy>
 	</appender>
-	<root level="debug">
+	<root level="info">
 		<appender-ref ref="stdout" />
 		<appender-ref ref="R" />
 	</root>
