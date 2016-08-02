@@ -71,7 +71,7 @@
 						<div class="ds-thread"
 							data-thread-key="p<c:out value='${data.NId}' />"
 							data-title="<c:out value='${data.CTitle}' />"
-							data-url="<%=ConfigUtils.getProperty("feihome.url")%><c:url value='/blog/p/${data.NId}' />"></div>
+							data-url="<%=ConfigUtils.getProperty("feihome.url")%><c:out value='/blog/p/${data.NId}' />"></div>
 						<!-- 多说评论框 end -->
 					</div>
 				</div>
