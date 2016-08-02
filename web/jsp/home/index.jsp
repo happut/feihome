@@ -11,6 +11,7 @@
 
 	<jsp:include page="/jsp/header.jsp" />
 	<div class="wrap">
+		<jsp:include page="/jsp/pageHeader.jsp" />
 
 		<%--<div class="row marketing">
 				<div class="col-md-12">
@@ -56,15 +57,7 @@
 				</div>
 			</div>
 			--%>
-		<div class="jumbotron" style="background:rgba(255,255,255,0)">
-			<div class="container">
-				<h1>Feihome</h1>
-				<h2><%=ConfigUtils.getProperty("feihome.title")%></h2>
-				<p>
-					<a href="<c:url value='/' />"><span style="margin-left: 10px;"><%=ConfigUtils.getProperty("feihome.url")%></span></a>
-				</p>
-			</div>
-		</div>
+
 		<div class="container">
 			<div class="row marketing">
 				<div class="col-md-8">
@@ -87,21 +80,26 @@
 						<ul class="ds-top-threads" data-range="monthly" data-num-items="5"></ul>
 						<!--多说js加载开始，一个页面只需要加载一次 -->
 						<script type="text/javascript">
-						var duoshuoQuery = {short_name:"feihome"};
-						(function() {
-						    var ds = document.createElement('script');
-						    ds.type = 'text/javascript';ds.async = true;
-						    ds.src = 'http://static.duoshuo.com/embed.js';
-						    ds.charset = 'UTF-8';
-						    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-						})();
+							var duoshuoQuery = {
+								short_name : "feihome"
+							};
+							(function() {
+								var ds = document.createElement('script');
+								ds.type = 'text/javascript';
+								ds.async = true;
+								ds.src = 'http://static.duoshuo.com/embed.js';
+								ds.charset = 'UTF-8';
+								(document.getElementsByTagName('head')[0] || document
+										.getElementsByTagName('body')[0])
+										.appendChild(ds);
+							})();
 						</script>
 						<!--多说js加载结束，一个页面只需要加载一次 -->
 					</div>
 				</div>
 			</div>
 		</div>
+		<%@ include file="/jsp/footer.jsp"%>
 	</div>
-	<%@ include file="/jsp/footer.jsp"%>
 </body>
 </html>

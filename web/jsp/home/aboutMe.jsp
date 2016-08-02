@@ -10,6 +10,7 @@
 
 	<jsp:include page="/jsp/header.jsp" />
 	<div class="wrap">
+		<jsp:include page="/jsp/pageHeader.jsp" />
 		<div class="container">
 			<div class="row marketing">
 				<div class="col-md-12">

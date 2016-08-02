@@ -9,8 +9,9 @@
 <title><c:out value='${data.CTitle}' /></title>
 </head>
 <body>
-	<jsp:include page='/jsp/header.jsp'/>
+	<jsp:include page='/jsp/header.jsp' />
 	<div class="wrap">
+		<jsp:include page="/jsp/pageHeader.jsp" />
 		<div class="container">
 			<div class="col-md-12">
 				<div class="well">
@@ -33,20 +34,29 @@
 				</div>
 				<div class="well">
 					<!-- 多说评论框 start -->
-					<div class="ds-thread" data-thread-key="p<c:out value='${data.NId}' />" data-title="<c:out value='${data.CTitle}' />" data-url="<%=ConfigUtils.getProperty("feihome.url")%><c:url value='/blog/p/${data.NId}' />"></div>
+					<div class="ds-thread"
+						data-thread-key="p<c:out value='${data.NId}' />"
+						data-title="<c:out value='${data.CTitle}' />"
+						data-url="<%=ConfigUtils.getProperty("feihome.url")%><c:url value='/blog/p/${data.NId}' />"></div>
 					<!-- 多说评论框 end -->
 					<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 					<script type="text/javascript">
-					var duoshuoQuery = {short_name:"feihome"};
+						var duoshuoQuery = {
+							short_name : "feihome"
+						};
 						(function() {
 							var ds = document.createElement('script');
-							ds.type = 'text/javascript';ds.async = true;
-							ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+							ds.type = 'text/javascript';
+							ds.async = true;
+							ds.src = (document.location.protocol == 'https:' ? 'https:'
+									: 'http:')
+									+ '//static.duoshuo.com/embed.js';
 							ds.charset = 'UTF-8';
-							(document.getElementsByTagName('head')[0] 
-							 || document.getElementsByTagName('body')[0]).appendChild(ds);
+							(document.getElementsByTagName('head')[0] || document
+									.getElementsByTagName('body')[0])
+									.appendChild(ds);
 						})();
-						</script>
+					</script>
 					<!-- 多说公共JS代码 end -->
 				</div>
 			</div>

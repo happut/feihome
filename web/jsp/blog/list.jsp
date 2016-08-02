@@ -44,6 +44,7 @@
 <body>
 	<jsp:include page='/jsp/header.jsp' />
 	<div class="wrap">
+		<jsp:include page="/jsp/pageHeader.jsp" />
 		<div class="container">
 			<div class="col-md-12">
 				<c:forEach items="${data}" var="d" varStatus="var">

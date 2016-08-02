@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" import="com.feihome.support.utils.ConfigUtils"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 <header>
@@ -25,7 +25,7 @@
 							href="<c:url value='/blog/list' />">博客</a></li>
 						<li class='nav-item'><a class="nav-link"
 							href="<c:url value='/blog/list' />">聚合</a></li>
-<%-- 						<li class='nav-item'><a class="nav-link"
+						<%-- 						<li class='nav-item'><a class="nav-link"
 							href="<c:url value='/gasoline/list' />">油价</a></li> --%>
 						<li class='nav-item'><a class="nav-link"
 							href="<c:url value='/home/aboutMe' />">关于我</a></li>
@@ -37,7 +37,8 @@
 								aria-expanded="false">我的 <span class="caret"></span></a>
 								<ul class="dropdown-menu">
 									<li><a href="<c:url value='/user/detail' />">详细信息</a></li>
-									<li><a href="<c:url value='/user/signup' />" style="color: red;">退出登录</a></li>
+									<li><a href="<c:url value='/user/signup' />"
+										style="color: red;">退出登录</a></li>
 								</ul></li>
 						</shiro:authenticated>
 						<shiro:notAuthenticated>

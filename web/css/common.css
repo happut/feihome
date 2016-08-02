@@ -1,11 +1,16 @@
 body {
-	   background-color: #fff; 
-	  /*background: url(../img/bg_ice.jpg) center center repeat;*/
-	  font-family:"Microsoft YaHei","微软雅黑",sans-serif;
+	background-color: #fff;
+	/*background: url(../img/bg_ice.jpg) center center repeat;*/
+	font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
 }
 
 .wrap {
-	margin-top:-20px;
-	padding-top:50px;
-	background: linear-gradient(to bottom,#03a9f4 0px,#fff 400px); 
+	margin-top: -20px;
+	background: linear-gradient(to bottom, #03a9f4 0px, #fff 600px);
+}
+
+.pageHead {
+/* 	background: linear-gradient(to bottom, #03a9f4 0px, #fff 600px); */
+	background: rgba(255,255,255,0);
+	margin-top: 0px;
 }
