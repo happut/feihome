@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -63,6 +64,10 @@
 										class="ds-thread-count"
 										data-thread-key="p<c:out value='${d.NId}' />"
 										data-count-type="comments"></span> </a>
+									<shiro:authenticated>
+										<a href="<c:url value='/blog/edit/${d.NId}' />">编辑</a>
+										<a href="<c:url value='/blog/delete/${d.NId}' />">删除</a>
+									</shiro:authenticated>
 									<fmt:formatDate value="${d.dtCreatetime}" type="both"
 										pattern="yyyy-MM-dd HH:mm" />
 									<c:out value='${d.CUsername}' />

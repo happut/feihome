@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -22,6 +23,11 @@
 		(document.getElementsByTagName('head')[0] || document
 				.getElementsByTagName('body')[0]).appendChild(ds);
 	})();
+
+	$(document).ready(function() {
+		var content = $(".content_hidden").val();
+		$(".content").html(marked(content));
+	});
 </script>
 <!-- 多说公共JS代码 end -->
 
@@ -48,8 +54,16 @@
 								<c:out value='${data.CTitle}' />
 								<small><c:out value='${data.CUsername}' />(<fmt:formatDate
 										value="${data.dtCreatetime}" type="both"
-										pattern="yyyy-MM-dd HH:mm" />)</small>
-
+										pattern="yyyy-MM-dd HH:mm" />)
+									<a href="#comment" /> <span
+										class="ds-thread-count"
+										data-thread-key="p<c:out value='${data.NId}' />"
+										data-count-type="comments"></span> </a>
+									<shiro:authenticated>
+										<a href="<c:url value='/blog/edit/${data.NId}' />">编辑</a>
+										<a href="<c:url value='/blog/delete/${data.NId}' />">删除</a>
+									</shiro:authenticated>
+								</small>
 							</h3>
 						</div>
 					</div>
@@ -59,14 +73,16 @@
 				<div class="col-md-12">
 					<div class="well">
 						<div class="content">
-							<c:out value='${data.CContent}' escapeXml="false" />
+							<c:out value='${data.CContent}' escapeXml="false"/>
 						</div>
+						<input class="content_hidden" type="hidden"
+							value="<c:out value='${data.CContent}'/>">
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<div class="well">
+					<div class="well" id="comment">
 						<!-- 多说评论框 start -->
 						<div class="ds-thread"
 							data-thread-key="p<c:out value='${data.NId}' />"

@@ -41,4 +41,19 @@ public interface BlogMapper {
     public List<TBlog> getBlogById(Integer id);
     
     public Integer getBlogsCount();
+
+    /**
+     * @param blog
+     * @author wfei
+     * @time 2016-8-3下午12:50:41
+     */
+    public void editBlog(TBlog blog);
+
+    /**
+     * @param id
+     * @return
+     * @author wfei
+     * @time 2016-8-3下午1:26:05
+     */
+    public boolean deleteBlog(Integer id);
 }

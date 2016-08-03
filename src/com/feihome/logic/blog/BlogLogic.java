@@ -6,6 +6,11 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.math.NumberUtils;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
+import org.jsoup.helper.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -59,17 +64,16 @@ public class BlogLogic {
         return new ModelAndView("blog/addBlog");
     }
 
-    @RequestMapping(value = "addBlogReq", method = RequestMethod.POST)
+    @RequestMapping(value = "editBlogReq", method = RequestMethod.POST)
     @ResponseBody
-    public String addBlogReq(
+    public String editBlogReq(
             @RequestParam(value = "title", required = true) String title,
             @RequestParam(value = "content", required = true) String content,
+            @RequestParam(value = "blogId") String id, 
             HttpServletRequest request, HttpServletResponse response) throws Exception {
         JSONObject result = new JSONObject();
-        TUser user = (TUser) request.getSession().getAttribute("user");
-        if (user == null) {
-            throw new Exception("session中未保存user信息");
-        }
+        Subject subject = SecurityUtils.getSubject();
+        TUser user = (TUser) subject.getPrincipal();
         TBlog blog = new TBlog();
         blog.setCContent(content);
         blog.setCTitle(title);
@@ -78,7 +82,13 @@ public class BlogLogic {
         blog.setNType(0);
         blog.setNUserid(user.getNId());
 
-        boolean isSuccess = blogService.createBlog(blog);
+        boolean isSuccess = false;
+        if (StringUtils.isBlank(id)) {
+            isSuccess = blogService.createBlog(blog);
+        } else {
+            blog.setNId(NumberUtils.toInt(id));
+            isSuccess = blogService.editBlog(blog);
+        }
         result.put("result", isSuccess);
 
         return result.toString();
@@ -101,5 +111,20 @@ public class BlogLogic {
         TBlog data = blogService.getBlogById(id);
         request.setAttribute("data", data);
         return "blog/p";
+    }
+
+    @RequestMapping(value = "edit/{id}")
+    public String edit(HttpServletRequest request,
+            HttpServletResponse response, @PathVariable Integer id) throws Exception {
+        TBlog data = blogService.getBlogById(id);
+        request.setAttribute("data", data);
+        return "blog/addBlog";
+    }
+
+    @RequestMapping(value = "delete/{id}")
+    public String delete(HttpServletRequest request,
+            HttpServletResponse response, @PathVariable Integer id) throws Exception {
+        blogService.deleteBlog(id);
+        return "redirect:/blog/list";
     }
 }

@@ -16,7 +16,7 @@
 	<select id="getBlogs" resultMap="TBlogResultMap">
 		SELECT b.*,u.C_USERNAME as C_USERNAME
 		FROM T_BLOG b LEFT JOIN T_USER u ON b.N_USERID = u.N_ID
-		ORDER BY b.DT_EDITTIME DESC
+		ORDER BY b.DT_CREATETIME DESC
 	</select>
 
 	<select id="getBlogById" resultMap="TBlogResultMap">
@@ -46,4 +46,16 @@
 			T_BLOG(C_TITLE,C_CONTENT,DT_CREATETIME,DT_EDITTIME,N_TYPE,N_USERID)
 			VALUE (#{CTitle},#{CContent},#{dtCreatetime},#{dtEdittime},#{NType},#{NUserid})
 	</insert>
+
+	<update id="editBlog"
+		parameterType="com.feihome.model.TBlog">
+			UPDATE T_BLOG
+			SET C_TITLE = #{CTitle}, C_CONTENT = #{CContent}, DT_EDITTIME= #{dtEdittime}
+			WHERE N_ID = #{NId}
+	</update>
+	
+	<delete id="deleteBlog" parameterType="Integer">
+		DELETE FROM T_BLOG
+		WHERE N_ID = #{id}
+	</delete>
 </mapper>

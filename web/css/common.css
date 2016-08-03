@@ -1,7 +1,7 @@
 body {
-	background-color: rgba(255,255,255,0);
+	background-color: rgba(255, 255, 255, 0);
 	/*background: url(../img/bg_ice.jpg) center center repeat;*/
-	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .wrap {
@@ -11,11 +11,11 @@ body {
 }
 
 .pageHead {
-/* 	background: linear-gradient(to bottom, #03a9f4 0px, #fff 600px); */
-	background-color: rgba(255,255,255,0);
+	/* 	background: linear-gradient(to bottom, #03a9f4 0px, #fff 600px); */
+	background-color: rgba(255, 255, 255, 0);
 	margin-top: 0px;
 }
 
-a,a:HOVER{
-	color:#03a9f4;
+a,a:HOVER {
+	color: #666;
 }

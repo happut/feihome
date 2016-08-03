@@ -33,6 +33,10 @@ public class BlogService {
 		return dao.createBlog(blog) ;
 	}
 
+    public boolean editBlog(TBlog blog) {
+        return dao.editBlog(blog) ;
+    }
+	
 	public List<TUser> getAllUserInfo() {
 		return dao.getAllUserInfo();
 	}

@@ -30,13 +30,12 @@ public class BlogDao extends BaseDao {
     }
 
     public boolean createBlog(TBlog blog) {
-        //		int rows = getJdbcTemplate()
-        //				.update("insert into t_blog(C_TITLE,C_CONTENT,DT_CREATETIME,DT_EDITTIME,N_TYPE,N_USERID) VALUE(?,?,?,?,?,?)",
-        //						blog.getCTitle(), blog.getCContent(),
-        //						blog.getDtCreatetime(), blog.getDtEdittime(),
-        //						blog.getNType(), blog.getNUserid());
-        //		return rows > 0;
         blogMapper.createBlog(blog);
+        return true;
+    }
+    
+    public boolean editBlog(TBlog blog) {
+        blogMapper.editBlog(blog);
         return true;
     }
 
@@ -57,8 +56,7 @@ public class BlogDao extends BaseDao {
 
     @Transactional
     public boolean deleteBlog(Integer id) {
-        return BooleanUtils.toBoolean(getJdbcTemplate().update(
-            "delete from t_blog WHERE N_ID = ?", id));
+        return blogMapper.deleteBlog(id);
     }
 
     /**
