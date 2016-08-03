@@ -6,8 +6,14 @@
 		<blockquote>
 			<p>Changelog</p>
 		</blockquote>
-		<p>
-			ver:1.2.0.5<br> 增加多说评论<br>优化界面
-		</p>
+		<ul>
+			<p>ver:1.2.1.6</p>
+			<li>完善编辑删除功能</li>
+		</ul>
+		<ul>
+			<p>ver:1.2.0.5</p>
+			<li>增加多说评论</li>
+			<li>优化界面</li>
+		</ul>
 	</div>
 </div>
