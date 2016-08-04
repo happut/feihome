@@ -89,6 +89,7 @@ public class BlogLogic {
             isSuccess = blogService.editBlog(blog);
         }
         result.put("result", isSuccess);
+        result.put("title", blog.getCTitle());
 
         return result.toString();
     }
