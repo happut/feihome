@@ -26,11 +26,6 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 	<mvc:resources mapping="/**/*.ico" location="/" />
 	<mvc:resources mapping="/**/*.js" location="/" />
 
-
-	<!-- 启用spring mvc 注解 -->
-	<task:annotation-driven scheduler="myScheduler" />
-	<task:scheduler id="myScheduler" pool-size="10" />
-
 	<websocket:handlers>
 		<websocket:mapping path="/echo.wangfei" handler="echoWebSocketHandler" />
 		<websocket:handshake-interceptors>

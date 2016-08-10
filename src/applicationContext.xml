@@ -2,12 +2,15 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task"
 	xsi:schemaLocation="
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
 http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
 http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
 http://www.springframework.org/schema/context 
-http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+http://www.springframework.org/schema/context/spring-context-2.5.xsd
+http://www.springframework.org/schema/task  
+http://www.springframework.org/schema/task/spring-task-3.0.xsd">
 
 	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
 		<property name="driverClassName"> <value>${dataSource_driverClass}</value> 
@@ -19,8 +22,12 @@ http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 	<context:annotation-config />
 	<!-- 设置使用注解的类所在的jar包 -->
 	<context:component-scan base-package="com.feihome" />
-	
-	
+
+	<!-- 启用spring mvc 注解 -->
+	<task:annotation-driven scheduler="myScheduler" />
+	<task:scheduler id="myScheduler" pool-size="10" />
+
+
 	<bean
 		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />
 	<bean
