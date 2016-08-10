@@ -7,6 +7,10 @@
 			<p>Changelog</p>
 		</blockquote>
 		<ul>
+			<p>ver:1.2.2.7</p>
+			<li>markdown解析问题</li>
+		</ul>
+		<ul>
 			<p>ver:1.2.1.6</p>
 			<li>完善编辑删除功能</li>
 		</ul>
