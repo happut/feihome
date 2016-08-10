@@ -23,6 +23,7 @@ public class TBlog implements java.io.Serializable {
 	private Integer NUserid;
 	private Timestamp dtCreatetime;
 	private Timestamp dtEdittime;
+	private String CSummary;
 
 	
 	public String getCUsername() {
@@ -111,5 +112,13 @@ public class TBlog implements java.io.Serializable {
 	public void setDtEdittime(Timestamp dtEdittime) {
 		this.dtEdittime = dtEdittime;
 	}
+
+    public String getCSummary() {
+        return CSummary;
+    }
+
+    public void setCSummary(String cSummary) {
+        CSummary = cSummary;
+    }
 
 }

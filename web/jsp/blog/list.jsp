@@ -74,6 +74,7 @@
 								</p>
 							</footer>
 						</blockquote>
+						<div style="margin:0 10px; padding:10px; background-color: #efefef;"><c:out value='${d.CSummary}' /></div>
 					</div>
 				</c:forEach>
 			</div>

@@ -16,11 +16,13 @@
 	});
 	function submitForm() {
 		var title = $("#blog_title").val();
+		var summary = $("#blog_summary").val();
 		var content = $("#editor_id").data('markdown').getContent();
 		var blogId = $("#blogId").val();
 		$.post("<c:url value='/blog/editBlogReq'/>", {
 			"blogId" :blogId,
 			"title" : title,
+			"summary" : summary,
 			"content" : content
 		}, function(data, textStatus) {
 			data = $.parseJSON(data);
@@ -56,6 +58,13 @@
 						<div class="col-md-11">
 							<input type="text" class="form-control" id="blog_title"
 								placeholder="" value="<c:out value='${data.CTitle}'/>"/>
+						</div>
+					</div>
+					<div class="form-group has-info ">
+						<label for="inputEmail3" class="col-md-1 control-label">摘要</label>
+						<div class="col-md-11">
+							<input type="text" class="form-control" id="blog_summary"
+								placeholder="" value="<c:out value='${data.CSummary}'/>"/>
 						</div>
 					</div>
 					<div class="form-group has-info">

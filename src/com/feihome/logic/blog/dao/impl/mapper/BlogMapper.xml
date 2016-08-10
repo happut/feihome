@@ -11,6 +11,7 @@
 		<result property="dtCreatetime" column="DT_CREATETIME" />
 		<result property="dtEdittime" column="DT_EDITTIME" />
 		<result property="CUsername" column="C_USERNAME" />
+		<result property="CSummary" column="C_SUMMARY" />
 	</resultMap>
 
 	<select id="getBlogs" resultMap="TBlogResultMap">
@@ -43,14 +44,14 @@
 		<insert id="createBlog"
 		parameterType="com.feihome.model.TBlog">
 			INSERT INTO
-			T_BLOG(C_TITLE,C_CONTENT,DT_CREATETIME,DT_EDITTIME,N_TYPE,N_USERID)
-			VALUE (#{CTitle},#{CContent},#{dtCreatetime},#{dtEdittime},#{NType},#{NUserid})
+			T_BLOG(C_TITLE,C_CONTENT,C_SUMMARY,DT_CREATETIME,DT_EDITTIME,N_TYPE,N_USERID)
+			VALUE (#{CTitle},#{CContent},#{CSummary},#{dtCreatetime},#{dtEdittime},#{NType},#{NUserid})
 	</insert>
 
 	<update id="editBlog"
 		parameterType="com.feihome.model.TBlog">
 			UPDATE T_BLOG
-			SET C_TITLE = #{CTitle}, C_CONTENT = #{CContent}, DT_EDITTIME= #{dtEdittime}
+			SET C_TITLE = #{CTitle}, C_CONTENT = #{CContent},C_SUMMARY=#{CSummary}, DT_EDITTIME= #{dtEdittime}
 			WHERE N_ID = #{NId}
 	</update>
 	

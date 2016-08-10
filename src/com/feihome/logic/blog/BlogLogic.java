@@ -68,6 +68,7 @@ public class BlogLogic {
     public String editBlogReq(
             @RequestParam(value = "title", required = true) String title,
             @RequestParam(value = "content", required = true) String content,
+            @RequestParam(value = "summary", required = true) String summary,
             @RequestParam(value = "blogId") String id, 
             HttpServletRequest request, HttpServletResponse response) throws Exception {
         JSONObject result = new JSONObject();
@@ -76,6 +77,7 @@ public class BlogLogic {
         TBlog blog = new TBlog();
         blog.setCContent(content);
         blog.setCTitle(title);
+        blog.setCSummary(summary);
         blog.setDtCreatetime(new Timestamp(System.currentTimeMillis()));
         blog.setDtEdittime(new Timestamp(System.currentTimeMillis()));
         blog.setNType(0);
