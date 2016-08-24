@@ -27,10 +27,8 @@ public class PolymerizationJob {
 	@Qualifier("polymerizationDao")
 	private PolymerizationDao polymerizationDao;
 
-	@Scheduled(cron = "0/30 1 * * * ? ")
+	@Scheduled(cron = "0 0/2 * * * ? ")
 	public void polymerization() throws SQLException {
-		System.out.println("test");
-
 		Map<String, IPolymerization> beans = SpringContextUtil
 				.getBeansByType(IPolymerization.class);
 
@@ -38,15 +36,6 @@ public class PolymerizationJob {
 			List<TPolymerizationElement> elements = beans.get(s)
 					.pullPolymerizationInfo();
 			polymerizationDao.createPolymerizationelements(elements);
-		}
-	}
-	
-	@Scheduled(cron = "0/10 1 * * * ? ")
-	public void test() throws SQLException {
-		System.out.println("test");
-		Map<String, Test> beans = SpringContextUtil
-				.getBeansByType(Test.class);
-		for (String s : beans.keySet()) {
 		}
 	}
 }

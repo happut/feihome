@@ -3,7 +3,8 @@ package com.feihome.model;
 import java.util.Date;
 
 public class TPolymerizationElement {
-	private Integer id;
+    private String id;
+	private String orginId;
 	private Integer type;
 	private Date date;
 	private String title;
@@ -13,10 +14,10 @@ public class TPolymerizationElement {
 	private String ext3;
 	private String ext4;
 	private String ext5;
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public Integer getType() {
@@ -73,6 +74,12 @@ public class TPolymerizationElement {
 	public void setUrl(String url) {
 		this.url = url;
 	}
+    public String getOrginId() {
+        return orginId;
+    }
+    public void setOrginId(String orginId) {
+        this.orginId = orginId;
+    }
 	
 	
 }
