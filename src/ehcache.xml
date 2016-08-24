@@ -8,4 +8,8 @@
 	<cache name="userEntire" maxElementsInMemory="10000" eternal="true"
 		overflowToDisk="true">
 	</cache>
+
+	<cache name="normalCodeCache" maxElementsInMemory="10000" eternal="true"
+		overflowToDisk="true">
+	</cache>
 </ehcache>
