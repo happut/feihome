@@ -10,6 +10,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
+import org.markdown4j.Markdown4jProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -111,6 +112,8 @@ public class BlogLogic {
     public String article(HttpServletRequest request,
             HttpServletResponse response, @PathVariable Integer id) throws Exception {
         TBlog data = blogService.getBlogById(id);
+        data.setCContent(new Markdown4jProcessor().process(data.getCContent()));
+        System.out.println(data.getCContent());
         request.setAttribute("data", data);
         return "blog/p";
     }
