@@ -1,6 +1,5 @@
 package com.feihome.support.utils;
 
-import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
