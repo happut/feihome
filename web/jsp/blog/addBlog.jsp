@@ -53,22 +53,22 @@
 			<div class="col-md-12 well vertical-center">
 				<form class="form-horizontal " role="form"
 					onsubmit="return submitForm();">
-					<div class="form-group has-info ">
-						<label for="inputEmail3" class="col-md-1 control-label">主题</label>
+					<div class="form-group has-info  ">
+						<label for="blog_title" class="col-md-1 control-label">主题</label>
 						<div class="col-md-11">
 							<input type="text" class="form-control" id="blog_title"
 								placeholder="" value="<c:out value='${data.CTitle}'/>"/>
 						</div>
 					</div>
-					<div class="form-group has-info ">
-						<label for="inputEmail3" class="col-md-1 control-label">摘要</label>
+					<div class="form-group has-info  ">
+						<label for="blog_summary" class="col-md-1 control-label">摘要</label>
 						<div class="col-md-11">
-							<input type="text" class="form-control" id="blog_summary"
+							<input type="text" class="form-control" id="blog_summary" maxlength="200"
 								placeholder="" value="<c:out value='${data.CSummary}'/>"/>
 						</div>
 					</div>
-					<div class="form-group has-info">
-						<label for="inputEmail3" class="col-md-1 control-label">内容</label>
+					<div class="form-group has-info ">
+						<label for="editor_id" class="col-md-1 control-label">内容</label>
 						<div class="col-md-11">
 							<textarea data-provide="markdown" rows="15" id="editor_id"
 								name="content"><c:out value='${data.CContent}'/>
