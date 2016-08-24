@@ -25,10 +25,6 @@
 	})();
 
 	$(document).ready(function() {
-		$(".content").hide();
-		var content = $(".content_hidden").val();
-		$(".content").html(markdown.toHTML(content));
-		$(".content").fadeIn();
 	});
 </script>
 <!-- 多说公共JS代码 end -->
@@ -81,7 +77,7 @@
 				<div class="col-md-12">
 					<div class="well">
 						<div class="content">
-							<%-- <c:out value='${data.CContent}' escapeXml="false"/> --%>
+							 <c:out value='${data.CContent}' escapeXml="false"/> 
 						</div>
 						<input class="content_hidden" type="hidden"
 							value="<c:out value='${data.CContent}'/>">

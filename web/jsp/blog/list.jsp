@@ -10,44 +10,72 @@
 <title><%=ConfigUtils.getProperty("feihome.title")%></title>
 
 <script type="text/javascript">
-	var duoshuoQuery = {short_name:"feihome"};
+	var duoshuoQuery = {
+		short_name : "feihome"
+	};
 	(function() {
-	    var ds = document.createElement('script');
-	    ds.type = 'text/javascript';ds.async = true;
-	    ds.src = 'http://static.duoshuo.com/embed.js';
-	    ds.charset = 'UTF-8';
-	    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';
+		ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] || document
+				.getElementsByTagName('body')[0]).appendChild(ds);
 	})();
-	
+
+	$(window).scroll(function() {
+		if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+			$("#loadingWell").show();
+			$.get("list/1", {}, function(data, textStatus) {
+				var test = $.parseJSON(data);
+				for ( var i = 0; i < test.length; i++) {
+					$("#main").append("<div class=\"well\">");
+					$("#main").append("<blockquote>");
+					$("#main").append("<p>");
+					$("#main").append("<a href=\"<c:url value='/blog/p/' />" + test[i].NId + "\" />");
+					$("#main").append(test[i].CTitle + "</a>");
+					$("#main").append("</p>");
+					$("#main").append("</blockquote>");
+					$("#main").append("</div>");
+				}
+				$("#loadingWell").hide();
+			}, "json");
+		}
+	});
 
 	$(document).ready()
 	{
-
-	/*	$.get("list/1", {
-		}, function(data, textStatus) {
-			var test = $.parseJSON(data);
-			
-			for(var i=0;i<test.length;i++){
-				$("#main").append("<div class=\"well\">");
-				$("#main").append("<blockquote>");
-				$("#main").append("<p>");
-				$("#main").append("<a href=\"<c:url value='/blog/p/' />"+test[i].NId+"\" />");
-				$("#main").append(test[i].CTitle+"</a>");
-				$("#main").append("</p>");
-				$("#main").append("</blockquote>");
-				$("#main").append("</div>");
-			}
-		}, "json");*/
+		$("#loadingWell").hide();
 	}
 </script>
+<style>
+.loading {
+	background: url(../img/loading.png) center center no-repeat;
+	background-size: 50px 50px;
+	height: 50px;
+	width:50px;
+	-moz-animation: rotate 1s infinite linear;
+	-webkit-animation: rotate 1s infinite linear;
+	animation: rotate 1s infinite linear;
+}
 
+@-webkit-keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+	
+	to {
+		transform: rotate(360deg);
+	}
+}
+</style>
 </head>
 <body>
 	<jsp:include page='/jsp/header.jsp' />
 	<div class="wrap">
 		<jsp:include page="/jsp/pageHeader.jsp" />
 		<div class="container">
-			<div class="col-md-12">
+			<div class="col-md-12" id="main">
 				<c:forEach items="${data}" var="d" varStatus="var">
 					<div class="well">
 						<blockquote>
@@ -74,9 +102,17 @@
 								</p>
 							</footer>
 						</blockquote>
-						<div style="margin:0 10px; padding:10px; background-color: #efefef;"><c:out value='${d.CSummary}' /></div>
+						<div
+							style="margin:0 10px; padding:10px; background-color: #efefef;">
+							<c:out value='${d.CSummary}' />
+							无
+						</div>
 					</div>
 				</c:forEach>
+				<div></div>
+				<div class="well">
+					<img class="loading" id="loadingWell" src="../img/loading.png"/>
+					</div>
 			</div>
 		</div>
 		<%@ include file="/jsp/footer.jsp"%>
