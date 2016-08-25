@@ -27,7 +27,12 @@ public class PolymerizationDao {
             if (StringUtils.isBlank(ele.getId())) {
                 ele.setId(CommonUtils.generateUUID());
             }
-            createPolymerizationelement(ele);
+            TPolymerizationElement e = mapper
+                    .getPolymerizationTopOneElementByOrginId(ele.getType(),
+                        ele.getOrginId());
+            if (e == null) {
+                createPolymerizationelement(ele);
+            }
         }
     }
 

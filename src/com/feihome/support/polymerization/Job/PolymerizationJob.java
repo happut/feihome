@@ -27,7 +27,7 @@ public class PolymerizationJob {
 	@Qualifier("polymerizationDao")
 	private PolymerizationDao polymerizationDao;
 
-	@Scheduled(cron = "0 0/2 * * * ? ")
+	@Scheduled(cron = "0 0/30 * * * ? ")
 	public void polymerization() throws SQLException {
 		Map<String, IPolymerization> beans = SpringContextUtil
 				.getBeansByType(IPolymerization.class);

@@ -26,10 +26,14 @@
 	</select>
 	
 	<select id="getPolymerizationTopOneElementByType" resultMap="TPolymerizationResultMap">
-		SELECT * FROM T_POLYMERIZATIONELEMENT WHERE N_TYPE=#{type} ORDER BY C_ID DESC LIMIT 0,1
+		SELECT * FROM T_POLYMERIZATIONELEMENT WHERE N_TYPE=#{type} ORDER BY C_ORGINID DESC LIMIT 0,1
+	</select>
+
+	<select id="getPolymerizationTopOneElementByOrginId" resultMap="TPolymerizationResultMap">
+		SELECT * FROM T_POLYMERIZATIONELEMENT WHERE C_ORGINID=#{orginId} and N_TYPE=#{type} ORDER BY C_ORGINID DESC LIMIT 0,1
 	</select>
 	
 	<select id="getPolymerizationElementsByType" resultMap="TPolymerizationResultMap">
-		SELECT * FROM T_POLYMERIZATIONELEMENT WHERE N_TYPE=#{type} ORDER BY C_ID DESC
+		SELECT * FROM T_POLYMERIZATIONELEMENT WHERE N_TYPE=#{type} ORDER BY C_ORGINID DESC
 	</select>
 </mapper>

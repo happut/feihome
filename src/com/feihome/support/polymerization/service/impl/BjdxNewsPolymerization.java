@@ -16,7 +16,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import com.feihome.model.TPolymerizationElement;
-import com.feihome.support.Constants;
 import com.feihome.support.polymerization.dao.impl.PolymerizationDao;
 import com.feihome.support.polymerization.service.IPolymerization;
 
@@ -33,20 +32,11 @@ public class BjdxNewsPolymerization implements IPolymerization {
 
     @Override
     public List<TPolymerizationElement> pullPolymerizationInfo() {
-
-        TPolymerizationElement curElement = polymerizationDao
-                .getPolymerizationTopOneElementByType(Constants.POLYMERIZATIONELEMENT_TYPE_BJDX);
-
-        if (curElement == null) {
-            curElement = new TPolymerizationElement();
-            curElement.setOrginId("0");
-        }
-
-        return getPagableTPolymerizationElements(baseUrl, 0, curElement);
+        return getPagableTPolymerizationElements(baseUrl, 0);
     }
 
     public List<TPolymerizationElement> getPagableTPolymerizationElements(
-            String baseUrl, int page, TPolymerizationElement curEle) {
+            String baseUrl, int page) {
         List<TPolymerizationElement> dataList = new ArrayList<TPolymerizationElement>();
         boolean flag = false;
         try {
@@ -76,18 +66,12 @@ public class BjdxNewsPolymerization implements IPolymerization {
                 element.setTitle(e.child(0).attr("title"));
                 element.setType(1);
                 if (!url.startsWith("http://")) {
-                    element.setUrl(articleUrl + url);
+                    element.setUrl(articleUrl + "/" + url);
                     element.setOrginId(url.substring(url.lastIndexOf("/") + 1,
                         url.lastIndexOf(".")));
                 } else {
                     element.setUrl(url);
                     element.setOrginId("" + page + e.elementSiblingIndex());
-                }
-
-                // 如果抽取到当前id，停止
-                if (element.getOrginId().equals(curEle.getOrginId())) {
-                    flag = true;
-                    break;
                 }
                 dataList.add(element);
             }
@@ -103,7 +87,7 @@ public class BjdxNewsPolymerization implements IPolymerization {
                     return dataList;
                 }
                 List<TPolymerizationElement> nextPageData = getPagableTPolymerizationElements(
-                    baseUrl, page + 1, curEle);
+                    baseUrl, page + 1);
                 if (nextPageData.size() > 0) {
                     dataList.addAll(nextPageData);
                 }
