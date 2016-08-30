@@ -104,8 +104,7 @@
 						</blockquote>
 						<div
 							style="margin:0 10px; padding:10px; background-color: #efefef;">
-							<c:out value='${d.CSummary}' />
-							无
+							<c:out value='${d.CSummary}'>无</c:out>
 						</div>
 					</div>
 				</c:forEach>
