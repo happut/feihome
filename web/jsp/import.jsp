@@ -10,10 +10,12 @@
 <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap-material-design/0.5.10/js/ripples.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap-material-design/0.5.10/js/material.min.js"></script>
+
 <script src="//cdn.bootcss.com/markdown.js/0.5.0/markdown.min.js"></script>
 <script src="//cdn.bootcss.com/marked/0.3.6/marked.js"></script>
 <script src="//cdn.bootcss.com/to-markdown/3.0.1/to-markdown.js"></script>
 <script src="//cdn.bootcss.com/bootstrap-markdown/2.10.0/js/bootstrap-markdown.js"></script>
+
 
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -21,7 +23,13 @@
 	});
 </script>
 
+<%-- <link href="<c:url value="/css/thinker-md.user.css"/>" rel="stylesheet">
+<link href="<c:url value="/css/thinker-md.vendor.css"/>" rel="stylesheet"> --%>
 <link href="<c:url value="/css/common.css"/>" rel="stylesheet">
+
+
+<%-- <script type="text/javascript" charset="utf-8" src="<c:url value="/js/thinker-md.vendor.js"/>"></script> --%>
+
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
