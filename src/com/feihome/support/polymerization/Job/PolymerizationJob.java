@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Repository;
 
-import com.feihome.dao.Test;
 import com.feihome.logic.blog.dao.impl.BlogDao;
 import com.feihome.model.TPolymerizationElement;
 import com.feihome.support.polymerization.dao.impl.PolymerizationDao;
