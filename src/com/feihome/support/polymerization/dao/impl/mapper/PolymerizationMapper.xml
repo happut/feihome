@@ -24,13 +24,20 @@
 	<select id="getPolymerizationElementsCountByType" resultType="int">
 		SELECT COUNT(*) FROM T_POLYMERIZATIONELEMENT WHERE N_TYPE=#{type}
 	</select>
+
+	<select id="getPolymerizationElementsCountByTypeAndOrginIds" resultType="int">
+		SELECT COUNT(*) FROM T_POLYMERIZATIONELEMENT WHERE N_TYPE=#{type} and C_ORGINID IN 
+		<foreach collection="orgins" index="index" item="item" open="(" separator="," close=")">  
+            #{item}   
+    	</foreach> 
+	</select>
 	
 	<select id="getPolymerizationTopOneElementByType" resultMap="TPolymerizationResultMap">
 		SELECT * FROM T_POLYMERIZATIONELEMENT WHERE N_TYPE=#{type} ORDER BY C_ORGINID DESC LIMIT 0,1
 	</select>
 
 	<select id="getPolymerizationTopOneElementByOrginId" resultMap="TPolymerizationResultMap">
-		SELECT * FROM T_POLYMERIZATIONELEMENT WHERE C_ORGINID=#{orginId} and N_TYPE=#{type} ORDER BY C_ORGINID DESC LIMIT 0,1
+		SELECT * FROM T_POLYMERIZATIONELEMENT WHERE C_ORGINID=#{param2} and N_TYPE=#{param1} ORDER BY C_ORGINID DESC LIMIT 0,1
 	</select>
 	
 	<select id="getPolymerizationElementsByType" resultMap="TPolymerizationResultMap">

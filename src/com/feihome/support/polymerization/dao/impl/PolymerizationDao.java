@@ -39,6 +39,10 @@ public class PolymerizationDao {
     public int getPolymerizationElementsCountByType(int type) {
         return mapper.getPolymerizationElementsCountByType(type);
     }
+    
+    public int getPolymerizationElementsCountByTypeAndOrginIds(int type,String[] orgins) {
+        return mapper.getPolymerizationElementsCountByTypeAndOrginIds(type,orgins);
+    }
 
     public TPolymerizationElement getPolymerizationTopOneElementByType(int type) {
         return mapper.getPolymerizationTopOneElementByType(type);
