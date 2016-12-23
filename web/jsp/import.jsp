@@ -6,6 +6,8 @@
 <link href="//cdn.bootcss.com/bootstrap-material-design/0.5.10/css/ripples.min.css" rel="stylesheet">
 <link href="//cdn.bootcss.com/bootstrap-markdown/2.10.0/css/bootstrap-markdown.min.css" rel="stylesheet">
 
+<link href="//cdn.bootcss.com/Swiper/3.3.1/css/swiper.min.css" rel="stylesheet">
+
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap-material-design/0.5.10/js/ripples.min.js"></script>
@@ -16,11 +18,14 @@
 <script src="//cdn.bootcss.com/to-markdown/3.0.1/to-markdown.js"></script>
 <script src="//cdn.bootcss.com/bootstrap-markdown/2.10.0/js/bootstrap-markdown.js"></script>
 
+<script src="//cdn.bootcss.com/Swiper/3.3.1/js/swiper.jquery.js"></script>
 
 <script type="text/javascript">
 	$(document).ready(function(){
 		$.material.init();
 	});
+	
+   
 </script>
 
 <%-- <link href="<c:url value="/css/thinker-md.user.css"/>" rel="stylesheet">

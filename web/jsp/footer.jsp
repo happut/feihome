@@ -40,6 +40,7 @@
 						target="_blank">Material Design for Bootstrap</a>, <a
 						href="http://projects.spring.io/spring-framework" target="_blank">Spring
 						MVC</a>, <a href="https://www.openshift.com/" target="_blank">OpenShift</a>
+						, <a href="http://www.swiper.com.cn/" target="_blank">Swiper</a>
 				</div>
 				<div class="copyright">
 					Current version：<a

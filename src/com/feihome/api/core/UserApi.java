@@ -11,17 +11,17 @@ import com.alibaba.fastjson.JSONObject;
 @Controller
 @RequestMapping("/api/user")
 public class UserApi {
-	
-	private Logger log = LoggerFactory.getLogger(UserApi.class);
-	
-	@RequestMapping(value="login")
-	@ResponseBody
-	public String helloWorld() {
-		log.debug("HelloWorld!" + "已经执行");
-		JSONObject json = new JSONObject();
-		json.put("user", "wangfei");
-		return json.toString();
-	}
-	
+
+    private Logger log = LoggerFactory.getLogger(UserApi.class);
+
+    @RequestMapping(value = "login")
+    @ResponseBody
+    public String helloWorld() {
+        log.debug("HelloWorld!" + "已经执行");
+        JSONObject json = new JSONObject();
+        json.put("user", "wangfei");
+        return json.toString();
+    }
+
 
 }
