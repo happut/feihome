@@ -3,5 +3,6 @@
 <%
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath() + "/";
 	String url = basePath + "home/index";
-	response.sendRedirect(url);
+	response.sendRedirect(url); 
 %>
+  
