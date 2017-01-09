@@ -7,7 +7,7 @@
 <%@ include file="/jsp/import.jsp"%>   
 </head>
 <body>
-
+   
 	<jsp:include page="/jsp/header.jsp"/>
 	<div class="wrap">
 		<div class="row marketing">
