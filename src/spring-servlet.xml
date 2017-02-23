@@ -25,6 +25,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 	<mvc:resources mapping="/**/*.css" location="/" />
 	<mvc:resources mapping="/**/*.ico" location="/" />
 	<mvc:resources mapping="/**/*.js" location="/" />
+	<mvc:resources mapping="/**/*.html" location="/" />
 
 	<websocket:handlers>
 		<websocket:mapping path="/echo.wangfei" handler="echoWebSocketHandler" />
