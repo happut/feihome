@@ -1,4 +1,4 @@
-FROM daocloud.io/rockytan/docker-base-maven-tomcat:latest
+FROM daocloud.io/liushaoping/maven-tomcat
 
 ADD pom.xml /tmp/build/
 RUN cd /tmp/build && mvn -q dependency:resolve
