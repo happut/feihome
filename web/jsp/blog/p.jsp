@@ -10,20 +10,6 @@
 <title><c:out value='${data.CTitle}' /></title>
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
-	var duoshuoQuery = {
-		short_name : "feihome"
-	};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';
-		ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:')
-				+ '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] || document
-				.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-
 	$(document).ready(function() {
 	});
 </script>
@@ -87,12 +73,18 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="well" id="comment">
-						<!-- 多说评论框 start -->
-						<div class="ds-thread"
-							data-thread-key="p<c:out value='${data.NId}' />"
-							data-title="<c:out value='${data.CTitle}' />"
-							data-url="<%=ConfigUtils.getProperty("feihome.url")%><c:out value='/blog/p/${data.NId}' />"></div>
-						<!-- 多说评论框 end -->
+						<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+						<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+						<script>
+                            var cloudTieConfig = {
+                                url: "http://wangfei.tk/blog/p/"+<c:out value='${data.NId}' />,
+                                sourceId: "<c:out value='${data.NId}' />",
+                                productKey: "32f29f798af24bd8a98ae90f45dd1e81",
+                                target: "cloud-tie-wrapper"
+                            };
+                            var yunManualLoad = true;
+                            Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
+						</script>
 					</div>
 				</div>
 			</div>
