@@ -1,11 +1,9 @@
 package com.feihome.logic.blog;
 
-import java.sql.Timestamp;
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import com.feihome.model.TBlog;
+import com.feihome.model.TUser;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.shiro.SecurityUtils;
@@ -14,17 +12,14 @@ import org.markdown4j.Markdown4jProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-import com.feihome.model.TBlog;
-import com.feihome.model.TUser;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedInputStream;
+import java.sql.Timestamp;
+import java.util.List;
 
 @Controller
 @RequestMapping("/blog")
@@ -115,6 +110,22 @@ public class BlogLogic {
         data.setCContent(new Markdown4jProcessor().process(data.getCContent()));
         System.out.println(data.getCContent());
         request.setAttribute("data", data);
+
+        Runtime r = Runtime.getRuntime();
+        Process p = r.exec("cmd /k ping 127.0.0.1");
+        BufferedInputStream bis = new BufferedInputStream(p.getInputStream());
+
+        int bytesRead = 0;
+        byte[] buffer = new byte[1024];
+
+        //从文件中按字节读取内容，到文件尾部时read方法将返回-1
+        while ((bytesRead = bis.read(buffer)) != -1) {
+
+            //将读取的字节转为字符串对象
+            String chunk = new String(buffer,0, bytesRead);
+            System.out.print(chunk);
+        }
+
         return "blog/p";
     }
 
