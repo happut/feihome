@@ -1,4 +1,4 @@
-##Spring MVC +  Bootstrap + MyBatis + Shiro
+## Spring MVC +  Bootstrap + MyBatis + Shiro
 
 [![Build Status](https://travis-ci.org/happut/feihome.svg?branch=master)](https://travis-ci.org/happut/feihome) [![license](https://img.shields.io/github/license/happut/feihome.svg)]()
 
