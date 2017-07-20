@@ -43,7 +43,7 @@
             $.post("doLogin", {
                 "username": user,
                 "passwords": pass
-            }, function (data, textStatus) {
+            }, function (data, textStatus) { //test
                 data = $.parseJSON(data);
                 if (data.success == true) {
                     $(".form-signin").hide();
