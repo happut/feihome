@@ -64,13 +64,6 @@ public class UserLogic {
         return result.toString();
     }
 
-    @RequestMapping(value = "signup")
-    public ModelAndView signup(HttpServletRequest request,
-            HttpServletResponse response) throws Exception {
-        Subject subject = SecurityUtils.getSubject();
-        subject.logout();
-        return new ModelAndView("user/signup");
-    }
 
     @RequestMapping(value = "login")
     public ModelAndView login(HttpServletRequest request,

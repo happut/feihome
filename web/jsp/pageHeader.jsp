@@ -13,7 +13,7 @@
 		})
 	});
 </script>
-
+<!--
 <div class="jumbotron pageHead">
 	<div class="container">
 		<div class="swiper-container">
@@ -30,5 +30,6 @@
 		</div>
 	</div>
 </div>
+-->
 
 

@@ -72,19 +72,19 @@
                 Feihome
             </h1>
             <div class="form-group has-info label-floating">
-                <label class="control-label" for="login-name">用户名</label> <input
+                <label class="control-label" for="login-name">Username</label> <input
                     type="text" class="form-control" id="login-name">
             </div>
             <div class="form-group has-info label-floating">
-                <label class="control-label" for="login-pass">密码</label> <input
+                <label class="control-label" for="login-pass">Password</label> <input
                     type="password" class="form-control" id="login-pass">
             </div>
 
             <button id="subBtn"
-                    class="btn btn-lg btn-info btn-block btn-raised" type="submit">登陆
+                    class="btn btn-lg btn-info btn-block btn-raised" type="submit">login
             </button>
             <button id="backBtn" class="btn btn-lg btn-info btn-block"
-                    type="button">返回首页
+                    type="button">Back to Index
             </button>
         </form>
     </div>

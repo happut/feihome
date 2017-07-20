@@ -14,7 +14,7 @@
 		<!-- Shiro的核心安全接口,这个属性是必须的 -->
 		<property name="securityManager" ref="securityManager" />
 		<!-- 身份认证失败，则跳转到登录页面的配置 -->
-		<property name="loginUrl" value="/user/signup" />
+		<property name="loginUrl" value="/user/login" />
 		<!-- 权限认证失败，则跳转到指定页面 -->
 		<property name="unauthorizedUrl" value="/nopower.jsp" />
 		<!-- Shiro连接约束配置,即过滤链的定义 -->
@@ -24,7 +24,7 @@
 				/blog/list*=anon
 				/blog/p/**=anon
 				/blog/**=authc
-				/user/signup=anon
+				/user/doLogin=anon
 				/user/login=anon
 				/user/**=authc
 				/control/**=authc
