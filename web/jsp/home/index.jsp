@@ -19,7 +19,7 @@
 						<div class="col-md-12">
 							<div class="well">
 								<blockquote>
-									<p>博文</p>
+									<p>Blogs</p>
 								</blockquote>
 								<p>
 								</p>
@@ -28,7 +28,7 @@
 						<div class="col-md-12">
 							<div class="well">
 								<blockquote>
-									<p>友情链接</p>
+									<p>Friend Link</p>
 								</blockquote>
 								<p>
 									<a href="http://www.xuding.info" target="_blank"><img

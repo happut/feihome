@@ -17,7 +17,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.BufferedInputStream;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -32,7 +31,7 @@ public class BlogLogic {
     @RequestMapping(value = "loadBlog")
     @ResponseBody
     public List<TBlog> loadBlog(HttpServletRequest request,
-            HttpServletResponse response) throws Exception {
+                                HttpServletResponse response) throws Exception {
         List<TBlog> data = blogService.getBlogs();
         return data;
     }
@@ -48,14 +47,14 @@ public class BlogLogic {
     @RequestMapping(value = "list/{id}")
     @ResponseBody
     public String list(HttpServletRequest request,
-            HttpServletResponse response, @PathVariable Integer id) throws Exception {
+                       HttpServletResponse response, @PathVariable Integer id) throws Exception {
         List<TBlog> data = blogService.getBlogs(id);
         return JSON.toJSONString(data, true);
     }
 
     @RequestMapping(value = "addBlog")
     public ModelAndView addBlog(HttpServletRequest request,
-            HttpServletResponse response) throws Exception {
+                                HttpServletResponse response) throws Exception {
         return new ModelAndView("blog/addBlog");
     }
 
@@ -65,7 +64,7 @@ public class BlogLogic {
             @RequestParam(value = "title", required = true) String title,
             @RequestParam(value = "content", required = true) String content,
             @RequestParam(value = "summary", required = true) String summary,
-            @RequestParam(value = "blogId") String id, 
+            @RequestParam(value = "blogId") String id,
             HttpServletRequest request, HttpServletResponse response) throws Exception {
         JSONObject result = new JSONObject();
         Subject subject = SecurityUtils.getSubject();
@@ -105,33 +104,17 @@ public class BlogLogic {
 
     @RequestMapping(value = "p/{id}")
     public String article(HttpServletRequest request,
-            HttpServletResponse response, @PathVariable Integer id) throws Exception {
+                          HttpServletResponse response, @PathVariable Integer id) throws Exception {
         TBlog data = blogService.getBlogById(id);
         data.setCContent(new Markdown4jProcessor().process(data.getCContent()));
         System.out.println(data.getCContent());
         request.setAttribute("data", data);
-
-        Runtime r = Runtime.getRuntime();
-        Process p = r.exec("cmd /k ping 127.0.0.1");
-        BufferedInputStream bis = new BufferedInputStream(p.getInputStream());
-
-        int bytesRead = 0;
-        byte[] buffer = new byte[1024];
-
-        //从文件中按字节读取内容，到文件尾部时read方法将返回-1
-        while ((bytesRead = bis.read(buffer)) != -1) {
-
-            //将读取的字节转为字符串对象
-            String chunk = new String(buffer,0, bytesRead);
-            System.out.print(chunk);
-        }
-
         return "blog/p";
     }
 
     @RequestMapping(value = "edit/{id}")
     public String edit(HttpServletRequest request,
-            HttpServletResponse response, @PathVariable Integer id) throws Exception {
+                       HttpServletResponse response, @PathVariable Integer id) throws Exception {
         TBlog data = blogService.getBlogById(id);
         request.setAttribute("data", data);
         return "blog/addBlog";
@@ -139,7 +122,7 @@ public class BlogLogic {
 
     @RequestMapping(value = "delete/{id}")
     public String delete(HttpServletRequest request,
-            HttpServletResponse response, @PathVariable Integer id) throws Exception {
+                         HttpServletResponse response, @PathVariable Integer id) throws Exception {
         blogService.deleteBlog(id);
         return "redirect:/blog/list";
     }

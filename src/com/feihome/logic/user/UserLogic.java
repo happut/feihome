@@ -1,8 +1,8 @@
 package com.feihome.logic.user;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import com.alibaba.fastjson.JSONObject;
+import com.feihome.model.TUser;
+import com.feihome.support.auth.shiro.MD5Util;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
@@ -18,9 +18,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.alibaba.fastjson.JSONObject;
-import com.feihome.model.TUser;
-import com.feihome.support.auth.shiro.MD5Util;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @Controller
 @RequestMapping("/user")
@@ -30,9 +29,9 @@ public class UserLogic {
     @Qualifier("userService")
     UserService userService;
 
-    @RequestMapping(value = "login", method = RequestMethod.POST)
+    @RequestMapping(value = "doLogin", method = RequestMethod.POST)
     @ResponseBody
-    public String login(
+    public String doLogin(
             @RequestParam(value = "username", required = true) String username,
             @RequestParam(value = "passwords", required = true) String passwords,
             HttpServletRequest request, HttpServletResponse response) {
@@ -71,6 +70,14 @@ public class UserLogic {
         Subject subject = SecurityUtils.getSubject();
         subject.logout();
         return new ModelAndView("user/signup");
+    }
+
+    @RequestMapping(value = "login")
+    public ModelAndView login(HttpServletRequest request,
+                               HttpServletResponse response) throws Exception {
+        Subject subject = SecurityUtils.getSubject();
+        subject.logout();
+        return new ModelAndView("user/login");
     }
 
     @RequestMapping(value = "logOutReq")

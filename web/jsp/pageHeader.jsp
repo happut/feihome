@@ -25,13 +25,6 @@
 						<a href="<c:url value='/' />"><span><%=ConfigUtils.getProperty("feihome.url")%></span></a>
 					</p>
 				</div>
-				<div class="swiper-slide">
-					<h1>Feihome</h1>
-					<h2><%=ConfigUtils.getProperty("feihome.title")%></h2>
-					<p>
-						<a href="<c:url value='/' />"><span><%=ConfigUtils.getProperty("feihome.url")%></span></a>
-					</p>
-				</div>
 			</div> 
 			<div class="swiper-pagination"></div>
 		</div>
