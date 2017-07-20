@@ -24,7 +24,7 @@
                 <div class="col-md-12">
 
                     <blockquote>
-                        <p>Friend Link</p>
+                        <p>Friend Link</p> <!--test -->
                     </blockquote>
                     <p>
                         <a href="http://www.xuding.info" target="_blank"><img
