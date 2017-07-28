@@ -21,22 +21,6 @@
     <div class="container">
         <div class="well">
             <div class="row marketing">
-                <div class="col-md-12">
-
-                    <blockquote>
-                        <p>Friend Link</p> <!--test -->
-                    </blockquote>
-                    <p>
-                        <a href="http://www.xuding.info" target="_blank"><img
-                                width="16" height="16" width="16" height="16" alt=""
-                                src="http://www.xuding.info/favicon.ico">徐老师</a>
-                    </p>
-
-                </div>
-            </div>
-        </div>
-        <div class="well">
-            <div class="row marketing">
                 <div class="col-md-6">
                     <div class="copyright">
                         Copyright <span class="glyphicon glyphicon-copyright-mark"></span>
@@ -46,8 +30,6 @@
                         Designed by <a href="http://weibo.com/littlewangfei"
                                        target="_blank">@WangFei-Invariant.(Happut)</a>. All rights
                         reserved.
-                        <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-                        document.write(unescape("%3Cspan id='cnzz_stat_icon_1253223179'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/z_stat.php%3Fid%3D1253223179%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
                     </div>
                 </div>
                 <div class="col-md-6">
