@@ -42,7 +42,7 @@ public class BlogLogic {
         Integer pageCount = blogService.getBlogsCount();
         request.setAttribute("pageCount", pageCount);
 
-        int maxPage = pageCount / 10 + 1;
+        int maxPage = (pageCount - 1)    / 10 + 1;
         request.setAttribute("prePage", 1);
         request.setAttribute("nextPage", NumberUtils.min(new int[]{maxPage, 2}));
 
@@ -57,7 +57,7 @@ public class BlogLogic {
         Integer pageCount = blogService.getBlogsCount();
         request.setAttribute("pageCount", pageCount);
 
-        int maxPage = pageCount / 10 + 1;
+        int maxPage = (pageCount - 1) / 10 + 1;
         request.setAttribute("prePage", NumberUtils.max(new int[]{1, id - 1}));
         request.setAttribute("nextPage", NumberUtils.min(new int[]{maxPage, id + 1}));
         return "blog/list";
