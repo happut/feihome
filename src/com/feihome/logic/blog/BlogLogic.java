@@ -1,6 +1,5 @@
 package com.feihome.logic.blog;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.feihome.model.TBlog;
 import com.feihome.model.TUser;
@@ -38,18 +37,30 @@ public class BlogLogic {
 
     @RequestMapping(value = "list")
     public String list(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        List<TBlog> data = blogService.getBlogs();
+        List<TBlog> data = blogService.getBlogs(1);
         request.setAttribute("data", data);
-        request.setAttribute("pageCount", blogService.getBlogsCount());
+        Integer pageCount = blogService.getBlogsCount();
+        request.setAttribute("pageCount", pageCount);
+
+        int maxPage = pageCount / 10 + 1;
+        request.setAttribute("prePage", 1);
+        request.setAttribute("nextPage", NumberUtils.min(new int[]{maxPage, 2}));
+
         return "blog/list";
     }
 
     @RequestMapping(value = "list/{id}")
-    @ResponseBody
     public String list(HttpServletRequest request,
                        HttpServletResponse response, @PathVariable Integer id) throws Exception {
         List<TBlog> data = blogService.getBlogs(id);
-        return JSON.toJSONString(data, true);
+        request.setAttribute("data", data);
+        Integer pageCount = blogService.getBlogsCount();
+        request.setAttribute("pageCount", pageCount);
+
+        int maxPage = pageCount / 10 + 1;
+        request.setAttribute("prePage", NumberUtils.max(new int[]{1, id - 1}));
+        request.setAttribute("nextPage", NumberUtils.min(new int[]{maxPage, id + 1}));
+        return "blog/list";
     }
 
     @RequestMapping(value = "addBlog")

@@ -17,27 +17,22 @@
         <div class="row marketing">
             <div class="col-md-8">
                 <div class="row marketing">
-                    <div class="col-md-12">
-                        <div class="well">
-                            <blockquote>
-                                <p>Blogs</p>
-                            </blockquote>
-                            <p>
-                            </p>
+
+                    <c:forEach items="${blogs}" var="blog">
+                        <div class="col-md-12">
+                            <div class="well">
+                                <blockquote>
+                                    <p><a href="<c:url value='/blog/p/${blog.NId}' />"/>
+                                        <c:out value='${blog.CTitle}'/>
+                                        </a></p>
+                                </blockquote>
+                                <p>
+                                    <small><c:out value='${blog.CContent}'>无</c:out></small>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="well">
-                            <blockquote>
-                                <p>Friend Link</p>
-                            </blockquote>
-                            <p>
-                                <a href="http://www.xuding.info" target="_blank"><img
-                                        width="16" height="16" width="16" height="16" alt=""
-                                        src="http://www.xuding.info/favicon.ico">徐老师</a>
-                            </p>
-                        </div>
-                    </div>
+                    </c:forEach>
+
                     <div class="col-md-12">
                         <div class="well">
                             <blockquote>

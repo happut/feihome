@@ -26,14 +26,15 @@ public class BlogDao extends BaseDao {
     }
 
     public List<TBlog> getBlogs(Integer pageNum) {
-        return blogMapper.getPagableBlogs(pageNum - 1, 10);
+        int page = pageNum - 1;
+        return blogMapper.getPagableBlogs(page * 10, 10);
     }
 
     public boolean createBlog(TBlog blog) {
         blogMapper.createBlog(blog);
         return true;
     }
-    
+
     public boolean editBlog(TBlog blog) {
         blogMapper.editBlog(blog);
         return true;
@@ -77,5 +78,9 @@ public class BlogDao extends BaseDao {
      */
     public Integer getBlogsCount() {
         return blogMapper.getBlogsCount();
+    }
+
+    public List<TBlog> getRecentBlogs(Integer count) {
+        return blogMapper.getPagableBlogs(0, count);
     }
 }

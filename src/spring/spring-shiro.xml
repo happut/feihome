@@ -21,7 +21,8 @@
 		<property name="filterChainDefinitions">
 			<value>
 				<!--anon 表示匿名访问，不需要认证以及授权 -->
-				/blog/list*=anon
+				/blog/list=anon
+                /blog/list/*=anon
 				/blog/p/**=anon
 				/blog/**=authc
 				/user/doLogin=anon
