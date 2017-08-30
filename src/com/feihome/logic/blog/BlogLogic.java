@@ -3,11 +3,11 @@ package com.feihome.logic.blog;
 import com.alibaba.fastjson.JSONObject;
 import com.feihome.model.TBlog;
 import com.feihome.model.TUser;
+import com.feihome.support.utils.MarkdownUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
-import org.markdown4j.Markdown4jProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -42,7 +42,7 @@ public class BlogLogic {
         Integer pageCount = blogService.getBlogsCount();
         request.setAttribute("pageCount", pageCount);
 
-        int maxPage = (pageCount - 1)    / 10 + 1;
+        int maxPage = (pageCount - 1) / 10 + 1;
         request.setAttribute("prePage", 1);
         request.setAttribute("nextPage", NumberUtils.min(new int[]{maxPage, 2}));
 
@@ -117,8 +117,10 @@ public class BlogLogic {
     public String article(HttpServletRequest request,
                           HttpServletResponse response, @PathVariable Integer id) throws Exception {
         TBlog data = blogService.getBlogById(id);
-        data.setCContent(new Markdown4jProcessor().process(data.getCContent()));
-        System.out.println(data.getCContent());
+
+
+        data.setCContent(MarkdownUtils.parseMarkdown2html(data.getCContent()));
+//        System.out.println(data.getCContent());
         request.setAttribute("data", data);
         return "blog/p";
     }
