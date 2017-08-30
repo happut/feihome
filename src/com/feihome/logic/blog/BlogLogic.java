@@ -44,6 +44,7 @@ public class BlogLogic {
 
         int maxPage = (pageCount - 1) / 10 + 1;
         request.setAttribute("prePage", 1);
+        request.setAttribute("curPage", 1);
         request.setAttribute("nextPage", NumberUtils.min(new int[]{maxPage, 2}));
 
         return "blog/list";
@@ -59,6 +60,7 @@ public class BlogLogic {
 
         int maxPage = (pageCount - 1) / 10 + 1;
         request.setAttribute("prePage", NumberUtils.max(new int[]{1, id - 1}));
+        request.setAttribute("curPage", id);
         request.setAttribute("nextPage", NumberUtils.min(new int[]{maxPage, id + 1}));
         return "blog/list";
     }
