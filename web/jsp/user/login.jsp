@@ -68,9 +68,9 @@
     <div class="well vertical-center">
         <form class="form-signin has-warning" style="display: block;"
               action="" onsubmit="return submitForm();">
-            <h1>
-                Feihome
-            </h1>
+            <p class="text-center lead ">
+                <strong>Feihome</strong>
+            </p>
             <div class="form-group has-info label-floating">
                 <label class="control-label" for="login-name">Username</label> <input
                     type="text" class="form-control" id="login-name">

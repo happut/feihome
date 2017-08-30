@@ -9,7 +9,7 @@
 <link href="//cdn.bootcss.com/Swiper/3.3.1/css/swiper.min.css" rel="stylesheet">
 
 <style>
-    .well {
+    .well{
         border-radius: 10px !important;
     }
 
@@ -17,7 +17,7 @@
         padding-top: 30px;
     }
 
-    .nav-menu {
+    .nav-menu,.pager li  {
         border-radius: 10px !important;
         box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
         background-color: rgba(0, 0, 0, 0);
