@@ -84,7 +84,7 @@ public class BlogLogic {
         TUser user = (TUser) subject.getPrincipal();
         TBlog blog = new TBlog();
         blog.setCContent(content);
-        blog.setCTitle(title);
+        blog.setCTitle(title);//test asdfasd
         blog.setCSummary(summary);
         blog.setDtCreatetime(new Timestamp(System.currentTimeMillis()));
         blog.setDtEdittime(new Timestamp(System.currentTimeMillis()));
