@@ -20,7 +20,7 @@
                 <nav aria-label="Page navigation">
                     <ul class="pager">
                         <li><a href="<c:url value="/blog/list/${prePage}"></c:url>">Previous</a></li>
-                        <li><a href="#"></c:url>">Next</a></li>
+
                         <li><a href="<c:url value="/blog/list/${nextPage}"></c:url>">Next</a></li>
                     </ul>
                 </nav>
