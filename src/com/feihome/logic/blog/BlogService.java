@@ -1,5 +1,7 @@
 package com.feihome.logic.blog;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.feihome.logic.blog.dao.impl.BlogDao;
 import com.feihome.model.TBlog;
 import com.feihome.model.TUser;
@@ -10,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -57,7 +60,7 @@ public class BlogService {
 
     public List<TBlog> getRecentBlogs(Integer count) {
         List<TBlog> blogs = dao.getRecentBlogs(count);
-        handleBlogs(blogs);
+        handleBlogs(blogs);//test
         return blogs;
     }
 
@@ -75,4 +78,6 @@ public class BlogService {
             }
         }
     }
+
+
 }
